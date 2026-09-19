@@ -13,7 +13,7 @@ const state = {
   currentSong: songsData[0],
   parsedSong: null,
   transposition: 0,
-  bpm: 120,
+  bpm: 60,
   countMode: 'R+3+5+7',
   startDegree: 'R',
   countInBeats: 4,
@@ -28,7 +28,6 @@ const elements = {
   songSearch: document.getElementById('song-search'),
   songSelect: document.getElementById('song-select'),
   btnStart: document.getElementById('btn-start'),
-  btnPause: document.getElementById('btn-pause'),
   btnReset: document.getElementById('btn-reset'),
   bpmSlider: document.getElementById('bpm-slider'),
   bpmVal: document.getElementById('bpm-val'),
@@ -148,12 +147,12 @@ function updatePlayButtonsState(isPlaying, isPaused) {
   if (isPlaying) {
     elements.btnStart.textContent = '⏸ 一時停止';
     elements.btnStart.className = 'btn btn-warning';
-    elements.btnPause.disabled = false;
+  } else if (isPaused) {
+    elements.btnStart.textContent = '▶️ 再スタート';
+    elements.btnStart.className = 'btn btn-primary';
   } else {
     elements.btnStart.textContent = '▶️ スタート';
     elements.btnStart.className = 'btn btn-primary';
-    elements.btnPause.disabled = true;
-    elements.btnPause.textContent = '⏸ 一時停止';
   }
 }
 
@@ -194,25 +193,20 @@ function setupEventListeners() {
     if (song) loadSong(song);
   });
 
-  // スタート / パラレル一時停止
+  // スタート / 一時停止 トグルボタン
   elements.btnStart.addEventListener('click', () => {
-    if (!state.isPlaying) {
+    if (!state.isPlaying && !state.isPaused) {
+      // 最初からのスタート
       audioEngine.setBpm(state.bpm);
       audioEngine.setBackingEnabled(state.enableBacking);
       audioEngine.start(state.countInBeats);
       updatePlayButtonsState(true, false);
-    } else {
-      audioEngine.pause();
-      updatePlayButtonsState(false, true);
-    }
-  });
-
-  // 一時停止
-  elements.btnPause.addEventListener('click', () => {
-    if (state.isPlaying) {
+    } else if (state.isPlaying) {
+      // 再生中 -> 一時停止へ
       audioEngine.pause();
       updatePlayButtonsState(false, true);
     } else if (state.isPaused) {
+      // 一時停止中 -> 再スタートへ
       audioEngine.resume();
       updatePlayButtonsState(true, false);
     }

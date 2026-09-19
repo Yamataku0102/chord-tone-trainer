@@ -6,7 +6,7 @@ import { getChordTones, noteToIndex } from './chordUtils.js';
 class AudioEngine {
   constructor() {
     this.audioCtx = null;
-    this.bpm = 120;
+    this.bpm = 60;
     this.isPlaying = false;
     this.isPaused = false;
     this.backingEnabled = true; // バッキング和音再生スイッチ

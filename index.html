@@ -28,7 +28,6 @@
       <!-- 演奏ボタン -->
       <div class="btn-group">
         <button id="btn-start" class="btn btn-primary">▶️ スタート</button>
-        <button id="btn-pause" class="btn btn-warning" disabled>⏸ 一時停止</button>
         <button id="btn-reset" class="btn btn-secondary">🔄 リセット</button>
       </div>
 
@@ -50,12 +49,12 @@
           <button id="bpm-minus-10" class="btn-bpm" title="-10 (10刻みの数値に丸め)">-10</button>
           <button id="bpm-minus-1" class="btn-bpm">-1</button>
         </div>
-        <input type="range" id="bpm-slider" min="50" max="240" value="120" />
+        <input type="range" id="bpm-slider" min="40" max="240" value="60" />
         <div class="bpm-buttons">
           <button id="bpm-plus-1" class="btn-bpm">+1</button>
           <button id="bpm-plus-10" class="btn-bpm" title="+10 (10刻みの数値に丸め)">+10</button>
         </div>
-        <span id="bpm-val" class="bpm-display">120</span>
+        <span id="bpm-val" class="bpm-display">60</span>
       </div>
 
       <!-- 移調 (Transposition) -->

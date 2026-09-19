@@ -226,20 +226,25 @@ export function getChordTones(symbol) {
     fifthDegree = '♯5';
   }
 
-  // 7度の判定
-  if (t.includes('^') || t.includes('maj7') || t.includes('Δ')) {
+  let hasSeventh = false;
+  // 7度 / 6度の判定
+  if (t.includes('^') || t.includes('maj7') || t.includes('Δ') || t.includes('maj')) {
     seventhInterval = 11;
     seventhDegree = '7';
+    hasSeventh = true;
   } else if (t.includes('o7') || t.includes('dim7')) {
     seventhInterval = 9;
     seventhDegree = '♭♭7';
+    hasSeventh = true;
   } else if (t.includes('6')) {
     seventhInterval = 9;
     seventhDegree = '6';
-  } else {
-    // ドミナント7th または マイナー7th
+    hasSeventh = true;
+  } else if (t.includes('7') || t.includes('h')) {
+    // ドミナント7th, マイナー7th, m7♭5
     seventhInterval = 10;
     seventhDegree = '♭7';
+    hasSeventh = true;
   }
 
   // 音楽理論ステップに基づく音名導出
@@ -248,14 +253,19 @@ export function getChordTones(symbol) {
   const thirdStep = thirdDegree === '4' ? 3 : 2; // sus4の場合は4度ステップ(+3)
   const thirdNote = getSpelledNoteName(root, thirdStep, (rootIdx + thirdInterval) % 12);
   const fifthNote = getSpelledNoteName(root, 4, (rootIdx + fifthInterval) % 12);
-  const seventhNote = getSpelledNoteName(root, 6, (rootIdx + seventhInterval) % 12);
 
-  return [
+  const res = [
     { degree: 'R', note: rootNote, semitones: 0, order: 0 },
     { degree: thirdDegree, note: thirdNote, semitones: thirdInterval, order: 1 },
-    { degree: fifthDegree, note: fifthNote, semitones: fifthInterval, order: 2 },
-    { degree: seventhDegree, note: seventhNote, semitones: seventhInterval, order: 3 }
+    { degree: fifthDegree, note: fifthNote, semitones: fifthInterval, order: 2 }
   ];
+
+  if (hasSeventh) {
+    const seventhNote = getSpelledNoteName(root, 6, (rootIdx + seventhInterval) % 12);
+    res.push({ degree: seventhDegree, note: seventhNote, semitones: seventhInterval, order: 3 });
+  }
+
+  return res;
 }
 
 /**
@@ -265,6 +275,7 @@ export function getChordTones(symbol) {
  */
 export function getFormattedChordTones(symbol, countMode = 'R+3+5+7', startDegree = 'R') {
   const tones = getChordTones(symbol);
+  if (!tones || tones.length === 0) return [];
 
   // 表示音数制限
   let count = 4;
@@ -275,15 +286,21 @@ export function getFormattedChordTones(symbol, countMode = 'R+3+5+7', startDegre
 
   let sorted = [...tones];
 
+  // 4音未満（トライアド等）への安全策
+  const t0 = tones[0];
+  const t1 = tones[1] || tones[0];
+  const t2 = tones[2] || tones[0];
+  const t3 = tones[3] || tones[2] || tones[0];
+
   // 開始度数に応じたシフト/並び替え
   if (startDegree === '3') {
-    sorted = [tones[1], tones[2], tones[3], tones[0]];
+    sorted = [t1, t2, t3, t0].filter(Boolean);
   } else if (startDegree === '5') {
-    sorted = [tones[2], tones[3], tones[0], tones[1]];
+    sorted = [t2, t3, t0, t1].filter(Boolean);
   } else if (startDegree === '7') {
-    sorted = [tones[3], tones[0], tones[1], tones[2]];
+    sorted = [t3, t0, t1, t2].filter(Boolean);
   } else if (startDegree === 'descending') {
-    sorted = [tones[3], tones[2], tones[1], tones[0]];
+    sorted = [...tones].reverse();
   }
 
   return sorted.slice(0, count);

@@ -88,6 +88,29 @@ class AudioEngine {
     this.countInBeatsLeft = 0;
   }
 
+  // 特定の小節に位置ジャンプ（タップして途中から再生/選択）
+  jumpToMeasure(measureIndex) {
+    if (!this.songData || !this.songData.measures) return;
+    const maxIdx = this.songData.measures.length - 1;
+    this.currentMeasure = Math.max(0, Math.min(measureIndex, maxIdx));
+    this.currentBeat = 0;
+
+    if (this.isPlaying) {
+      if (this.timerId) clearTimeout(this.timerId);
+      this.stopActiveBackingTones();
+      this.countInBeatsLeft = 0; // タップ途中再生時は即座にカウントインなしで進める
+      this.scheduleNextTick();
+    } else {
+      // 停止中であれば選択された小節の頭コードのバッキング音を鳴らして確認できるようにする
+      const m = this.songData.measures[this.currentMeasure];
+      const chord = m?.chords[0];
+      if (this.backingEnabled && chord) {
+        this.initAudio();
+        this.playBackingChord(chord);
+      }
+    }
+  }
+
   // タイマー進行ループ
   scheduleNextTick() {
     if (!this.isPlaying) return;
@@ -182,6 +205,8 @@ class AudioEngine {
     this.stopActiveBackingTones();
 
     const tones = getChordTones(symbol);
+    if (!tones || tones.length === 0) return;
+
     const now = this.audioCtx.currentTime;
     
     // 1拍あたりの秒数
@@ -192,13 +217,13 @@ class AudioEngine {
     // ベース音 (ルート octave 3: MIDI 48..59)
     const rootIdx = noteToIndex(tones[0].note);
     const bassFreq = 440 * Math.pow(2, (rootIdx + 48 - 69) / 12);
-    this.playTone(bassFreq, 0.35, duration, 'triangle');
+    this.playTone(bassFreq, 0.32, duration, 'triangle');
 
-    // 和音音色 (octave 4: MIDI 60..71)
+    // 和音音色 (ルート音を octave 4 (MIDI 60) 付近にし、インターバルに従って正確にボイシング展開)
     tones.forEach((t) => {
-      const idx = noteToIndex(t.note);
-      const freq = 440 * Math.pow(2, (idx + 60 - 69) / 12);
-      this.playTone(freq, 0.12, duration, 'sine');
+      const midiNote = 60 + rootIdx + (t.semitones || 0);
+      const freq = 440 * Math.pow(2, (midiNote - 69) / 12);
+      this.playTone(freq, 0.11, duration, 'sine');
     });
   }
 

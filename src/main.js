@@ -117,8 +117,17 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   const formattedTones = getFormattedChordTones(activeChordTransposed, state.countMode, state.startDegree);
   renderChordTonesCards(formattedTones);
 
-  // リードシートの描画 (全体移調 & 現在小節ハイライト)
-  renderLeadSheet(elements.leadsheetContainer, state.parsedSong, state.transposition, currentMeasureIdx);
+  // リードシートの描画 (全体移調 & 現在小節ハイライト & 小節タップで途中再生/選択)
+  renderLeadSheet(
+    elements.leadsheetContainer,
+    state.parsedSong,
+    state.transposition,
+    currentMeasureIdx,
+    (clickedMeasureIdx) => {
+      audioEngine.jumpToMeasure(clickedMeasureIdx);
+      renderCurrentState(clickedMeasureIdx, 0);
+    }
+  );
 
   // ギター指板の描画 (音名表記 & 表示/非表示トグル)
   const targetNoteNames = formattedTones.map(t => t.note);

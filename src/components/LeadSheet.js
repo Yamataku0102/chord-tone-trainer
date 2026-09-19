@@ -3,7 +3,7 @@
  */
 import { formatChordForDisplay, transposeChord } from '../chordUtils.js';
 
-export function renderLeadSheet(containerEl, songParsedData, transposition = 0, currentMeasureIndex = -1) {
+export function renderLeadSheet(containerEl, songParsedData, transposition = 0, currentMeasureIndex = -1, onMeasureClick = null) {
   if (!containerEl || !songParsedData) return;
 
   const { beatsPerMeasure, timeSignature, measures } = songParsedData;
@@ -18,6 +18,13 @@ export function renderLeadSheet(containerEl, songParsedData, transposition = 0, 
     const measureBox = document.createElement('div');
     measureBox.className = `measure-card ${idx === currentMeasureIndex ? 'active-measure' : ''}`;
     measureBox.dataset.measureIndex = idx;
+
+    if (onMeasureClick) {
+      measureBox.style.cursor = 'pointer';
+      measureBox.addEventListener('click', () => {
+        onMeasureClick(idx);
+      });
+    }
 
     const mNumber = document.createElement('span');
     mNumber.className = 'measure-num';

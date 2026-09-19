@@ -429,6 +429,12 @@ select {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.measure-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(6, 182, 212, 0.5);
 }
 
 .measure-card.active-measure {

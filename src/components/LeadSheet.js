@@ -48,12 +48,4 @@ export function renderLeadSheet(containerEl, songParsedData, transposition = 0, 
   });
 
   containerEl.appendChild(sheetWrapper);
-
-  // アクティブ小節への自動スクロール
-  if (currentMeasureIndex >= 0) {
-    const activeEl = sheetWrapper.querySelector(`.measure-card[data-measure-index="${currentMeasureIndex}"]`);
-    if (activeEl) {
-      activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  }
 }

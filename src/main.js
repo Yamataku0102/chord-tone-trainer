@@ -17,7 +17,7 @@ const state = {
   countMode: 'R+3+5+7',
   startDegree: 'R',
   countInBeats: 4,
-  showFretboard: true,
+  showFretboard: false,
   enableBacking: true,
   isPlaying: false,
   isPaused: false

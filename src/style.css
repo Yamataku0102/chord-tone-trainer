@@ -386,12 +386,6 @@ select {
   padding-right: 6px;
 }
 
-@media (max-width: 600px) {
-  .lead-sheet-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .measure-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-color);
@@ -507,4 +501,145 @@ select {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+/* ==========================================================================
+   スマホ・モバイルレスポンシブ最適化 (@media max-width: 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  .app-container {
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* コントロールバー */
+  .controls-bar {
+    padding: 12px;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .btn-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    flex: 1;
+  }
+
+  .select-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .select-group select {
+    flex: 1;
+  }
+
+  .metronome-control {
+    width: 100%;
+    justify-content: space-between;
+    padding: 8px 10px;
+    box-sizing: border-box;
+  }
+
+  .metronome-control input[type="range"] {
+    flex: 1;
+    min-width: 60px;
+  }
+
+  .bpm-buttons {
+    gap: 2px;
+  }
+
+  .btn-bpm {
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+
+  /* 楽曲検索 */
+  .song-selector-panel {
+    flex-direction: column;
+    padding: 12px;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .search-input, .song-select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card-panel {
+    padding: 14px;
+  }
+
+  /* 度数ガイド: スマホでも常に4音横一列並び */
+  .chord-tones-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .tone-card {
+    padding: 8px 2px !important;
+  }
+
+  .tone-degree {
+    font-size: 0.75rem !important;
+  }
+
+  .tone-note {
+    font-size: 1.25rem !important;
+  }
+
+  /* リードシート: スマホでも常に1行4小節並び (コンパクトフォント) */
+  .lead-sheet-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 4px !important;
+    padding-right: 2px !important;
+  }
+
+  .measure-card {
+    padding: 8px 2px !important;
+    min-height: 48px !important;
+  }
+
+  .measure-num {
+    font-size: 0.6rem !important;
+    top: 2px !important;
+    left: 3px !important;
+  }
+
+  .measure-chords {
+    gap: 2px !important;
+    font-size: 0.75rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .sheet-chord-symbol {
+    font-size: 0.75rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .big-chord-symbol {
+    font-size: 3rem;
+  }
 }

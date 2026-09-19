@@ -21,7 +21,7 @@ export const GUITAR_STRINGS = [
 export function noteToIndex(noteStr) {
   if (!noteStr) return 0;
   // フラット/シャープ正規化
-  const n = noteStr.trim();
+  const n = noteStr.trim().replace(/♭/g, 'b').replace(/♯/g, '#');
   let idx = NOTES_FLAT.indexOf(n);
   if (idx !== -1) return idx;
   idx = NOTES_SHARP.indexOf(n);
@@ -72,13 +72,12 @@ export function parseChordSymbol(symbol) {
     return { root: 'C', type: s, bass, original: symbol };
   }
 
-  // type からゴミ文字（英大文字など不自然に付着したもの）をクリーンアップ
+  // type からゴミ文字（括弧など）をクリーンアップ
   let cleanType = rootMatch[2] || '';
-  // 括弧や不要記号の削除
   cleanType = cleanType.replace(/[()\[\]{}|]/g, '');
 
-  const normRoot = rootMatch[1].replace('♭', 'b').replace('♯', '#');
-  const normBass = bass ? bass.replace('♭', 'b').replace('♯', '#') : null;
+  const normRoot = rootMatch[1].replace(/♭/g, 'b').replace(/♯/g, '#');
+  const normBass = bass ? bass.replace(/♭/g, 'b').replace(/♯/g, '#') : null;
 
   return {
     root: normRoot,
@@ -195,8 +194,7 @@ export function getChordTones(symbol) {
   const { root, type } = parseChordSymbol(symbol);
   const rootIdx = noteToIndex(root);
 
-  // コードタイプに応じたインターバル（半音数）定義
-  let thirdInterval = 4; // Major 3rd
+  let thirdInterval = 4; // Major 3rd (デフォルト)
   let fifthInterval = 7; // Perfect 5th
   let seventhInterval = 11; // Major 7th
 
@@ -204,51 +202,64 @@ export function getChordTones(symbol) {
   let fifthDegree = '5';
   let seventhDegree = '7';
 
-  const t = type.toLowerCase();
+  const origType = (type || '').trim();
+  // 全角記号・異名記号の正規化
+  const normType = origType
+    .replace(/♭/g, 'b')
+    .replace(/♯/g, '#');
 
-  // Minor系
-  if (t.includes('-') || t.includes('m') || t.includes('min')) {
+  // 1. Minor系の判定 (小文字の m, -, min, minor にマッチ。ただし MAJ, Maj, M7 の大文字MやMajは除く)
+  // 例: "m", "-7", "m7", "min7", "m7b5"
+  const isMinor = /^(m(?!aj)|-|min)/.test(normType) || /(^|[^a-zA-Z])(m(?!aj)|-|min)/.test(normType);
+
+  if (isMinor) {
     thirdInterval = 3;
     thirdDegree = '♭3';
-  }
-  // Sus4
-  if (t.includes('sus4') || t.includes('sus')) {
+  } else if (/sus4|sus/i.test(normType)) {
     thirdInterval = 5;
     thirdDegree = '4';
   }
 
-  // 5度の判定
-  if (t.includes('b5') || t.includes('-5') || t.includes('h') || t.includes('dim') || t.includes('o')) {
+  // 2. 5度の判定
+  if (/b5|-5|h|dim|o/i.test(normType)) {
     fifthInterval = 6;
     fifthDegree = '♭5';
-  } else if (t.includes('#5') || t.includes('+5') || t.includes('aug')) {
+  } else if (/#5|\+5|aug/i.test(normType)) {
     fifthInterval = 8;
     fifthDegree = '♯5';
   }
 
+  // 3. 7度 / 6度の判定
   let hasSeventh = false;
-  // 7度 / 6度の判定
-  if (t.includes('^') || t.includes('maj7') || t.includes('Δ') || t.includes('maj')) {
+
+  // Major 7th (M7, MA7, MAJ7, maj7, Δ7, Δ, ^7, ^)
+  const isMajor7th = /M7|MA7|MAJ7|maj7|Δ|\^/i.test(normType) || (origType.includes('M') && !origType.includes('min'));
+  // Diminished 7th (o7, dim7)
+  const isDim7 = /o7|dim7/i.test(normType);
+  // 6th (6, m6, M6)
+  const is6th = /6/.test(normType);
+  // 7th (7, m7, dom7, h7, h)
+  const is7th = /7|h/i.test(normType);
+
+  if (isMajor7th) {
     seventhInterval = 11;
     seventhDegree = '7';
     hasSeventh = true;
-  } else if (t.includes('o7') || t.includes('dim7')) {
+  } else if (isDim7) {
     seventhInterval = 9;
     seventhDegree = '♭♭7';
     hasSeventh = true;
-  } else if (t.includes('6')) {
+  } else if (is6th) {
     seventhInterval = 9;
     seventhDegree = '6';
     hasSeventh = true;
-  } else if (t.includes('7') || t.includes('h')) {
-    // ドミナント7th, マイナー7th, m7♭5
+  } else if (is7th) {
     seventhInterval = 10;
     seventhDegree = '♭7';
     hasSeventh = true;
   }
 
   // 音楽理論ステップに基づく音名導出
-  // Root: 0ステップ, 3度: 2ステップ, 5度: 4ステップ, 7度: 6ステップ
   const rootNote = getSpelledNoteName(root, 0, (rootIdx + 0) % 12);
   const thirdStep = thirdDegree === '4' ? 3 : 2; // sus4の場合は4度ステップ(+3)
   const thirdNote = getSpelledNoteName(root, thirdStep, (rootIdx + thirdInterval) % 12);

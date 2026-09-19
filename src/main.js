@@ -310,6 +310,18 @@ function setupEventListeners() {
     elements.countinBadge.style.display = 'none';
     renderCurrentState(0, 0);
   };
+  // スマホのダブルタップ拡大防止
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+      // フォーム入力等の動作を阻害しないようターゲットチェックも考慮しつつpreventDefault
+      if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'SELECT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+      }
+    }
+    lastTouchEnd = now;
+  }, { passive: false });
 }
 
 // アプリ起動

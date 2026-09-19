@@ -23,25 +23,8 @@
       </div>
     </header>
 
-    <!-- コントロールバー -->
-    <section class="controls-bar">
-      <!-- 演奏ボタン -->
-      <div class="btn-group">
-        <button id="btn-start" class="btn btn-primary">▶️ スタート</button>
-        <button id="btn-reset" class="btn btn-secondary">🔄 リセット</button>
-      </div>
-
-      <!-- 表示音数 (上部に配置) -->
-      <div class="select-group">
-        <label for="count-mode-select">⚙️ 表示音数:</label>
-        <select id="count-mode-select">
-          <option value="R+3+5+7" selected>R + 3 + 5 + 7 (全構成音)</option>
-          <option value="R+3+5">R + 3 + 5 (トライアド)</option>
-          <option value="R+3">R + 3</option>
-          <option value="R">R のみ</option>
-        </select>
-      </div>
-
+    <!-- 1. 設定パネル -->
+    <section class="controls-bar settings-panel">
       <!-- テンポ (BPM) -->
       <div class="metronome-control">
         <span style="font-weight: 700; color: var(--text-muted);">BPM</span>
@@ -55,6 +38,17 @@
           <button id="bpm-plus-10" class="btn-bpm" title="+10 (10刻みの数値に丸め)">+10</button>
         </div>
         <span id="bpm-val" class="bpm-display">60</span>
+      </div>
+
+      <!-- 表示音数 -->
+      <div class="select-group">
+        <label for="count-mode-select">⚙️ 表示音数:</label>
+        <select id="count-mode-select">
+          <option value="R+3+5+7" selected>R + 3 + 5 + 7 (全構成音)</option>
+          <option value="R+3+5">R + 3 + 5 (トライアド)</option>
+          <option value="R+3">R + 3</option>
+          <option value="R">R のみ</option>
+        </select>
       </div>
 
       <!-- 移調 (Transposition) -->
@@ -76,6 +70,28 @@
         </select>
       </div>
 
+      <!-- 開始度数 (パターン) -->
+      <div class="select-group">
+        <label for="start-degree-select">🎯 開始度数:</label>
+        <select id="start-degree-select">
+          <option value="R" selected>ルート始まり (R → 3 → 5 → 7)</option>
+          <option value="3">3度始まり (3 → 5 → 7 → R)</option>
+          <option value="5">5度始まり (5 → 7 → R → 3)</option>
+          <option value="7">7度始まり (7 → R → 3 → 5)</option>
+          <option value="descending">下行パターン (7 → 5 → 3 → R)</option>
+        </select>
+      </div>
+
+      <!-- カウントイン -->
+      <div class="select-group">
+        <label for="countin-select">⏱ カウントイン:</label>
+        <select id="countin-select">
+          <option value="4" selected>4拍 (デフォルト)</option>
+          <option value="8">8拍</option>
+          <option value="0">オフ (0拍)</option>
+        </select>
+      </div>
+
       <!-- スイッチトグル -->
       <div class="select-group">
         <label>
@@ -91,7 +107,7 @@
       </div>
     </section>
 
-    <!-- 楽曲検索 & 曲選択 -->
+    <!-- 2. 楽曲検索 & 曲選択 -->
     <section class="song-selector-panel">
       <input type="text" id="song-search" class="search-input" placeholder="🔍 曲名または作曲者で検索..." />
       <select id="song-select" class="song-select">
@@ -99,7 +115,15 @@
       </select>
     </section>
 
-    <!-- メインコンテンツ (演奏ビュー & リードシート) -->
+    <!-- 3. スタートボタン (アクションバー) -->
+    <section class="action-bar">
+      <div class="btn-group main-btn-group">
+        <button id="btn-start" class="btn btn-primary btn-large">▶️ スタート</button>
+        <button id="btn-reset" class="btn btn-secondary">🔄 リセット</button>
+      </div>
+    </section>
+
+    <!-- 4. メインコンテンツ (演奏ビュー & リードシート) -->
     <main class="main-grid">
       <!-- 左: 演奏ビュー (Big Chord & Chord Tones) -->
       <div class="card-panel">
@@ -137,32 +161,9 @@
       </div>
     </main>
 
-    <!-- ギター指板表示エリア -->
+    <!-- 5. ギター指板表示エリア -->
     <section id="fretboard-container">
       <!-- JSでギター指板を注入 -->
-    </section>
-
-    <!-- 設定ドロワー -->
-    <section class="settings-drawer">
-      <div class="select-group">
-        <label for="start-degree-select">🎯 開始度数 (パターン):</label>
-        <select id="start-degree-select">
-          <option value="R" selected>ルート始まり (R → 3 → 5 → 7)</option>
-          <option value="3">3度始まり (3 → 5 → 7 → R)</option>
-          <option value="5">5度始まり (5 → 7 → R → 3)</option>
-          <option value="7">7度始まり (7 → R → 3 → 5)</option>
-          <option value="descending">下行パターン (7 → 5 → 3 → R)</option>
-        </select>
-      </div>
-
-      <div class="select-group">
-        <label for="countin-select">⏱ カウントイン:</label>
-        <select id="countin-select">
-          <option value="4" selected>4拍 (デフォルト)</option>
-          <option value="8">8拍</option>
-          <option value="0">オフ (0拍)</option>
-        </select>
-      </div>
     </section>
   </div>
 

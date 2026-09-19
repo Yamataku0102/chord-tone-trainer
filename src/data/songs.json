@@ -1,0 +1,2202 @@
+[
+  {
+    "id": 1,
+    "title": "A Foggy Day",
+    "composer": "George Gershwin",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| FM7 | Am7b5 D7b9 | Gm7 | C7 | F | Dm7b5 | G7 | Gm7 C7 | FM7 | Cm7 F7 | BbM7 | Bbm6 | FM7 | Am7 D7 | Gm7 | C7 | FM7 | Am7b5 D7b9 | Gm7 | C7 | F | Dm7b5 | G7 | Gm7 C7 | Cm7 | F7 | BbM7 | Eb7 | F Gm7 | Am7 Bbm6 | Am7 Dm7 | Gm7 C7 | F | F |"
+  },
+  {
+    "id": 2,
+    "title": "Afternoon In Paris",
+    "composer": "John Lewis",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| CM7 | Cm7 F7 | BbM7 | Bbm7 Eb7 | AbM7 | Dm7 G7b9 | CM7 Am7 | Dm7 G7 | CM7 | CM7 | Dm7 | G7 | C | A7 | Dm7 | G7 | Dbm7 Gb7 | Dm7 G7 | CM7 | Cm7 F7 | BbM7 | Bbm7 Eb7 | AbM7 | Dm7 G7b9 | CM7 | CM7 |"
+  },
+  {
+    "id": 3,
+    "title": "Agua De Beber",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Fine",
+    "key": "Eb",
+    "rawChords": "| Cm7 | Ab7 G7b9 | Cm | D7 G7b9 | Cm | AbM7 | Cm | G7b13 | Cm | Cm | D7 | G7b13 | Cm7 | F7 | Fm7 | Bb7 | EbM7 | DbM7/Eb | D7 Db7#11 | Cm7 B7#11 | Bbm7 | F9/A | D7b9 | Dm7/G | Cm7 | Cm7 | F7 | Fm7 | Cm7 | Cm7 | F7 | Fm7 | Cm7 | G7 | Cm7 | Ab7 G7b9 | Cm | D7 G7b9 | Cm | AbM7 | Cm | G7b13 | Cm | Cm |"
+  },
+  {
+    "id": 4,
+    "title": "Ain't Misbehavin'",
+    "composer": "Fats Waller",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| EbM7 E°7 | Fm7 F#°7 | Eb/G G7b13 | AbM7 Db7 | Eb C7b9 | Fm7 Bb7 | G7 C7 | F7 Bb7 | Eb Abm7 | Eb Dm7 G7 | Cm | Ab7 | F7 | C7 | Bb G7 | Cm7 F7 | Gm7 C7 | F7 Bb7 | Eb E°7 | Fm7 F#°7 | Eb/G G7b13 | AbM7 Db7 | Eb C7b9 | Fm7 Bb7 | Eb Cm7 | Fm7 Bb7 |"
+  },
+  {
+    "id": 5,
+    "title": "Airegin",
+    "composer": "Sonny Rollins",
+    "style": "END",
+    "key": "Ab",
+    "rawChords": "| Fm7 | Gb7 | Fm7 | Gb7 | Fm | C7#9 | Fm | F7b9 | Bbm | F7#9 | Bbm | Bb7 | DbM7 | Dm7 G7 | CM7 | C#m7 F#7 | BM7 | Cm7 F7 | BbM7 | BbM7 | Bbm7 | Eb7 | AbM7 | Gm7b5 C7 | DbM7 | Dm7b5 G7 | Cm7b5 | F7 | Bbm7 | Eb7 | AbM7 | Gm7b5 C7b9 |"
+  },
+  {
+    "id": 6,
+    "title": "Alice In Wonderland",
+    "composer": "Sammy Fain",
+    "style": "Waltz",
+    "key": "C",
+    "rawChords": "| Dm7 | G7 | CM7 | FM7 | Bm7b5 | E7 | Am7 | Eb7 | Dm7 | G7 | Em7 | Am7 | Dm7 | G7 | Em7 | A7 | CM7 | CM7 | Dm7 | G7 | Em7 | Am7 | Dm7 | G7 | CM7 | CM7 | F#m7b5 | B7 | Em7 | A7 | Dm7 | A7 | Dm7 | G7 | Dm7 | G7 | CM7 | FM7 | Bm7b5 | E7 | Am7 | Eb7 | Dm7 | G7 | Em7 | Am7 | Dm7 | G7 | CM7 | CM7 |"
+  },
+  {
+    "id": 7,
+    "title": "All Blues",
+    "composer": "Miles Davis",
+    "style": "Waltz",
+    "key": "G",
+    "rawChords": "| G7 | G7 | G7 | G7 | G7 | G7 | G7 | G7 | G7 | G7 | G7 | G7 | Gm7 | Gm7 | Gm7 | Gm7 | G7 | G7 | G7 | G7 | D7#9 | D7#9 | Eb7#9 | D7#9 | G7 | G7 | G7 | G7 |"
+  },
+  {
+    "id": 8,
+    "title": "All Of Me",
+    "composer": "Gerald Marks",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| C | C | E7 | E7 | A7 | A7 | Dm | Dm | E7 | E7 | Am7 | Am7 | D7 | D7 | Dm7 | G7 | C | C | E7 | E7 | A7 | A7 | Dm | Dm | F | Fm | CM7 | A7 | Dm7b5 | G7 | C | Dm7 G7 |"
+  },
+  {
+    "id": 9,
+    "title": "All Of You",
+    "composer": "Cole Porter",
+    "style": "Optional Bb pedal in A sections",
+    "key": "Eb",
+    "rawChords": "| Abm6 | EbM7 | Fm7b5 | Bb7b9 | Abm6 | EbM7 | Fm7b5 | Bb7 | Eb6/G | Gb° | Fm7 | Bb7 | EbM7 D7 | Gm7b5/Db C7 | Fm7 | Bb7 | Abm6 | EbM7 | Fm7b5 | Bb7b9 | Abm6 | EbM7 | Gm7 | C7 | AbM7 | Am7b5 D7b9 | Gm7 | C7 | Fm7 | Bb7 | Eb | Eb |"
+  },
+  {
+    "id": 10,
+    "title": "All The Things You Are",
+    "composer": "Jerome Kern",
+    "style": "Medium Up Swing",
+    "key": "Ab",
+    "rawChords": "| Fm7 | Bbm7 | Eb7 | AbM7 | DbM7 | Dm7 G7 | CM7 | CM7 | Cm7 | Fm7 | Bb7 | EbM7 | AbM7 | Am7 D7b9 | GM7 | GM7 | Am7 | D7 | GM7 | GM7 | F#m7b5 | B7 | EM7 | C7b13 | Fm7 | Bbm7 | Eb7 | AbM7 | DbM7 | Dbm7 | Cm7 | B°7 | Bbm7 | Eb7 | AbM7 | Gm7b5 C7b9 |"
+  },
+  {
+    "id": 11,
+    "title": "All The Things You Are* Intro",
+    "composer": "Jerome Kern",
+    "style": "Medium Up Swing",
+    "key": "Ab",
+    "rawChords": "| Db7#9 | Db7#9 | C7#9 | C7#9 | Fm7 | Bbm7 | Eb7 | AbM7 | DbM7 | Dm7 G7 | CM7 | CM7 | Cm7 | Fm7 | Bb7 | EbM7 | AbM7 | Am7 D7b9 | GM7 | GM7 | Am7 | D7 | GM7 | GM7 | F#m7b5 | B7 | EM7 | C7b13 | Fm7 | Bbm7 | Eb7 | AbM7 | DbM7 | Dbm7 | Cm7 | B°7 | Bbm7 | Eb7 | AbM7 | Gm7b5 C7b9 |"
+  },
+  {
+    "id": 12,
+    "title": "Almost Like Being In Love",
+    "composer": "Frederick Loewe",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| EbM7 | F7 | Dm7 | G7 | Cm7 | Fsus F7 | Bb6 | Fm7 Bb7 | Bb Cm7 | C#°7 Bb7/D | Am7 | D7 | GM7 | GM7 | Gm7 | C7 | Cm7 | F7 | EbM7 | F7 | Dm7 | G7 | Cm7 | C#°7 | Bb/D | Db7 | Cm7 | F7 | Bb | Fm7 Bb7 |"
+  },
+  {
+    "id": 13,
+    "title": "Alone Together",
+    "composer": "Arthur Schwartz",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| Dm | Em7b5 A7b9 | Dm | Em7b5 A7b9 | Dm | Am7b5 D7b9 | Gm | Gm7 | Bm7 E7 | Gm7 C7 | F | Em7b5 A7 | DM7 | DM7 | DM7 | DM7 | Am7b5 | D7b9 | Gm | Gm | Gm7b5 | C7b9 | F | Em7b5 A7b9 | Dm | Em7b5 A7b9 | Dm | Em7b5 A7b9 | Dm | Bb7 A7 | Dm | Em7b5 A7 |"
+  },
+  {
+    "id": 14,
+    "title": "Along Came Betty",
+    "composer": "Benny Golson",
+    "style": "Medium Swing",
+    "key": "Ab",
+    "rawChords": "| Bbm7 | Bm7 E7 | Bbm7 | Bm7 E7 | AM7 | G#7 | GM7 | F#7 | F#m7 | Gm7 C7 | F#m7 | Gm7 C7 | FM7 | A7 | Dm7 | G7 | Cm7 | F7 | Am7b5 D7 | Gm7 Gm/F | Em7b5 | A7#9 | Fm7 | Bb7 | Bbm7 | Bm7 E7 | Bbm7 | Bm7 E7 | Cm7b5 | F7 | Bbm7b5 | Eb7#9 | AbM7 | Bm7 E7 |"
+  },
+  {
+    "id": 15,
+    "title": "Angel Eyes",
+    "composer": "Matt Dennis",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Cm7 D7 G7 | Cm7 Ab7 | Cm7 Am7b5 | Dm7b5 G7b9 | Cm7 D7 G7 | Cm A7alt | Ab7 G7b13 | Cm Dm7b5 G7b9 | Cm6 | Bbm7 Eb7 | AbM7 A°7 | Bbm7 Eb7 | AbM7 | Am7 D7 | GM7 | C#m7 F#7 | Dm7 G7 | Cm7 D7 G7 | Cm7 Ab7 | Cm Am7b5 | Dm7b5 G7b9 | Cm7 D7 G7 | Cm A7alt | Ab7 G7b13 | Cm |"
+  },
+  {
+    "id": 16,
+    "title": "Anthropology",
+    "composer": "Charlie Parker",
+    "style": "Up Tempo Swing",
+    "key": "Bb",
+    "rawChords": "| Bb G7 | Cm7 F7 | Dm7 G7 | Cm7 F7 | Bb Bb7 | Eb E°7 | Bb/F G7 | Cm7 F7 | Cm7/F F7 | Bb | D7 | D7 | G7 | G7 | C7 | C7 | F7 | F7 | Bb G7 | Cm7 F7 | Dm7 G7 | Cm7 F7 | Bb Bb7 | Eb E°7 | Cm7/F F7 | Bb |"
+  },
+  {
+    "id": 17,
+    "title": "April In Paris",
+    "composer": "Vernon Duke",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| Dm7b5/G | CM7 | Dm7b5 | G7 | CM7 | CM7 | Gm7 | C7 | FM7 | FM7 | Bm7b5 E7 | Am Am/G | F#m7b5 | B7b9 | E7 A7 | Dm7 G7 | F#m7b5 F°7 | C/E Eb° | Dm7b5 Dm7b5/G | C | Bm7b5 E7 | Am Am/G | F#m7b5 B7b9 | EM7 Dm7 G7 | Dm7b5/G | CM7 | Em7b5 | A7 | D7 | Dm7b5 G7 | C | C |"
+  },
+  {
+    "id": 18,
+    "title": "Au Privave",
+    "composer": "Charlie Parker",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| F7 | Bb7 | F7 | Cm7 F7 | Bb7b9 | B°7 | F7 | Am7 D7 | Gm7 | C7 | F7 D7 | Gm7 C7 |"
+  },
+  {
+    "id": 19,
+    "title": "Autumn In New York",
+    "composer": "Vernon Duke",
+    "style": "END",
+    "key": "F",
+    "rawChords": "| Gm7 Am7 | Bb6 C7 | F Gm7 | Am7 D7 | Gm7 Am7 | Bb6 C7 | Am7b5 | D7 | Gm7 | Bbm7 Eb7 | AbM7 | AbM7 Dm7b5 G7 | Cm7 | Dm7b5 G7 | CM7 | Am7 D7 | Gm7 Am7 | Bb6 C7 | FM7 Gm7 | Am7 D7 Db7 | Cm7 Dm7 | Ebm7 F7 | Bbm6 | Bbm6 Gm7b5 C7b9 | Fm7 C7 | Fm7 Bb7 Ebm7 Ab7 | DbM7 Ab7 | DbM7 Ab7 | Gm7 Am7 | Bbm6 C7 | Fm | Fm |"
+  },
+  {
+    "id": 20,
+    "title": "Autumn Leaves",
+    "composer": "Joseph Kosma",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| Cm7 | F7 | BbM7 | EbM7 | Am7b5 | D7b13 | Gm6 | Gm6 | Am7b5 | D7 | Gm | Gm | Cm7 | F7 | BbM7 | EbM7 | Am7b5 | D7 | Gm7 Gb7 | Fm7 E7 | Eb7 | D7 | Gm | Gm |"
+  },
+  {
+    "id": 21,
+    "title": "Bags' Groove",
+    "composer": "Milt Jackson",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F7 | Bb7 | F7 | F7 | Bb7 | Bb7 | F7 | F7 | Gm7 | C7 | F7 | Gm7 C7 | F7 | Bb7 | F7 | F7 | Bb7 | Bb7 | F7 | F7 | Gm7 | C7 | F7 | Gm7 C7 |"
+  },
+  {
+    "id": 22,
+    "title": "Beatrice and Benedict Overture (Beatrice)",
+    "composer": "Sam Rivers",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F | GbM7#11 | F | EbM7#11 | Dm7 | EbM7 | Dm7 Dm7/C | Bbm7 | Am7 | BbM7 | Em7b5 A7 | Dm7 | Gm7 | GbM7#11 | Fm7 | GbM7#11 |"
+  },
+  {
+    "id": 23,
+    "title": "Beautiful Love",
+    "composer": "Victor Young",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| Em7b5 | A7b9 | Dm | Dm | Gm7 | C7 | FM7 | Em7b5 A7 | Dm | Gm7 | Bb7#11 | Em7b5 A7b9 | Dm | G7#11 | Em7b5 | A7b9 | Dm | Gm7 | Bb7#11 | Em7b5 A7b9 | Dm B7#9 | Bb7 A7 | Dm | Dm |"
+  },
+  {
+    "id": 24,
+    "title": "Bernies's Tune",
+    "composer": "Bernie Miller",
+    "style": "Medium Up Swing",
+    "key": "F",
+    "rawChords": "| Dm | Dm | Bb7 | Bb7 | Em7b5 | A7 | Dm | Em7b5 A7 | Dm | Bb6 Gm7 | Cm7 F7 | Bb6 Gm7 | Cm7 F7 | Bb6 Gm7 | Cm7 F7 | Bb6 | Em7b5 A7 | Dm | Dm | Bb7 | Bb7 | Em7b5 | A7 | Dm7 | Dm7 |"
+  },
+  {
+    "id": 25,
+    "title": "Besame Mucho",
+    "composer": "Consuelo Velazques",
+    "style": "Bossa Nova",
+    "key": "Eb",
+    "rawChords": "| Cm | Cm | Fm | Fm | Fm FmM7 | Fm7 G7b9 | Cm | Cm | C7 | C7 | Fm | Fm | Cm Cm7/Bb | Ab7 G7 | Cm | Cm | Fm | Cm | G7 | Cm C7 | Fm | Cm | D7 Ab7 | G7 | Cm | Cm | Fm | Fm | Fm FmM7 | Fm7 G7b9 | Cm | Cm | C7 | C7 | Fm | Fm | Cm Cm7/Bb | Ab7 G7 | Cm | Cm |"
+  },
+  {
+    "id": 26,
+    "title": "Bessie's Blues",
+    "composer": "John Coltrane",
+    "style": "Up Tempo Swing",
+    "key": "Eb",
+    "rawChords": "| Eb7 | Ab7 | Eb7 | Eb7 | Ab7 | Ab7 | Eb7 | Eb7 | Bb7 | Ab7 | Eb7 | Bb7 | Ab7 | Eb7 | Bb7 |"
+  },
+  {
+    "id": 27,
+    "title": "Bewitched",
+    "composer": "Richard Rodgers",
+    "style": "Ballad",
+    "key": "C",
+    "rawChords": "| C | Dm7 | C/E E7b13 | FM7 F#°7 | C/G A7 | Dm7 Em7 A7 | Dm7 | G7 | FM7 | Em7 A7 | Dm6 | Dm6 | Am | Am | Dm7 G7 | Dm7 D#°7 | Em7 Eb°7 | Dm7 G7 | C | Dm7 | C/E E7b13 | FM7 F#°7 | C/G A7 | Dm7 G7 | C | Dm7 G7 |"
+  },
+  {
+    "id": 28,
+    "title": "Billie's Bounce",
+    "composer": "Charlie Parker",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| F7 | Bb7 | F7 | F7 | Bb7 | Bb7 | F7 | Am7 D7 | Gm7 | C7 | F7 D7 | Gm7 C7 |"
+  },
+  {
+    "id": 29,
+    "title": "Black Orpheus (Manha Do Carnaval)",
+    "composer": "Unknown Composer",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| Am | Bm7b5 E7b9 | Am | Bm7b5 E7b9 | Am | Dm7 G7 | CM7 | C#°7 | Dm7 | G7 | C | FM7 | Bm7b5 | E7b9 | Am | Bm7b5 E7b9 | Am | Bm7b5 E7b9 | Am | Bm7b5 E7b9 | Em7b5 | A7b9 | Dm7 | Dm7 | Dm Dm/C | Bm7b5 E7b9 | Am Am/G | FM7 | Bm7b5 | E7b9 | Am | Bm7b5 E7b9 |"
+  },
+  {
+    "id": 30,
+    "title": "Blue Bossa",
+    "composer": "Kenny Dorham",
+    "style": "Bossa Nova",
+    "key": "Eb",
+    "rawChords": "| Cm7 | Cm7 | Fm7 | Fm7 | Dm7b5 | G7#9 | Cm7 | Cm7 | Ebm7 | Ab7 | Db | Db | Dm7b5 | G7 | Cm7 | Dm7b5 G7 |"
+  },
+  {
+    "id": 31,
+    "title": "Blue In Green",
+    "composer": "Miles Davis, Bill Evans",
+    "style": "To Coda",
+    "key": "F",
+    "rawChords": "| BbM7#11 | A7#9 | Dm7 Db7 | Cm7 F7b9 | BbM7#11 | A7#9 | Dm7 | E7#9 E7b9 | AmM7 | DmM7 | BbM7#11 | A7#9 | Dm7 |"
+  },
+  {
+    "id": 32,
+    "title": "Blue Monk",
+    "composer": "Thelonious Monk",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| Bb7 | Eb7 | Bb7 | Bb7 | Eb7 | E°7 | Bb7 | Bb7 | F7 | F7 | Bb7 | Bb7 |"
+  },
+  {
+    "id": 33,
+    "title": "Blue Moon",
+    "composer": "Richard Rodgers",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Eb Cm7 | Fm7 Bb7 | EbM7 Cm7 | Fm7 Bb7 | EbM7 Cm7 | Fm7 Bb7sus | Eb Cm7 | Fm7 Bb7 | Eb | Eb | Fm7 Bb7 | Eb Cm7 | Fm7 Bb7 | Eb | Abm7 Db7 | GbM7 | Cm7 F7 | Fm7 Bb7 | EbM7 Cm7 | Fm7 Bb7 | EbM7 Cm7 | Fm7 Bb7 | EbM7 Cm7 | Fm7 Bb7sus | Eb | Eb |"
+  },
+  {
+    "id": 34,
+    "title": "Blues For Alice",
+    "composer": "Charlie Parker",
+    "style": "Medium Up Swing",
+    "key": "F",
+    "rawChords": "| FM7 | Em7b5 A7b9 | Dm7 G7 | Cm7 F7 | Bb7 | Bbm7 Eb7 | Am7 D7 | Abm7 Db7 | Gm7 | C7 | F Dm7 | Gm7 C7 |"
+  },
+  {
+    "id": 35,
+    "title": "Bluesette",
+    "composer": "Toots Thielemans",
+    "style": "Waltz",
+    "key": "Bb",
+    "rawChords": "| BbM7 | BbM7 | Am7b5 | D7 | Gm7 | C7 | Fm7 | Bb7 | EbM7 | EbM7 | Ebm7 | Ab7 | DbM7 | DbM7 | Dbm7 | Gb7 | BM7 | BM7 | Cm7 | F7 | Dm7 | Db7 | Cm7 | F7 |"
+  },
+  {
+    "id": 36,
+    "title": "Body And Soul",
+    "composer": "Johnny Green",
+    "style": "END",
+    "key": "Db",
+    "rawChords": "| Ebm7 Bb7 | Ebm7 Ab7 | DbM7 Gb7 | Fm7 E°7 | Ebm7 Ebm7/Db | Cm7b5 F7 | Bbm7 Eb7 Ebm7 Ab7 | Db6 C7 B7 Bb7 | Db Em7 A7 | DM7 Em7 | DM7/F# Gm7 C7 | F#m7 Bm7 Em7 A7 | DM7 | Dm7 G7 | CM7 Eb°7 | Dm7 G7 | C7 B7 Bb7 | Ebm7 Bb7 | Ebm7 Ab7 | DbM7 Gb7 | Fm7 E°7 | Ebm7 Ebm7/Db | Cm7b5 F7 | Bbm7 Eb7 Ebm7 Ab7 | Db6 Fm7b5 Bb7 |"
+  },
+  {
+    "id": 37,
+    "title": "Bolivia",
+    "composer": "Cedar Walton",
+    "style": "Up Tempo Swing",
+    "key": "D",
+    "rawChords": "| G7 | G7 | G7 | G7 | G7 | G7 | G7 | G7 | EbM7 | Em7 A7 | DM7 | Ab7b9 | GM7 | F#7#9 | Bm7 | CM7#11 | Bm7 | Bm/A | Abm7b5 | Gm7 C7 | F | B7b9 | BbM7 | A7 |"
+  },
+  {
+    "id": 38,
+    "title": "Bright Size Life",
+    "composer": "Pat Metheny",
+    "style": "Even 8ths",
+    "key": "D",
+    "rawChords": "| GM7 | GM7 | Bb/A | Bb/A | D | C9 | BbM7 | G/A | G/B G/A D | G/B G/A D | G/A | G/A | F/G | F/G | Em7 | A7 | D/F# | D/F# | GM7 | GM7 | Bb/A | Bb/A | D | C9 | A7 | D |"
+  },
+  {
+    "id": 39,
+    "title": "But Beautiful",
+    "composer": "Jimmy Van-Heusen",
+    "style": "Ballad",
+    "key": "G",
+    "rawChords": "| G C7 | Bm7b5 E7b9 | Am7 | C#m7b5 F#7b9 | G6 C7 | Bm7b5 E7 | A13 Bb13 | A13 | D7 | Bm7 Em7 | Am7 D7 | G6 F#m7b5 B7b9 | Em | A7 | Am7 | D7 | D7 | Bm7 Em7 | Am7 F#m7b5 B7 | Em7 F7 | Bm7 E7 | Am7 D7 | G6 | G6 |"
+  },
+  {
+    "id": 40,
+    "title": "But Not For Me",
+    "composer": "George Gershwin",
+    "style": "Medium Up Swing",
+    "key": "Eb",
+    "rawChords": "| F7 | Fm7 Bb7 | EbM7 | Gm7 C7 | F7 | Fm7 Bb7 | EbM7 | Bbm7 Eb7 | AbM7 | Abm7 Db7 | EbM7 | EbM7 | Cm7 | F7 | Fm7 | Bb7 | AbM7 | Abm7 Db7 | EbM7 | Cm7 | Fm7 | Bb7 | Eb6 | Eb6 |"
+  },
+  {
+    "id": 41,
+    "title": "Bye Bye Blackbird",
+    "composer": "Ray Henderson",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F | F | F | F | F | Am7 D7 | Gm7 | C7 | Gm | GmM7 | Gm7 | C7 | Gm7 | C7 | FM7 | FM7 | F7 | F7 | Am7b5 | D7 | Gm7 | Gm7 | Abm7 Db7 | Gm7 C7 | F | F | Am7 | D7 | Gm7 | C7 | F Dm7 | Gm7 C7 |"
+  },
+  {
+    "id": 42,
+    "title": "C Jam Blues",
+    "composer": "Duke Ellington",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| C7 | F7 | C7 | C7 | F7 | F7 | C7 | A7 | Dm7 | G7 | C7 | C7 |"
+  },
+  {
+    "id": 43,
+    "title": "Candy",
+    "composer": "David-Whitney-Kramer",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| EbM7 | Ebm | Dm7 | Db°7 | Cm7 | F7 | Bb | Bb7 | Bb | Bb | D7 | D7 | G7 | G7 | C7 | C7 | F7 | Bb7 | EbM7 | Ebm | Dm7 | Db°7 | Cm7 | F7 | Bb | Bb7 |"
+  },
+  {
+    "id": 44,
+    "title": "Cantaloupe Island",
+    "composer": "Herbie Hancock",
+    "style": "Jazz",
+    "key": "Ab",
+    "rawChords": "| Fm7 | Fm7 | Fm7 | Fm7 | Db7 | Db7 | Db7 | Db7 | Dm7 | Dm7 | Dm7 | Dm7 Fm7 | Fm7 | Fm7 | Fm7 | Fm7 |"
+  },
+  {
+    "id": 45,
+    "title": "Caravan",
+    "composer": "Duke Ellington",
+    "style": "D.C. al Fine",
+    "key": "Ab",
+    "rawChords": "| C7b9 | C7b9 | C7b9 | C7b9 | C7b9 | C7b9 | C7b9 | C7b9 | C7b9 | C7b9 | C7b9 | C7b9 | Fm6 | Fm6 | Fm6 | Fm6 | F7 | F7 | F7 | F7 | Bb7 | Bb7 | Bb7 | Bb7 | Eb7 | Eb7 | Eb7 | Eb7 | AbM7 | AbM7 | C7 | C7 |"
+  },
+  {
+    "id": 46,
+    "title": "Central Park West",
+    "composer": "John Coltrane",
+    "style": "Ballad",
+    "key": "B",
+    "rawChords": "| BM7 Em7 A7 | DM7 Bbm7 Eb7 | AbM7 Gm7 C7 | FM7 C#m7 F#7 | BM7 Em7 A7 | DM7 C#m7 F#7 | BM7 | C#m7/B | BM7 | C#m7/B C#m7 F#7 |"
+  },
+  {
+    "id": 47,
+    "title": "Ceora",
+    "composer": "Lee Morgan",
+    "style": "END",
+    "key": "Ab",
+    "rawChords": "| AbM7 | Bbm7 Eb7b9 | AbM7 | Ebm7 Ab7 | DbM7 | Dm7 G7 | Cm7 | F7 | Bbm7 | Eb7 | Cm7 | F7 | Dm7 | G7 | Cm7 F7 | Bbm7 Eb7b9 | AbM7 | Bbm7 Eb7b9 | AbM7 | Ebm7 Ab7 | DbM7 | Dm7 G7 | Cm7 | F7#9 | Bbm7 | Eb7 | Cm7b5 | F7#9 | Bbm7 | Eb7sus Eb7 | AbM7 | Bbm7 Eb7b9 | AbM7 | Bbm7 Eb7b9 | AbM7 | Bbm7 Eb7b9 | AbM7 |"
+  },
+  {
+    "id": 48,
+    "title": "Chasing the Bird",
+    "composer": "Charlie Parker",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| F | Gm7 C7 | Am7 D7 | Gm7 C7 | F7 | Bb B°7 | F/C D7 | Gm7 C7 | Gm7/C C7 | F | Em7 | A7 | Am7 | D7 | Dm7 | G7 | Gm7 | C7 | F | Gm7 C7 | Am7 D7 | Gm7 C7 | Cm7 F7 | Bb B°7 | Gm7/C C7 | F |"
+  },
+  {
+    "id": 49,
+    "title": "Chega De Saudade (No More Blues)",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Bossa Nova",
+    "key": "F",
+    "rawChords": "| Dm | Dm7/C | E7/B | E7 | Em7b5 | A7b9 | Dm | Em7b5 A7b9 | Dm | E7 | Am | Am | BbM7 | BbM7 | Em7b5 | A7b9 | Dm | Dm7/C | E7/B | E7/B | Em7b5 | A7b9 | Dm | D7b9 | Gm | A7b9 | Dm | Dm7/C | Bm7b5 E7 | Em7b5 A7b9 | Dm | A7 | DM7 | B7b13 | Em7 | Em7 | Em7 | A7 | D°7 | DM7 | F#m7 | F°7 | Em7 | Em7 | E7 | E7 | Em7b5 | A7b9 | DM7 | Bm7 | E7 | E7 | F#7 | F#7 | Bm7 Bbm7 | Am7 D7 | GM7 | Gm7 | F#m7 | B7 | E7 | A7sus | F#m7 | B7 | E7 | A7sus | DM7 | A7 |"
+  },
+  {
+    "id": 50,
+    "title": "Cherokee",
+    "composer": "Ray Noble",
+    "style": "Up Tempo Swing",
+    "key": "Bb",
+    "rawChords": "| BbM7 | BbM7 | Fm7 | Bb7 | EbM7 | EbM7 | Ab7 | Ab7 | Bb | Bb | C7 | C7 | Cm7 | G7 | Cm7 | F7+ | Cm7 | F7 | Bb | Bb | C#m7 | F#7 | BM7 | BM7 | Bm7 | E7 | AM7 | AM7 | Am7 | D7 | GM7 | GM7 | Gm7 | C7 | Cm7 | F7+ | BbM7 | BbM7 | Fm7 | Bb7 | EbM7 | EbM7 | Ab7 | Ab7 | Bb | Bb | C7 | C7 | Cm7 | F7 | Bb | Bb |"
+  },
+  {
+    "id": 51,
+    "title": "Cheryl",
+    "composer": "Charlie Parker",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| C | C | Gm7 | C7 | F7 | F7 | C | Em7 A7 | Dm7b5 | G7 | C | C |"
+  },
+  {
+    "id": 52,
+    "title": "The Chicken",
+    "composer": "Pee-Wee Ellis",
+    "style": "Fine",
+    "key": "Bb",
+    "rawChords": "| Bb7 | Bb7 | Bb7 | Bb7 | Bb7 | Bb7 | Bb7 | Bb7 | Eb7 | Eb7 | D7 | G7 | C7 | C7 | C7 | [object Object]N.C. | Bb7 Eb7 | Bb7 Eb7 | Bb7 Eb7 | Bb7 Eb7 |"
+  },
+  {
+    "id": 53,
+    "title": "Child Is Born, A",
+    "composer": "Thad Jones",
+    "style": "Waltz",
+    "key": "Bb",
+    "rawChords": "| BbM7 | Ebm/Bb | BbM7 | Ebm/Bb | BbM7 | Ebm/Bb | Am7b5 | D7#9 | Gm7 | D7+ | Gm7 | D7+ | Gm7 | C7 | F7sus | F7 | BbM7 | Ebm/Bb | BbM7 | Ebm/Bb | BbM7 | D7b9 | EbM7 | Ab7 Cm7b5 | Bb/F | GbM7#11 | Gm7 | C7 | F7sus | F7 |"
+  },
+  {
+    "id": 54,
+    "title": "The Chrisrmas Song",
+    "composer": "Mel Torme",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Eb Fm7 | Gm7 C7 Fm7 Bb7 | Eb Bbm7 Eb7 | AbM7 Db7 | Cm7 Db7 | Cm7 Cm7/Bb Am7 D7 | GM7 Abm7 Db7 | Gb Fm7 Bb7 | Cm7 Cm7/Bb Am7 D7 | Gm7 C7 Fm7 Bb7 | Eb6 | Bbm7 Eb7 | AbM7 Cm7 F7 | Bbm7 Eb7 | AbM7 | Abm7 Db7 | GbM7 B7 | Cm7 F7 | Fm7 Bb7 | Eb Fm7 | Gm7 C7 Fm7 Bb7 | Eb Bbm7 Eb7 | AbM7 Db7 | Cm7 Db7 | Cm7 Cm7/Bb Am7 D7 | Gm7 C7 Fm7 Bb7 | Eb6 |"
+  },
+  {
+    "id": 55,
+    "title": "Cleopatra's Dream",
+    "composer": "Earl Bud Powell",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| Bbm7b5 | Eb7 | Abm | Abm | Bbm7b5 | Eb7 | Abm | Abm | Abm | Abm | Eb7 | Eb7 | Abm | Abm | Eb7 | Eb7 | Abm | Abm | Bbm7b5 | Eb7 | Abm | Abm | Bbm7b5 | Eb7 | Abm | Abm |"
+  },
+  {
+    "id": 56,
+    "title": "Come Rain Or Come Shine",
+    "composer": "Harold Arlen",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F | Em7b5 A7 | Dm7 | Dm7 | G7 | Gm7 C7 | F | Cm7b5 F7 | Bbm7 | Fm7 | Bbm7 Abm7 | Gm7b5 C7 | Bm7b5 E7 | Am7b5 D7 | Am7b5 D7 | Gm7 C7 | F | Em7b5 A7 | Dm7 | Dm7 | Bm7 | E7 | Em7 | A7 | D7 | D7 | G7 | G7 | Dm Bm7b5 | Em7b5 A7 | Dm Ab7 | Gm7 C7 |"
+  },
+  {
+    "id": 57,
+    "title": "Come Sunday",
+    "composer": "Duke Ellington",
+    "style": "Ballad",
+    "key": "Bb",
+    "rawChords": "| F7 | Eb7 | F7 D7b13 | G7 | Cm7 | F7 | Bb Eb | Bb | D7 Eb7 | D7 | Gm7 | C7 | F7 | F7 Ab7 G7b13 | C7 | F7+ | F7 | Eb7 | F7 D7b13 | G7 | Cm7 | F7 | AbM7 A7b9 | Bb |"
+  },
+  {
+    "id": 58,
+    "title": "Con Alma",
+    "composer": "Dizzy Gillespie",
+    "style": "Afro",
+    "key": "C",
+    "rawChords": "| EM7 G#7/D# | C#m7 B7 | Bb7 | EbM7 Ebm7 Ab7 | DbM7 F7/C | Bbm7 Ab7 | G7 | CM7 | Cm7b5 | F7b9 | F#m7 | B7 | EM7 | EM7 | Fm7 | Bb7 | EM7 G#7/D# | C#m7 B7 | Bb7 | EbM7 Ebm7 Ab7 | DbM7 F7/C | Bbm7 Ab7 | G7 | CM7 |"
+  },
+  {
+    "id": 59,
+    "title": "Confirmation",
+    "composer": "Charlie Parker",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| F | Em7b5 A7 | Dm7 G7 | Cm7 F7 | Bb7 | Am7b5 D7 | G7 | Gm7b5 C7 | Gm7 C7 | F | Cm7 G7 | Cm7 F7 | BbM7 Cm7 | C#°7 Bb/D | Ebm7 | Ab7+ | DbM7 | Gm7 C7 | F | Em7b5 A7 | Dm7 G7 | Cm7 F7 | Bb7 | Am7b5 D7 | Gm7 C7 | F |"
+  },
+  {
+    "id": 60,
+    "title": "Cool Struttin'",
+    "composer": "Sonny Clark",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F7 | Bb7 | F7 | F7 | Bb7 | Bb7 | F7 | D7 | G7b13 | C7 | F7 Dm7 | Gm7 C7 | Bb7 | Bb7 | F7 | D7 | G7b13 | C7 | F7 | G7 C7 |"
+  },
+  {
+    "id": 61,
+    "title": "Corcovado",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Bossa Nova",
+    "key": "C",
+    "rawChords": "| D9/A | D9/A | Ab°7 | Ab°7 | Gm7 | C7sus | F°7 FM7 | FM7 | Fm7 | Bb7 | Em7 | A7b13 | D7 | D7 | Dm7 | Ab°7 | D9/A | D9/A | Ab°7 | Ab°7 | Gm7 | C7sus | F°7 FM7 | FM7 | Fm7 | Bb7 | Em7 | Am7 | Dm7 | G7 | Em7 | A7 | Dm7 | G7 | C6 | C6 |"
+  },
+  {
+    "id": 62,
+    "title": "Cotton Tail",
+    "composer": "Duke Ellington",
+    "style": "Up Tempo Swing",
+    "key": "Bb",
+    "rawChords": "| BbM7 Gm7 | Cm7 F7 | Dm7 G7 | Cm7 F7 | Bb Bb7 | Eb E°7 | Bb G7 | Cm7 F7 | Bb F7 | Bb | D7 | D7 | G7 | G7 | C7 | C7 | F7 | F7 | BbM7 Gm7 | Cm7 F7 | Dm7 Gm7 | Cm7 F7 | Bb Bb7 | Eb E°7 | Bb F7 | Bb |"
+  },
+  {
+    "id": 63,
+    "title": "Cry Me A River",
+    "composer": "Arthur Hamilton",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Cm Cm#5 | Cm6 Cm7 | Fm7 Bb7 | Eb Dm7b5 G7 | Gm7b5 C7b9 | F7 | B7 Bb7sus | Eb G7b13 | Eb Am7b5 D7b9 | Gm7 Em7b5 | Am7b5 D7b9 | Gm7 Em7b5 | Am7b5 D7b9 | Gm7 Em7b5 | Am7b5 D7b9 | GM7 | Dm7 G7 | Cm Cm#5 | Cm6 Cm7 | Fm7 Bb7 | EbM7 Dm7b5 G7 | Gm7b5 C7b9 | F7 | B7 Bb7sus | Eb |"
+  },
+  {
+    "id": 64,
+    "title": "Cute",
+    "composer": "Neal Hefti",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| Dm7 | G7 | C | A7 | Dm7 | G7 | Gm7 | C7 | FM7 | Fm6 | C E7 | Am7 | F#m7b5 | B7 | EM7 | A7 | Dm7 | G7 | C | C |"
+  },
+  {
+    "id": 65,
+    "title": "Daahoud",
+    "composer": "Clifford Brown",
+    "style": "Solos on AABA (alt. changes for head)",
+    "key": "Eb",
+    "rawChords": "| Ebm7 Ab7 | Dbm7 Gb7 | BM7 | Fm7 Bb7 | Ebm | B7 Bb7 | EbM7 | EbM7 | Bbm7 | Eb7 | AbM7 | AbM7 | Abm7 | Db7 | GbM7 | Fm7 Bb7 | Ebm7 Ab7 | Dbm7 Gb7 | BM7 | Fm7 Bb7 | Ebm | B7 Bb7 | EbM7 | EbM7 | GbM7 | Ebm7 Ab7 | B7 Bb7 | EbM7 |"
+  },
+  {
+    "id": 66,
+    "title": "Danny Boy",
+    "composer": "Traditional",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Eb | Eb7 | Ab | Abm6 | Eb | Cm | Fm7 | Bb7 | Eb | Eb7 | Ab | Abm | Eb Cm | Fm7 Bb7 | Eb | Bb7 | Eb Gb7b13 | AbM7 Bb7 | Eb | Eb Dm7b5 G7 | Cm Cm7/Bb | AbM7 Gm7 C7 | F7 | Bb7 | Eb G7 | Ab A°7 | Eb/Bb G7b13/B Cm | Cm Abm6 | Eb C7 | Fm7 Bb7 | Eb | Eb |"
+  },
+  {
+    "id": 67,
+    "title": "Darn That Dream",
+    "composer": "Jimmy Van-Heusen",
+    "style": "Ballad",
+    "key": "G",
+    "rawChords": "| G6 Bbm7 Eb7 | Am7 B7#11 | Em Em/D A7/C# Cm6 | Bm7b5 E7 | Am7 F7 | Bm7 Bbm7 | Am7 D7 | Bm7 E7 Am7 D7 | Am7 D7 | G6 Fm7 Bb7 | EbM7 Cm7 | Fm7 Bb7 | Gm7 F#m7 B7 | Fm7 Bb7 | EbM7 Cm7 | Gm6 | Am7 D7 | Bbm7 Eb7 Am7 D7 | G6 Bbm7 Eb7 | Am7 B7#11 | Em Em/D A7/C# Cm6 | Bm7b5 E7 | Am7 F7 | Bm7 Bbm7 | Am7 D7 | G6 |"
+  },
+  {
+    "id": 68,
+    "title": "Day By Day",
+    "composer": "Cahn-Stordahl-Weston",
+    "style": "Medium Swing",
+    "key": "G",
+    "rawChords": "| Am7 | D7 | Am7 | D7 | GM7 | C7 | Bm7 | E7 | Am7 | F#m7b5 B7 | Em7 | Em7 | A7 | A7 | Am7 | Bm7 E7 | Am7 | D7 | Am7 | D7 | GM7 | C7 | Bm7b5 | E7 | Am7 | D7 | Bm7 | E7 | Am7 | D7 | G | G |"
+  },
+  {
+    "id": 69,
+    "title": "Days Of Wine And Roses",
+    "composer": "Henry Mancini",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| FM7 | Eb7 | Am7b5 | D7 | Gm7 | Gm7 | Bbm | Eb7 | Am7 | Dm7 | Gm7 | C7 | Em7b5 A7 | Dm7 G7 | Gm7 | C7 | Am7 | Dm7 | Bm7b5 | Bb7 | Am7 Dm7 | Gm7 C7 | F | Gm7 C7 |"
+  },
+  {
+    "id": 70,
+    "title": "Dear Old Stockholm",
+    "composer": "Traditional",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| Dm | Em7b5 A7b9 | Gm7 C7 | F | Em7b5 A7b9 | Dm | Em7b5 | A7b9 | Dm7 | Dm6 | Dm7 | Dm6 | F | Gm7 C7 | F | Em7b5 A7b9 | Dm | Em7b5 A7b9 | Gm7 C7 | F | Em7b5 A7b9 | Dm | C7sus | C7sus | C7sus | C7sus | C7sus | Bb/C Am7/C | Gm7/C A7b9 | Dm7 | Dm7 |"
+  },
+  {
+    "id": 71,
+    "title": "Desafinado",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Bossa Nova",
+    "key": "F",
+    "rawChords": "| FM7 | FM7 | G7#11 | G7#11 | Gm7 | C7 | Am7b5 | D7b9 | Gm7 | A7b9 | D7 | D7b9 | G7b9 | G7b9 | GbM7 | GbM7 | Gm7 | Bbm6 | FM7 | E7#9 | AM7 | A#°7 | Bm7 | E7 | AM7 | A#°7 | Bm7 | E7 | AM7 | F#m7 | Bm7 | E7 | CM7 | C#°7 | Dm7 | G7 | Gm7 | Ebm6 | Gm7 | C7 | FM7 | FM7 | G7#11 | G7#11 | Gm7 | C7 | Am7b5 | D7b9 | Gm7 | Bbm | FM7 | Dm7 | G7 | G7 | Eb7 | Eb7 | G7 | Gm7 C7 | F6 | C7 |"
+  },
+  {
+    "id": 72,
+    "title": "Dolphin Dance",
+    "composer": "Herbie Hancock",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| EbM7 | DbM7/Eb | EbM7 | Dm7b5 G7 | Cm7 | Ab7#11 | Cm7 | Am7 D7 | GM7 | Abm7 Db7 | Fm7 | Bb7 | Cm7 | Cm/Bb | Am7 | D7 | GM7 | FM7/G | A/G | F/G | EbM7/F | D/F | EbM7/F | Em7 A7 | Eb7#11 | Am7/D D7/C | Bm7 | E7 Dm7 | C#m7 | F#7 | Bm7/E | Am7/E | Bm7/E | Am7/E | Bbm7/Eb | Eb7b9 | C7#9/Eb | Dm7b5 G7b9 |"
+  },
+  {
+    "id": 73,
+    "title": "Donna Lee",
+    "composer": "Charlie Parker",
+    "style": "Up Tempo Swing",
+    "key": "Ab",
+    "rawChords": "| Ab | F7 | Bb7 | Bb7 | Bbm7 | Eb7 | Ab | Ebm7 D7 | Db | Dbm7 | Ab | F7 | Bb7 | Bb7 | Bbm7 | Eb7 | Ab | F7 | Bb7 | Bb7 | C7 | C7 | Fm | Gm7b5 C7b9 | Fm | C7 | Fm | B°7 | Cm7 F7 | Bbm7 Eb7 | Ab | Bbm7 Eb7 |"
+  },
+  {
+    "id": 74,
+    "title": "Doxy",
+    "composer": "Sonny Rollins",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| Bb Ab7 | G7 | C7 F7 | Bb F7 | Bb Ab7 | G7 | C7 | F7 | Fm7 | Bb7 | Eb7 | E°7 | Bb Ab7 | G7 | C7 F7 | Bb |"
+  },
+  {
+    "id": 75,
+    "title": "E.S.P.",
+    "composer": "Wayne Shorter",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| E7alt | E7alt | FM7 | FM7 | E7alt | E7alt | EbM7#11 | EbM7#11 | D7alt | Eb7#11 | E7alt | FM7 EbM7 | Dm7 | G7 | Gm7 | Gb7 | Db7#11 | Gm7 | Dbm7 Gb7 | FM7 |"
+  },
+  {
+    "id": 76,
+    "title": "Easy Living",
+    "composer": "Ralph Rainger",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| F F#°7 | Gm7 G#°7 | FM7/A Cm7 F7 | BbM7 Eb7 | F Dm7 | Gm7 C7 | A7 D7 | G7 C7 | Gm7 C7 | F Bb7 | Ebm7 Ab7 | Db Bbm7 | Ebm7 Ab7 | Fm7 Bb7 | Ebm7 Ab7 | DbM7 Bbm7 | Gm7b5 C7 | Am7 D7 | Gm7 C7+ | F F#°7 | Gm7 G#°7 | FM7/A Cm7 F7 | BbM7 Eb7 | F Dm7 | Gm7 C7 | F | F |"
+  },
+  {
+    "id": 77,
+    "title": "Easy To Love",
+    "composer": "Cole Porter",
+    "style": "Medium Swing",
+    "key": "G",
+    "rawChords": "| Am7 | Bm7b5 E7b9 | Am7 | D7 | GM7 | CM7 | Bm7 | E7b9 | Am7 | D7 | GM7 CM7 | Bm7 E7b9 | Am7 | D7 | Bm7 | E7 | E7 | Am7 | Cm6 | GM7 | Bm7 Bb°7 | Am7 | D7 | G6 | G6 |"
+  },
+  {
+    "id": 78,
+    "title": "Embraceable You",
+    "composer": "George Gershwin",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| F6 | Ab°7 | Gm7 | Am7 D7 | Gm | Bbm7 Eb7 | F6 | Em7b5 A7 | Dm7 Dm7/C | Bm7b5 E7 | Am | D7#11 Db7#11 | CM7 A7 | Dm7 G7 | Gm7 | C7 | F6 Dm7 Db7 | Cm7 F7 | BbM7 | Em7b5 A7 | Dm7 Dm7/C | Bm7b5 Bbm7 Eb7 | Am7 D7 | Gm7b5 C7b9 | F6 | F6 |"
+  },
+  {
+    "id": 79,
+    "title": "Emily",
+    "composer": "Johnny Mandel",
+    "style": "Waltz",
+    "key": "C",
+    "rawChords": "| C | Am7 | Dm7 | G7 | C | Gm7 C7 | FM7 | Bb7 | AM7 | F#m7 | Bm7 | E7sus | Am7 | D7 | Dm7 | G7+ | C7 | FM7 | E7 | Am7 | B7 | Em7 | A7 | Dm7 | G7 | Bb7 | A7 | F#m7b5 | Fm7 | Em7 | A7 | Dm7 | G7 | C6 | C6 |"
+  },
+  {
+    "id": 80,
+    "title": "Everything Happens To Me",
+    "composer": "Matt Dennis",
+    "style": "Ballad",
+    "key": "Bb",
+    "rawChords": "| Cm7 F7 | Dm7 Db°7 | Cm7 F7 | Dm7b5 G7 | Cm7 Ebm7 Ab7b9 | Dm7 G7 | Cm7 F7 | Bb G7 | Bb | Fm7 Bb7#9 | EbM7 C7 | Fm7 Bb7#9 | EbM7 | Em7 A7#9 | DM7 Bm7 | Gm7 C7 | Cm7 F7 | Cm7 F7 | Dm7 Db°7 | Cm7 F7 | Dm7b5 G7 | Cm7 Ebm7 Ab7 | Dm7 G7 | Cm7 F7 | Bb |"
+  },
+  {
+    "id": 81,
+    "title": "Evidence",
+    "composer": "Thelonious Monk",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Eb | Gm7 C7 | Fm7 | Bb7 | Eb7 | Abm7 Db7 | F7 | Bb7 | Bbm7 | Eb7 | AbM7 | Db7 | Cm7 | C7 | Fm7 | Bb7 | Eb | Gm7 C7 | Fm7 | Bb7 | Eb7 | Abm7 Db7 | F7 | Bb7 |"
+  },
+  {
+    "id": 82,
+    "title": "Falling In Love With Love",
+    "composer": "Richard Rodgers",
+    "style": "Waltz",
+    "key": "Bb",
+    "rawChords": "| BbM7 | BbM7 | BbM7 | BbM7 | Cm7 | Cm7 | F7 | F7 | Cm7 | Cm7 | F7 | F7 | BbM7 | Gm7 | Cm7 | F7 | BbM7 | BbM7 | BbM7 | BbM7 | Am7 | Am7 | D7 | D7 | Gm7 | Gm7 | C7 | C7 | Cm7 | Cm7 | F7 | F7 | Am7 | D7 | Ab7 | G7 | Cm7 | Cm7 | F7 | F7 | BbM7 | BbM7 | BbM7 | BbM7 |"
+  },
+  {
+    "id": 83,
+    "title": "Fly Me To The Moon",
+    "composer": "Bart Howard",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| Am7 | Dm7 | G7 | CM7 C7 | FM7 | Bm7b5 | E7 | Am7 A7 | Dm7 | G7 | CM7 | A7 | Dm7 | G7 | CM7 | Bm7b5 E7 | Am7 | Dm7 | G7 | CM7 C7 | FM7 | Bm7b5 | E7 | Am7 A7 | Dm7 | D#°7 | Em7 | A7 | Dm7 | G7 | C | Bm7b5 E7 | Em7 | A7 | Dm7 | G7 | C | C |"
+  },
+  {
+    "id": 84,
+    "title": "Footprints",
+    "composer": "Wayne Shorter",
+    "style": "Waltz",
+    "key": "Eb",
+    "rawChords": "| Cm7 | Cm7 | Cm7 | Cm7 | Cm7 | Cm7 | Cm7 | Cm7 | Fm7 | Fm7 | Fm7 | Fm7 | Cm7 | Cm7 | Cm7 | Cm7 | D7 | D7 | Db7 | Db7 | Cm7 | Cm7 | Cm7 | Cm7 |"
+  },
+  {
+    "id": 85,
+    "title": "Forest Flower",
+    "composer": "Charles Lloyd",
+    "style": "Bossa Nova",
+    "key": "C",
+    "rawChords": "| AM7 | AM7 | GM7 | GM7 | CM7 | CM7 | BbM7 | BbM7 | Dbm7 | Dm7b5 G7b9 | CM7 | CM7 | Cm7 | B7#9 | BbM7 | BbM7 | BbM7 | BbM7 | Cm7 | Bb7 | EbM7 | EbM7 | Bb7 | Ab7 | GbM7 | GbM7 | Gbm7 | Am7 | Cm7 | Ebm7 | C6 | C6 |"
+  },
+  {
+    "id": 86,
+    "title": "Four On Six",
+    "composer": "Wes Montgomery",
+    "style": "Up Tempo Swing",
+    "key": "Bb",
+    "rawChords": "| Gm7 | Gm7 | Gm7 | Gm7 | Cm7 F7 | Bbm7 Eb7 | Am7 D7 | Ebm7 Ab7 | Gm7 | Gm7 | Gm7 | Cm7 F7 | BbM7 | Am7b5 D7b9 | Gm7 | Am7b5 D7b9 |"
+  },
+  {
+    "id": 87,
+    "title": "Four",
+    "composer": "Miles Davis",
+    "style": "Up Tempo Swing",
+    "key": "Eb",
+    "rawChords": "| EbM7 | EbM7 | Ebm7 | Ab7 | Fm7 | Fm7 | Abm7 | Db7 | Eb | F#m7 B7 | Fm7 | Bb7 | Eb | F#m7 B7 | Fm7 | Bb7 | Gm7 F#m7 | Fm7 Bb7 | Eb | Eb |"
+  },
+  {
+    "id": 88,
+    "title": "Freddie Freeloader",
+    "composer": "Miles Davis",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| Bb7 | Bb7 | Bb7 | Bb7 | Eb7 | Eb7 | Bb7 | Bb7 | F7 | Eb7 | Ab7 | Ab7 | F7 | Eb7 | Bb7 | Bb7 |"
+  },
+  {
+    "id": 89,
+    "title": "Gentle Rain, The",
+    "composer": "Luiz Bonfa",
+    "style": "Bossa Nova",
+    "key": "C",
+    "rawChords": "| Am6 | Am6 | E7/G# | E7/G# | Gm7 | C7 | F6 | F6 | F#m7b5 | B7b9 | Em7b5 | A7b9 | Dm7b5 Dm7b5/C | Bm7b5 E7 | Am6 | Bm7b5 E7 | Am7 | Gm7 C7 | F6 | Gm7 C7 | F6 | Em7 | Am | E7 |"
+  },
+  {
+    "id": 90,
+    "title": "Georgia On My Mind",
+    "composer": "Hoagy Carmichael",
+    "style": "Slow Swing",
+    "key": "F",
+    "rawChords": "| F | Em7b5 A7b9 | Dm Dm/C | Bm7b5 Bbm7 Eb7 | Am7 D7 | Gm7 C7 | Am7 D7 | Gm7 C7 | F Bbm7 | F Em7b5 A7#9 | Dm Em7b5 A7 | Dm Em7b5 A7 | Dm Em7b5 A7 | Dm G7 | Dm Em7b5 A7 | Dm Dm/C Dm/B Dm/Bb | Am7 D7 | Gm7 C7 | F | Em7b5 A7b9 | Dm Dm/C | Bm7b5 Bbm7 Eb7 | Am7 D7 | Gm7 C7 | F Bbm7 | F Gm7 C7 |"
+  },
+  {
+    "id": 91,
+    "title": "Giant Steps",
+    "composer": "John Coltrane",
+    "style": "Up Tempo Swing",
+    "key": "Eb",
+    "rawChords": "| B D7 | G Bb7 | Eb | Am7 D7 | G Bb7 | Eb F#7 | B | Fm7 Bb7 | Eb | Am7 D7 | G | C#m7 F#7 | B | Fm7 Bb7 | Eb | C#m7 F#7 |"
+  },
+  {
+    "id": 92,
+    "title": "The Girl From Ipanema",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Bossa Nova",
+    "key": "F",
+    "rawChords": "| FM7 | FM7 | G7 | G7 | Gm7 | Gb7 | F | Gb7 | F | F | GbM7 | GbM7 | B7 | B7 | F#m7 | F#m7 | D7 | D7 | Gm7 | Gm7 | Eb7 | Eb7 | Am7 | D7 | Gm7 | C7 | FM7 | FM7 | G7 | G7 | Gm7 | Gb7 | FM7 | Gb7 |"
+  },
+  {
+    "id": 93,
+    "title": "God Bless The Child",
+    "composer": "Herzog-Holiday",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| EbM7 Eb7 Ab6 | EbM7 Eb7 Ab6 | Bbm7 Eb7 | Bbm7 Eb7 | AbM7 | AbmM7 | Gm7 C7b9 | Fm7 Bb7 | Eb7 Ab7 | Eb7 Ab7 | Eb6 | Dm7b5 G7b9 | Cm CmM7 | Cm7 Cm6 | Gm7 D7 | Gm7 G7b9 | Cm CmM7 | Cm7 Cm6 | Gm7 C7 | Fm7 Bb7 | EbM7 Eb7 Ab6 | EbM7 Eb7 Ab6 | Bbm7 Eb7 | Bbm7 Eb7 | AbM7 | AbmM7 | Gm7 C7b9 | Fm7 Bb7 | Eb6 | Eb6 Eb |"
+  },
+  {
+    "id": 94,
+    "title": "Gone With The Wind",
+    "composer": "Allie Wrubel",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Fm7 Bb7 | EbM7 C7 | Fm7 Bb7 | EbM7 | Am7 D7 | G6 E7 | Am7 D7 | GM7 | Gm | Gb°7 | Fm7 | Bb7 | Eb D7b13 | Gm7b5 C7 | Fm7 | Bb7 | Fm7 | Cm7 | Fm7 Bb7 | Gm7 C7 | Fm7 | Bb7 | EbM7 | EbM7 |"
+  },
+  {
+    "id": 95,
+    "title": "Good Bait",
+    "composer": "Tadd Dameron",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| Bb6 Gm7 | Cm7 F7 | Bb6 Gm7 | Cm7 F7 | Fm7 Bb7 | Eb6 Ab7 | Dm7 G7b9 Cm7 F7b9 | Bb6 F7 | Bb6 Bb7 | Eb6 Cm7 | Fm7 Bb7 | Eb6 Cm7 | Fm7 Bb7 | Eb6 Eb7 | Ab6 Db7 | Gm7 C7b9 Fm7 Bb7b9 | Eb7 F7 | Bb6 Gm7 | Cm7 F7 | Bb6 Gm7 | Cm7 F7 | Fm7 Bb7 | Eb6 Ab7 | Dm7 G7b9 Cm7 F7b9 | Bb6 |"
+  },
+  {
+    "id": 96,
+    "title": "Groovin' High",
+    "composer": "Dizzy Gillespie",
+    "style": "Up Tempo Swing",
+    "key": "Eb",
+    "rawChords": "| EbM7 | EbM7 | Am7 D7 | Am7 D7 | Eb | Eb | Gm7 C7 | Gm7 C7 | F7 | F7 | Fm7 Bb7 | Fm7 Bb7 | Gm7 | F#m7 | Fm7 | Bb7 | Fm7 Bb7 | Fm7 Bb7 | Fm7 | Abm7 | Eb | Eb |"
+  },
+  {
+    "id": 97,
+    "title": "Have You Met Miss Jones?",
+    "composer": "Richard Rodgers",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F | F#°7 | Gm7 | C7 | Am7 | Dm7 | Gm7 | C7 | Cm7 | F7 | BbM7 | Abm7 Db7 | GbM7 | Em7 A7 | DM7 | Abm7 Db7 | GbM7 | Gm7 C7 | F | F#°7 | Gm7 | C7 Bb7 | Am7 D7 | Gm7 C7 | F6 | F6 |"
+  },
+  {
+    "id": 98,
+    "title": "Here's That Rainy Day",
+    "composer": "Jimmy Van-Heusen",
+    "style": "Ballad",
+    "key": "G",
+    "rawChords": "| G | Bb7 | EbM7 | AbM7 | Am7 | D7 | GM7 | Dm7 G7 | Cm7 | F7 | BbM7 | EbM7 | Am7 | D7 | GM7 Em7 | Am7 D7 | CM7 | Am7 D7 | Bm7 Em7 | A7 Bb°7 | Am7 | D7 | G | G |"
+  },
+  {
+    "id": 99,
+    "title": "Hot House",
+    "composer": "Tadd Dameron",
+    "style": "Up Tempo Swing",
+    "key": "C",
+    "rawChords": "| Gm7b5 | C7b9 | Fm7 | Fm7 | Dm7b5 | G7b9 | CM7 | CM7 | Gm7b5 | C7b9 | Fm7 | Fm7 | Dm7b5 | G7b9 | CM7 | CM7 | Cm7 | F7 | BbM7 | BbM7 | Ab7 | Ab7 | G7 | G7 | Gm7b5 | C7b9 | Fm7 | Fm7 | Dm7b5 | G7b9 | CM7 | CM7 |"
+  },
+  {
+    "id": 100,
+    "title": "How Deep Is The Ocean",
+    "composer": "Irving Berlin",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Cm7 | B°7 | Eb6/Bb | Am7b5 D7 | Gm7 | Am7b5 D7b9 | Gm7 D7/F# | Fm7 Bb7 | Bbm7 | Eb7 | Ebm7 | Ab7 | Cm7b5 | F7 | B7 Bb7 | Dm7b5 G7b9 | Bbm7 Abm7 | Gm7b5 C7b9 | Fm7 | Db7 | Eb/Bb G7/B | Cm7 F7 | Fm7 Bb7 | Eb |"
+  },
+  {
+    "id": 101,
+    "title": "How High The Moon",
+    "composer": "Morgan Lewis",
+    "style": "Medium Swing",
+    "key": "G",
+    "rawChords": "| GM7 | GM7 | Gm7 | C7 | FM7 | FM7 | Fm7 | Bb7 | EbM7 | Am7 D7 | Gm7 | Am7b5 D7b9 | Bm7 | E7 | Am7 | D7 | EbM7 | Am7 D7 | GM7 | Am7 D7 | Bm7 Bb7 | Am7 D7 | G6 | G6 |"
+  },
+  {
+    "id": 102,
+    "title": "How Insensitive",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Bossa Nova",
+    "key": "F",
+    "rawChords": "| Dm | Dm | C#°7 | C#°7 | Cm6 | Cm6 | G7/B | G7/B | BbM7 | BbM7 | EbM7 | EbM7 | Em7b5 | A7b9 | Dm7 | Db7 | Cm7 | Cm7 | B°7 | B°7 | BbM7 | Em7b5 A7 | Dm | Dm Db7 | Cm7 | F7 | Bm7 | E7b9 | BbM7 | A7 | Dm7 | Dm7 |"
+  },
+  {
+    "id": 103,
+    "title": "Hush-A-Bye",
+    "composer": "Trad.",
+    "style": "Bossa Nova",
+    "key": "Ab",
+    "rawChords": "| Fm | Fm F7 | Bbm7 | Bbm7 | Gm7b5 | C7 | Fm | Fm | Gm7b5 | C7 | Fm | Fm | F7 | F7 | Bbm7 | Bbm7 | Eb7 | Eb7 | Ab | C7b9 | Fm | Fm F7 | Bbm7 | Bbm7 | Gm7b5 | C7 | Fm | Fm |"
+  },
+  {
+    "id": 104,
+    "title": "I Can't Get Started",
+    "composer": "Vernon Duke",
+    "style": "Ballad",
+    "key": "C",
+    "rawChords": "| CM7 Am7 | Dm7 G7 | Bm7 E7 Bbm7 Eb7 | Am7 D7 Abm7 Db7 | CM7 Am7 | Dm7 G7b9 | E7 A7 | D7 G7sus | C6 Bb7#11 | CM7 | Em7 A7 | Em7 A7 | DM7 GM7 | DM7 | Dm7 G7 | Dm7 G7 | Em7 A7 | D7 G7sus | CM7 Am7 | Dm7 G7 | Bm7 E7 Bbm7 Eb7 | Am7 D7 Abm7 Db7 | C A7b9 | Dm7 G7 | C6 | C6 |"
+  },
+  {
+    "id": 105,
+    "title": "I Can't Give You Anything But Love",
+    "composer": "Jimmy McHugh",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| Bb EbM7 | Dm7 Db7 | Cm7 | F7 | Bb EbM7 | Dm7 Db7 | Cm7 | F7 | Fm7 | Bb7 | EbM7 | EbM7 | C7 | C7 | Cm7 | F7 | Bb EbM7 | Dm7 Db7 | Cm7 | F7 | Fm7 | Bb7 | EbM7 | EbM7 | EbM7 | E°7 | Bb/F | G7 | Cm7 | F7 | Bb | Cm7 F7 |"
+  },
+  {
+    "id": 106,
+    "title": "I Concentrate On You",
+    "composer": "Cole Porter",
+    "style": "Up Tempo Swing",
+    "key": "Eb",
+    "rawChords": "| EbM7 | EbM7 | Ab7#11 | Ab7#11 | Ebm7 | Dbm7 Gb7 | BM7 | BM7 | Fm7b5 | Bb7b9 | Ebm7 | Cm7b5 | B7#11 | Bb7 | Eb6 | Fm7 Bb7 | EbM7 | EbM7 | Ab7#11 | Ab7#11 | Ebm7 | Dbm7 Gb7 | BM7 | BM7 | Abm7 | Db7 | GbM7 | BM7 | F7 | Bb7 | Eb6 | Eb6 Eb7 | Ab | Abm7 Db7 | EbM7 | Gm7 C7#9 | Fm7 | Bb7 | EbM7 | EbM7 A7#11 | AbM7 | Abm7 | GbM7 | Ebm7 Ebm7/C# | Cm7b5 | F7 | BbM7 | Bb7 | Eb6 | Ab7#11 | Am7b5 | D7 | Bbm7 | Eb7 | Dm7b5 | G7 | Gm7b5 | C7 | Fm7 | F#°7 | B7#11 | Bb7 | Eb6 | Eb6 |"
+  },
+  {
+    "id": 107,
+    "title": "I Could Write A Book",
+    "composer": "Richard Rodgers",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Eb Cm7 | Fm7 Bb7 | Gm7 C7 | Fm7 Bb7 | EbM7 | C7 | Fm7 | Bb7 | Eb/G B7/F# | Fm7 Bb7 | Cm7 F7b9 | BbM7 D7 | Gm7 | Cm7 F7 | Fm7 | Bb7 | Cm CmM7 | Cm7 Cm6 | Bbm7 Eb7 | AbM7 Db7 | Gm7 C7 | Fm7 Bb7 | Eb6 | Eb6 |"
+  },
+  {
+    "id": 108,
+    "title": "I Didn't Know What Time It Was",
+    "composer": "Richard Rodgers",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| Em7 A7 | Dm7 G7 | Em A7 | Dm7 G7 | Gm7 C7 | Dm7 Dm7/C | BbM7 Am7 | Gm7 C7 | Gm7 C7 | F6 | Em7b5 A7 | Em7b5 A7 | Dm7 Db7 Cm7 F7 | BbM7 | Am7 Dm7 | G7 | Gm7 C7 | Em7 A7 | Dm7 G7 | Em7 A7 | Dm7 G7 | Gm7 C7 | Dm7 Dm7/C | BbM7 Am7 | Bbm7 Eb7 | Am7 D7 | Gm7 C7sus | F6 | F6 |"
+  },
+  {
+    "id": 109,
+    "title": "I Fall In Love Too Easily",
+    "composer": "Jule Styne",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Fm7 Bb7 | EbM7 AbM7 | Dm7b5 G7b9 | Cm A7 | Dm7b5 G7b9 | Cm7 Cm7/Bb | Am7b5 Ab7#11 | Dm7b5 G7 | Am7b5 D7#9 | G7 Db7#9 | C7b9 | Fm7 C7 | Fm7 Abm7 Db7 | G7b9 C7 | Fm7 Bb7 | Eb6 |"
+  },
+  {
+    "id": 110,
+    "title": "I Hear A Rhapsody",
+    "composer": "Fragos-Baker-Gasparre",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Cm7 Gb7 | Fm7 Bb7b9 | EbM7 Ab7 | Gm7b5 C7b9 | Fm7 Fm7b5 | Bb7b9 | EbM7 | Dm7b5 G7 | Am7b5 D7b9 | Gm7 | Am7b5 D7b9 | Gm7 | Cm7 F7 | BbM7 | Ab7 | Dm7b5 | G7 | Cm7 Gb7 | Fm7 Bb7b9 | EbM7 Ab7 | Gm7b5 C7b9 | Fm7 Fm7b5 | Bb7b9 | EbM7 | EbM7 |"
+  },
+  {
+    "id": 111,
+    "title": "I Love You",
+    "composer": "Cole Porter",
+    "style": "Medium Up Swing",
+    "key": "F",
+    "rawChords": "| Gm7b5 | C7b9 | FM7 | FM7 | Gm7 | C7 | FM7 | FM7 | Gm7b5 | C7b9 | FM7 | Bm7 E7 | AM7 | Bm7 E7 | AM7 | AM7 | Gm7 | C7 | FM7 | FM7 | Am7b5 | D7b9 | Gm7 | C7 | Gm7b5 | C7b9 | FM7 | Am7b5 D7 | G7 | Gm7 C7 | F6 | F6 |"
+  },
+  {
+    "id": 112,
+    "title": "I Mean You",
+    "composer": "Thelonious Monk",
+    "style": "SOLO",
+    "key": "F",
+    "rawChords": "| F | F | Db7 | D7 | Gm7 | C7 | F D7 | Gm7 C7 | F | F | Eb7 | Eb7 | F | F | Db7 | Db7 | C7 | C7 | F | F | Db7 | D7 | Gm7 | C7 | F | Gm7 C7 |"
+  },
+  {
+    "id": 113,
+    "title": "I Remember Clifford",
+    "composer": "Benny Golson",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| AbM7 | Bb7b9 | G7b9 G7/B | Cm7 Bbm7 Abm7 Gbm7 | Fm7 | Bb7b9 | EbM7 G7 | AbM7 A°7 | Bb7 B°7 | Cm7 Cm7/Bb | Am7b5 D7b9 | Gm7 Gm7/F | Em7b5 A7b9 | Fm7 Bb7b9 | Am7b5 D7b9 | Gm7b5 C7b9 | Fm7 Bb7+ | Gm7 AbM7 | Am7b5 D7b9 | Gm7 C7b9 | Fm7 Bb7b9 | EbM7 | Dm7b5 G7b9 | Cm7 Cm7/Bb | Am7b5 D7b9 | Gm7 C7 Fm7 Bb7 | EbM7 G7 | AbM7 A°7 | Bb7 B°7 | Cm7 Cm7/Bb | Am7b5 D7b9 | Gm7b5 C7b9 | Fm7 Bb7 | Eb6 |"
+  },
+  {
+    "id": 114,
+    "title": "I Remember You",
+    "composer": "Victor Schertzinger",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| FM7 | Bm7 E7 | FM7 | Cm7 F7 | BbM7 | Bbm7 Eb7 | Am7 D7 | Gm7 C7 | FM7 | Cm7 F7 | BbM7 | Em7 A7 | DM7 | Em7 A7 | DM7 | Dm7 G7 | CM7 | Gm7 C7 | FM7 | Bm7 E7 | FM7 | Am7b5 D7 | Gm7 | Bbm7 Eb7 | F | Bm7b5 Bbm7 | Am7 Ab7 | Gm7 C7 | F | Gm7 C7 |"
+  },
+  {
+    "id": 115,
+    "title": "I Should Care",
+    "composer": "Cahn-Stordahl-Weston",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| Dm7 G7 | Em7 A7 | Dm7 G7 | CM7 | Em7b5 | A7 | Dm7 | Fm7 Bb7 | CM7 | Bm7b5 E7 | Gm7 C7 | FM7 | Bm7b5 E7b9 | Am7 | Am7 D7 | Dm7 G7 | CM7 | Bm7b5 E7 | Am7 | D7 D#°7 | Dm7 | G7 | C6 F7 | Em7 A7 |"
+  },
+  {
+    "id": 116,
+    "title": "I Thought About You",
+    "composer": "Jimmy Van-Heusen",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| Bm7b5 Bb7#11 | A7 D7 | G7 Ab7 | G7 | Gm7 Gm7/F | Em7 A7 | Dm7 Db7 | Cm7 F7 | BbM7 | Bbm7 Eb7 | FM7 C7 | FM7 | Bm7b5 E7 | Bm7b5 E7 | Am7 Ab7 | Gm7 C7 | BbM7 | Bbm7 Eb7 | FM7 FM7/E Dm7 Dm7/C | Bm7b5 Bb7#11 | Am7 Ab7 | Gm7 C7 | F6 | F6 |"
+  },
+  {
+    "id": 117,
+    "title": "I'll Close My Eyes",
+    "composer": "Reid-Kaye",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| FM7 | FM7 | Em7b5 | A7 | Dm7 | G7 | Cm7 | F7 | BbM7 | Eb7 | FM7 | FM7 | Bm7b5 | E7b9 | Am7 Ab7 | Gm7 C7 | BbM7 | Eb7 | Am7b5 | D7b9 | Gm7 | C7 | F6 | F6 |"
+  },
+  {
+    "id": 118,
+    "title": "I'll Remember April",
+    "composer": "Raye-DePaul",
+    "style": "Medium Swing",
+    "key": "G",
+    "rawChords": "| GM7 | GM7 | GM7 | GM7 | Gm7 | Gm#5 | Gm6 | Gm#5 | Am7b5 | D7 | Bm7b5 | E7 | Am7 | D7 | G | G7b9 | Cm7 | F7 | BbM7 | Gm7 | Cm7 | F7 | BbM7 | Bb6 | Am7 | D7 | GM7 | G6 | F#m7 | B7 | EM7 | Am7 D7 | Am7b5 | D7 | Bm7b5 | E7 | Am7 | D7 | G | G |"
+  },
+  {
+    "id": 119,
+    "title": "I'm In The Mood For Love",
+    "composer": "Jimmy McHugh",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| C Am7 | Dm7 G7 | Dm7 G7 | C°7 C | Em7 Eb°7 | Dm7 | G7 | C G7 | C | Dm7 G7 | C C#°7 | Dm7 G7 | C | F#m7b5 B7b9 | Em7 | Am7b5 D7 | Dm7b5 G7 | C Am7 | Dm7 G7 | Dm7 G7 | C°7 C | Em7 Eb°7 | Dm7 | G7 | C6 |"
+  },
+  {
+    "id": 120,
+    "title": "I'm Old Fashioned",
+    "composer": "Jerome Kern",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F Dm7 | Gm7 C7b9 | FM7 Dm7 | Gm7 C7b9 | Bb6/F | FM7 | Em7b5 | A7 | Dm7 | G7 | Dm7 | G7 | Gm7 | C7 | Am7 D7 | Gm7 C7 | FM7 Dm7 | Gm7 C7 | FM7 | Bm7b5 E7 | AM7 Bm7 | C#m7 DM7 | E7 F#°7 | Gm7 C7 | F Dm7 | Gm7 C7b9 | FM7 Dm7 | Gm7 C7b9 | Cm7 F7 | BbM7 Eb7#11 | Am7 Dm7 | Bm7b5 Bbm6 | Am7 Ab7 | Gm7 C7 | F | F |"
+  },
+  {
+    "id": 121,
+    "title": "I've Never Been in Love Before",
+    "composer": "Frank Loesser",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| Bb Gm7 | Cm7 F7 | BbM7 Eb7 | Dm7 G7b9 | Cm7 | F7 | Dm7 G7 | Cm7 F7 | BbM7 | Fm7 Bb7 | EbM7 | Cm7 F7 | BbM7 | Am7b5 D7b9 | Gm Gm7/F | Em7b5 A7b9 | DM7 DM7/C# | Cm7 F7 | Bb Gm7 | Cm7 F7 | BbM7 Eb7 | Dm7 G7b9 | Cm7 | F7 | Bb | Bb |"
+  },
+  {
+    "id": 122,
+    "title": "If I Should Lose You",
+    "composer": "Ralph Rainger",
+    "style": "END",
+    "key": "Bb",
+    "rawChords": "| Gm7 | Am7b5 D7#9 | Gm7 Gb7 | Fm7 Bb7 | EbM7 | Fm7 Bb7 | EbM7 | EbM7 | Cm7 | F7 | BbM7 | Am7b5 D7 | Gm7 | C7 | Cm7 Cm7/Bb | Am7b5 D7 | Cm7 | F7 | BbM7 | D7b9 G7 | Cm7 | F7 | Bb6 | Am7b5 D7 |"
+  },
+  {
+    "id": 123,
+    "title": "If I Were A Bell",
+    "composer": "Frank Loesser",
+    "style": "Medium Up Swing",
+    "key": "F",
+    "rawChords": "| G7 | C7 | FM7 | FM7 | Am7b5 | D7 | G7 | C7 | F6 F7/A | Bb6 C7 | F6 | Em7b5 A7 | Dm7 Dm7/C | Bm7b5 E7 | AM7 | Gm7 C7 | F6 F7/A | Bb6 B°7 | F6/C | Am7b5 D7 | Gm7 | C7 | F6 | F6 |"
+  },
+  {
+    "id": 124,
+    "title": "If You Could See Me Now",
+    "composer": "Tadd Dameron",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| EbM7 | Ab7 | EbM7 Cm7 | Ab7 | Gm7 F#m7 B7 | Fm7 Bb7 | Db7 C7 | F7 Bb7 | Eb Abm7 | Eb | Am7 D7 | Bm7 E7 | Am7 D7 | GM7 | Am7 Cm7 F7 | Dm7 Gm7 | Cm7b5 F7 | Fm7 Bb7 | EbM7 | Ab7 | EbM7 Cm7 | Ab7 | Gm7 F#m7 B7 | Fm7 Bb7 | Eb Abm7 | Eb |"
+  },
+  {
+    "id": 125,
+    "title": "Impressions",
+    "composer": "John Coltrane",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 |"
+  },
+  {
+    "id": 126,
+    "title": "In A Mellow Tone",
+    "composer": "Duke Ellington",
+    "style": "END",
+    "key": "Ab",
+    "rawChords": "| Bb7 | Eb7 | Ab6 | Ab6 | Ebm7 | Ab7 | DbM7 | DbM7 | DbM7 | Gb7 | Ab6 | F7 | Bb7 | Bb7 | Bbm7 | Eb7 | Bb7 | Eb7 | Ab6 | Ab6 | Ebm7 | Ab7 | DbM7 | DbM7 | Db7 | D°7 | Ab6/Eb | F7 | Bb7 | Eb7 | Ab6 | Ab6 |"
+  },
+  {
+    "id": 127,
+    "title": "In a Sentimental Mood",
+    "composer": "Duke Ellington",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| Dm DmM7 | Dm7 Dm6 | Gm GmM7 | Gm7 E7 A7 | Dm | Am7 D7 | Gm7 C7b9 | F Em7 A7 | F Ebm7 Ab7 | DbM7 Bbm7 | Ebm7 Ab7 | Db/F Bb7 | Ebm7 Ab7 | DbM7 Bbm7 | Ebm7 Ab7 | Gm7 | C7 | Dm DmM7 | Dm7 Dm6 | Gm GmM7 | Gm7 E7 A7 | Dm | Am7 D7 | Gm7 C7b9 | F |"
+  },
+  {
+    "id": 128,
+    "title": "In Your Own Sweet Way",
+    "composer": "Dave Brubeck",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Am7b5 D7b9 | Gm7 C7 | Cm7 F7 | Bb6 EbM7 | Abm7 Db7 | GbM7 BM7 | Cm7b5 F7b9 | BbM7#11 | Em7b5 A7b9 | DM7 | Em7 A7 | DM7 | Dm7 G7 | CM7 | Ebm7 Ab7 | G7 | Am7b5 D7b9 | Gm7 C7 | Cm7 F7 | Bb6 EbM7 | Abm7 Db7 | GbM7 BM7 | Cm7b5 F7b9 | BbM7#11 | Ab7sus | Ab7sus | Ab7sus | Ab7sus | Ab7sus | Ab7sus | Ab7sus | Ab7sus |"
+  },
+  {
+    "id": 129,
+    "title": "Inner Urge",
+    "composer": "Joe Henderson",
+    "style": "Up Tempo Swing",
+    "key": "G",
+    "rawChords": "| F#m7b5 | F#m7b5 | F#m7b5 | F#m7b5 | FM7#11 | FM7#11 | FM7#11 | FM7#11 | EbM7#11 | EbM7#11 | EbM7#11 | EbM7#11 | DbM7#11 | DbM7#11 | DbM7#11 | DbM7#11 | EM7#11 | DbM7#11 | DM7#11 | BM7#11 | CM7 | AM7 | Bb7 | GM7 |"
+  },
+  {
+    "id": 130,
+    "title": "Interplay",
+    "composer": "Bill Evans",
+    "style": "Medium Swing",
+    "key": "Ab",
+    "rawChords": "| Fm6 | Bbm6 | Fm6 | F7b9 | Bbm7 | Bbm7 | Fm6 | Ab7 | Gm7b5 | C7+ | Fm6 Dm7b5 | DbM7 GbM7 |"
+  },
+  {
+    "id": 131,
+    "title": "Invitation",
+    "composer": "Bronislau Kaper",
+    "style": "Even 8ths",
+    "key": "Eb",
+    "rawChords": "| Cm7 | Cm7 | Cm7 | Cm7 | Cm7 | F7 | Bb7 | Bb7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ab7 | Db7b9 | Db7b9 | Dbm7 | Gb7 | Bm7 | Bm7 | Bm7 | E7 | Am7 | Am7 | Am7 | D7 | Gm7 | Gm7 | Em7b5 | Eb7#11 | D7#9 | G7b9 | Ebm7 | Ebm7 | B7#11 | B7#11 | F7b9 | Bb7b9 | EbmM7 | EbmM7 |"
+  },
+  {
+    "id": 132,
+    "title": "Israel",
+    "composer": "John Carisi",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| Dm | Dm#5 | Dm6 | D7b9 | Gm Gm#5 | Gm6 A7b13 | DM7 | FM7 | BbM7 | A7 | Dm F7 | Bb7 A7 |"
+  },
+  {
+    "id": 133,
+    "title": "It Could Happen To You",
+    "composer": "Jimmy Van-Heusen",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| EbM7 | Gm7b5 C7b9 | Fm7 | Am7b5 D7b9 | Eb | Ab | Gm7b5 | C7 | Fm7 | Abm7 Db7 | EbM7 | Dm7b5 G7 | Cm7 | F7 | Fm7 | Bb7 | Fm7 | Abm7 Db7 | EbM7 | Gm7b5 C7 | Fm7 | Bb7 | Eb | Eb |"
+  },
+  {
+    "id": 134,
+    "title": "It Don't Mean A Thing",
+    "composer": "Duke Ellington",
+    "style": "Medium Up Swing",
+    "key": "Bb",
+    "rawChords": "| Gm Gm/F# | Gm/F C7/E | Eb7 D7 | Gm | C7 | C#°7 | Bb/D | D7+ | C7 | F7 | Bb6 | Bb6 | Fm7 | Bb7 | EbM7 | EbM7 | Gm7 | C7 | F7 | D7 | Gm Gm/F# | Gm/F C7/E | Eb7 D7 | Gm | C7 | F7 | Bb6 | Bb6 |"
+  },
+  {
+    "id": 135,
+    "title": "It Might As Well Be Spring",
+    "composer": "Richard Rodgers",
+    "style": "D.C. al 3rd ending",
+    "key": "C",
+    "rawChords": "| CM7 | Dm7 | Em7 A7 | Dm7 G7 | CM7 | C6 | Gm7 | C7 | F#m7b5 | F7 | C/E | A7 | Dm7 | G7 | Em7 A7 | Dm7 G7 | CM7 | Gm7 C7 | FM7 | Dm7 | Gm7 | C7 | Gm7 | C7 | FM7 | Em7 A7 | Dm7 | Dm7/C | Bm7 | E7 | Am7 | D7 | Dm7 | G7 | Em7 | A7 | D7 | D7 | Dm7 | G7 | CM7 CM7/B | Am7 Am7/G | F#m7b5 | F7 | Em7 | Am7 | Dm7 | G7 | CM7 | Am7 | Dm7 | G7 |"
+  },
+  {
+    "id": 136,
+    "title": "It's All Right With Me",
+    "composer": "Cole Porter",
+    "style": "END",
+    "key": "F",
+    "rawChords": "| Dm | DmM7 | Dm7 | Dm6 | Dm7 | D7 | Gm7 | Gm7 | C7 | C7 | Am7b5 | D7b9 | G7 | G7 | Em7b5 | A7b9 | Gm7 | C7 | F6 | F6 | Am7b5 | Am7b5 | Ab°7 | Ab°7 | Gm7b5 | C7b9 | FM7 | FM7 | Am7b5 | Am7b5 | Ab°7 | Ab°7 | Gm7b5 | C7b9 | Em7b5 | A7 | G7 | G7 | Gm7 | C7 | FM7 | F7 | Bb | Bm7b5 | F/A D7 | Gm7 C7sus | F6 | Em7b5 A7b9 |"
+  },
+  {
+    "id": 137,
+    "title": "It's Only a Paper Moon",
+    "composer": "Harold Arlen",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| C6 C#°7 | Dm7 G7 | Dm7 G7 | C6 | C C7/E | F6 F#°7 | G7 | C6 G7 | C6 | F F#°7 | C/G A7 | Dm7 G7 | C6 C7 | F F#°7 | C/G | Em7b5 A7 | Dm7 G7 | C6 C#°7 | Dm7 G7 | Dm7 G7 | C6 | C C7/E | F6 F#°7 | G7 | C6 G7 |"
+  },
+  {
+    "id": 138,
+    "title": "It's You Or No One",
+    "composer": "Jule Styne",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| Gm7 | C7 | FM7 Bb7 | Am7 D7 | Gm7 | C7 | FM7 | FM7 | Bbm7 | Eb7 | AbM7 | AbM7 G7+ | C | Dm7 G7 | Gm7 | C7 | Cm7 | F7 | Bbm7 | Eb7 | Am7 D7 | Abm7 Db7 | Gm7 | C7 | F | F |"
+  },
+  {
+    "id": 139,
+    "title": "Jor Du",
+    "composer": "Duke Jordan",
+    "style": "Up Tempo Swing",
+    "key": "Eb",
+    "rawChords": "| D7 G7 | Cm | F7 Bb7 | EbM7 | D7 G7 | Cm | Ab7 | G7 | Ab7 | G7 | G7 C7 | F7 Bb7 | Eb7 Ab7 | Db7 | F7 Bb7 | Eb7 Ab7 | Db7 Gb7 | G7 | D7 G7 | Cm | F7 Bb7 | EbM7 | D7 G7 | Cm | Ab7 G7sus | Cm |"
+  },
+  {
+    "id": 140,
+    "title": "Joy Spring",
+    "composer": "Clifford Brown",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| FM7 | Gm7 C7 | FM7 | Bbm7 Eb7 | Am7 Ab7 | Gm7 C7 | F | Abm7 Db7 | GbM7 | Abm7 Db7 | GbM7 | Bm7 E7 | Bbm7 A7 | Abm7 Db7 | Gb | Am7 D7 | GM7 | Gm7 C7 | FM7 | Fm7 Bb7 | EbM7 | Abm7 Db7 | GbM7 | Gm7 C7 | FM7 | Gm7 C7 | FM7 | Bbm7 Eb7 | Am7 Ab7 | Gm7 C7 | FM7 | Gm7 C7 |"
+  },
+  {
+    "id": 141,
+    "title": "Just Friends",
+    "composer": "John Klenner",
+    "style": "END",
+    "key": "F",
+    "rawChords": "| BbM7 | BbM7 | Bbm7 | Eb7 | FM7 | FM7 | Abm7 | Db7 | Gm7 | C7 | Am7 | Dm7 | G7 | G7 | Gm7 | C7 B7 | Gm7 | C7 | Am7 | Dm7 | G7 | Gm7 C7 | F6 | Cm7 B7 |"
+  },
+  {
+    "id": 142,
+    "title": "Just One Of Those Things",
+    "composer": "Cole Porter",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| Dm7 | Dm7 | Em7b5 | A7 | Cm6 | F7 | Bm7b5 | Bbm6 | F/A | Dm7 | Gm7 | C7 | FM7 | F#°7 | Gm7 | Em7b5 A7#9 | F/A | D7 | Gm7 | C7 | FM7 | FM7 | Fm7 | Bb7 | EbM7 | E°7 | Fm7 | Bb7 | EbM7 | EbM7 | Dm7 | G7 | C6 | Am7 | Gbm7b5 | Fm7 | Em7 | Eb°7 | Dm7 | Em7b5 A7#9 | Dm | Dm | Em7b5 | A7 | Cm6 | F7 | Bm7b5 | Bbm6 | Am7 | D7 | Gm7 | C7 | F6 | D7 | Gm7 | A7 |"
+  },
+  {
+    "id": 143,
+    "title": "Just Squeeze Me",
+    "composer": "Duke Ellington",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F Gm7 | Am7 Gm7 | F Gm7 | Am7 D7 | Gm7 | C7 | F | Gm7 C7 | F | F | F7 | F7 | BbM7 | Bb6 | G7 | G7 | Gm7 | C7 | F Gm7 | Am7 Gm7 | F Gm7 | Am7 D7 | Gm7 | C7 | F | Gm7 C7 |"
+  },
+  {
+    "id": 144,
+    "title": "Killer Joe",
+    "composer": "Benny Golson",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| C7 | Bb7 | C7 | Bb7 | C7 | Bb7 | C7 | Bb7 | Em7b5 | A7b9 | Ebm7 | Ab7 | A7 | Ab7sus Ab7 | Em7 | A7b9 | C7 | Bb7 | C7 | Bb7 | C7 | Bb7 | C7 | Bb7 |"
+  },
+  {
+    "id": 145,
+    "title": "L-O-V-E",
+    "composer": "Gabler-Kaempfert",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F6 | Am7 Ab° | Gm7 | C7 | Gm6 | C7 | FM7 | F6 | Cm6 | F7 | BbM7 | BbM7 | G7 | G7 | C7 | Gm7 C7 | Cm6 | F7 | BbM7 | Ab°7 | F/A D7 | Gm7 C7 | F | Gm7 C7 |"
+  },
+  {
+    "id": 146,
+    "title": "Lady Bird",
+    "composer": "Tadd Dameron",
+    "style": "Up Tempo Swing",
+    "key": "C",
+    "rawChords": "| CM7 | CM7 | Fm7 | Bb7 | CM7 | CM7 | Bbm7 | Eb7 | AbM7 | AbM7 | Am7 | D7 | Dm7 | G7 | CM7 EbM7 | AbM7 DbM7 |"
+  },
+  {
+    "id": 147,
+    "title": "Lament",
+    "composer": "J.J. Johnson",
+    "style": "Ballad",
+    "key": "Ab",
+    "rawChords": "| Fm | Ebm7 Ab7 | DbM7 | Gm7 C7 | FM7 | Am7b5 D7 | Gm7 | Em7b5 A7 | Dm Dm7/C Bbm7 | Am7 Dm7 | Gm7 | Em7b5 A7 | Dm | Ebm7 Ab7 | DbM7 | Gm7b5 C7b9 | Dm Dm7/C Bbm7 | Am7 Dm7 | Bm7b5 | Bbm7 Eb7 | F Dm7 | Db7 C7 | F | F |"
+  },
+  {
+    "id": 148,
+    "title": "Laura",
+    "composer": "David Raskin",
+    "style": "END",
+    "key": "C",
+    "rawChords": "| Am7 | D7b9 | G C7 | G | Gm7 | C7b9 | F Bb7 | F | Fm7 | Bb7 | EbM7 | Cm7 | Am7b5 | D7b5 D7 | GM7 | Bm7b5 E7b13 | Fm7 Fm7/Eb | Dm7b5 G7b9 | C Am7 | D7 | D7b9 | G7 | C | Bm7b5 E7b9 |"
+  },
+  {
+    "id": 149,
+    "title": "Lazy Bird",
+    "composer": "John Coltrane",
+    "style": "Up Tempo Swing",
+    "key": "G",
+    "rawChords": "| Am7 | Cm7 F7 | Fm7 | Bb7 | Eb | Am7 D7 | GM7 | Abm7 Db7 | GM7 | GM7 | Bm7 | E7 | AM7 | Bbm7 Eb7 | Am7 | D7 | GM7 | Abm7 Db7 | Am7 | Cm7 F7 | Fm7 | Bb7 | Eb | Am7 D7 | GM7 | GM7 |"
+  },
+  {
+    "id": 150,
+    "title": "Left Alone",
+    "composer": "Mal Waldron",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| Dm Em7b5 A7 | F7 BbM7 | Gm7 Em7b5 A7 | BbM7 Bb7 | Em7b5 F7 | BbM7 | Em7b5 A7 | Em7b5 A7 | Em7b5 A7 | Dm D7 | Gm7 C7 | FM7 D7b9 | Gm7 C7 | Em7b5 A7 | Dm Em7b5 A7 | F7 BbM7 | Gm7 Em7b5 A7 | BbM7 Bb7 | Em7b5 F7 | BbM7 | Em7b5 A7 | Dm |"
+  },
+  {
+    "id": 151,
+    "title": "Like Someone In Love",
+    "composer": "Jimmy Van-Heusen",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| CM7 E7/B | Am7 Am7/G | F#m7b5 F7#11 | Em7 A7 | Dm7 | F#m7 B7 | CM7 | Gm7 C7 | FM7 | Bm7 E7 | AM7 | AM7 | Am7 | D7 | Dm7 | G7 | FM7 | Bm7 E7 | AM7 | D#°7 | Em7 A7 | Dm7 G7 | C6 | Dm7 G7 |"
+  },
+  {
+    "id": 152,
+    "title": "Little B's Poem",
+    "composer": "Bobby Hutcherson",
+    "style": "Waltz",
+    "key": "Eb",
+    "rawChords": "| Am7 | Gm7 | Am7 | Dm7 | Gm7 | Fm7 | Gm7 | Em7b5 A7 | Dm7 | Ebm7 Ab7 | DbM7 | Dm7 G7 | CM7 | C#m7 | AM7 Bm7 C#m7 | Dm7 Em7 Gm7 |"
+  },
+  {
+    "id": 153,
+    "title": "Love For Sale",
+    "composer": "Cole Porter",
+    "style": "D.C. al Fine",
+    "key": "Db",
+    "rawChords": "| Eb7 | Eb7 | Bb7 | Bb7 | Eb7 | Eb7 | Bb7 | Bb7 | Ebm7 | Ab7 | DbM7 | Gb7 | Cm7b5 | F7#9 | Bbm | Bbm | Ebm7 | Ab7b9 | DbM7 | Fm7 Bb7 | Ebm7 | Ab7 | DbM7 | DbM7 | Fm7 | Bb7 | Ebm | Ebm | Gm7b5 C7b9 | Gm7b5 C7b9 | F#m7 B7 | Fm7b5 Bb7b9 |"
+  },
+  {
+    "id": 154,
+    "title": "Love Is Here To Stay",
+    "composer": "George Gershwin",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| G7 | Gm7 C7 | F6 | Am7 D7 | G7 | Gm7 C7 | Eb7 D7 | Bm7b5 E7 | Am7 D7 | Gm7 C7 | FM7 | Em7b5 A7 | Dm7 | G7 | Gm7 | C7 | Am7 D7 | Gm7 C7 | F F7 | Bb B° | Am7 D7 | Gm7 C7 | F | F |"
+  },
+  {
+    "id": 155,
+    "title": "Love Letters",
+    "composer": "Edward Heyman, Victor Young",
+    "style": "Medium Swing",
+    "key": "G",
+    "rawChords": "| G | G | Em7 | Em7 | Am7 | D7 | G | G | C#m7b5 | F#7 | Bm | E7 | Am7 | E7 | Am7 | D7 | G | G | Em7 | Em7 | Am7 | D7 | G | Dm7 G7 | CM7 | Cm7 F7 | G/B | Bb°7 | Am7 | D7 | G | G |"
+  },
+  {
+    "id": 156,
+    "title": "Lover Man",
+    "composer": "Davis-Ramirez-Sherman",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| Dm7 G7 | Dm7 G7 | Gm7 C7 | Gm7 C7 | F7#9 | Bb7 | Abm7 Db7 Gm7 C7 | FM7 Em7 A7 | FM7 Bb7 | Am AmM7 | Am7 D7 | G Am7 | Bm7 E7 Am7 D7 | Gm GmM7 | Gm7 C7 | F Eb7 | Em7 A7 | Dm7 G7 | Dm7 G7 | Gm7 C7 | Gm7 C7 | F7#9 | Bb7 | Abm7 Db7 Gm7 C7 | FM7 |"
+  },
+  {
+    "id": 157,
+    "title": "Lover, Come Back To Me",
+    "composer": "Sigmund Romberg",
+    "style": "Medium Up Swing",
+    "key": "Bb",
+    "rawChords": "| Bb | Bb | Am7b5 | D7 | Gm7 | Gm7 | C7 | C7 | Bb | Gm7 | C7 | F7 | Bb6 Bb7/D | Eb E°7 | Bb/F G7 | Cm7 F7 | Bb | Am7b5 D7 | Gm | Gm | Cm | Gm | D7 | D7 | Eb7 | D7 | Gm | Gm | Cm | Gm | C7 | C7 | F7 | F7 | Bb | Bb | Am7b5 | D7 | Gm7 | Gm7 | Dm7b5 | G7 | Cm7 | C#°7 | Dm7 Gm7 | Cm7 F7 | Bb Bb7/D | Eb E°7 | Bb/F | Bb/F |"
+  },
+  {
+    "id": 158,
+    "title": "Lullaby Of Birdland",
+    "composer": "George Shearing",
+    "style": "Medium Swing",
+    "key": "Ab",
+    "rawChords": "| Fm Dm7b5 | G7b9 C7b9 | Fm DbM7 | Bbm7 Eb7 | AbM7 Fm7 | Bbm7 Eb7b9 | AbM7 Db7 | Gm7b5 C7 | AbM7 Eb7 | AbM7 | Cm7b5 F7b9 | Bbm7 | Bbm7 Eb7b9 | AbM7 | Cm7b5 F7b9 | Bbm7 | Bbm7 Eb7b9 | AbM7 C7 | Fm Dm7b5 | G7b9 C7b9 | Fm DbM7 | Bbm7 Eb7 | Ab Fm7 | Bbm7 Eb7b9 | AbM7 Eb7 | AbM7 |"
+  },
+  {
+    "id": 159,
+    "title": "Mac The Knife",
+    "composer": "Kurt Weill",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| Bb6 | B°7 | Cm7 | F7 | Cm7 | F7 | Bb | Am7b5 D7 | Gm7 | Gm7 | Cm7 | G7 | Cm7 | F7 | Bb6 Gm7 | Cm7 F7 | Bb | Cm7 F7 |"
+  },
+  {
+    "id": 160,
+    "title": "Maiden Voyage",
+    "composer": "Herbie Hancock",
+    "style": "Even 8ths",
+    "key": "D",
+    "rawChords": "| D7sus | D7sus | D7sus | D7sus | F7sus | F7sus | F7sus | F7sus | Eb7sus | Eb7sus | Eb7sus | Eb7sus | Dbm6 | Dbm6 | Dbm6 | Dbm6 | D7sus | D7sus | D7sus | D7sus | F7sus | F7sus | F7sus | F7sus |"
+  },
+  {
+    "id": 161,
+    "title": "Mambo Inn",
+    "composer": "Bauza-Sampson-Woodlen",
+    "style": "Latin",
+    "key": "F",
+    "rawChords": "| Gm7 C7 | FM7 D7 | Gm7 C7 | FM7 D7 | Gm7 C7 | Am7 D7 | Gm7 C7 | F6 D7b13 | F6 B7 | Bbm7 | Eb7 | AbM7 AbM7/G | Fm7 Fm7/Eb | Dm7 | G7 | Gm7 | Am7 D7b13 | Gm7 C7 | FM7 D7 | Gm7 C7 | FM7 D7 | Gm7 C7 | Am7 D7 | Gm7 C7 | F6 |"
+  },
+  {
+    "id": 162,
+    "title": "Mean To Me",
+    "composer": "Turk-Ahlert",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| FM7 F#°7 | Gm7 C7 | FM7 Cm7 F7 | BbM7 Eb7 | Am7 D7 | Gm7 C7 | F Dm7 | Gm7 C7 | F Bb6 | F Cm7 F7 | Bb6 | C7 F7 | Bb6 | Eb7 D7 | Gm7 | Eb7 D7 | G7 | C7 | FM7 F#°7 | Gm7 C7 | FM7 Cm7 F7 | BbM7 Eb7 | Am7 D7 | Gm7 C7 | F Dm7 | G7 C7 |"
+  },
+  {
+    "id": 163,
+    "title": "Milestones (New)",
+    "composer": "Miles Davis",
+    "style": "SOLO",
+    "key": "Bb",
+    "rawChords": "| Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Am7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 | Gm7 |"
+  },
+  {
+    "id": 164,
+    "title": "Misty",
+    "composer": "Erroll Garner",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| EbM7 | Bbm7 Eb7 | AbM7 | Abm7 Db7 | EbM7 Cm7 | Fm7 Bb7 | G7 C7 | Fm7 Bb7 | Eb6 Abm7 | Eb6 | Bbm7 | Eb7b9 | AbM7 | AbM7 | Am7 | D7 | Gm7 C7b9 | Fm7 Bb7 | EbM7 | Bbm7 Eb7 | AbM7 | Abm7 Db7 | EbM7 Cm7 | Fm7 Bb7 | Eb6 Abm7 | Eb6 |"
+  },
+  {
+    "id": 165,
+    "title": "Moanin'",
+    "composer": "Bobby Timmons",
+    "style": "D.S. al Fine",
+    "key": "Ab",
+    "rawChords": "| Fm7 Ab7 | G7 C7 | Fm7 Ab7 | G7 C7 | Fm7 Ab7 | G7 C7 | Fm7 Ab7 | Gm7b5 C7 | Fm7 Ab7 | Cm7b5 F7b9 | Bbm7 Ab7 | G7b9 C7#9 | Fm7 | F7 | Bbm7 Ab7 | G7b9 | Gm7b5 | C7 |"
+  },
+  {
+    "id": 166,
+    "title": "Moment's Notice",
+    "composer": "John Coltrane",
+    "style": "SOLO",
+    "key": "Eb",
+    "rawChords": "| Em7 A7 | Fm7 Bb7 | EbM7 | Abm7 Db7 | Dm7 G7 | Ebm7 Ab7 | Db | Dm7b5 G7 | Cm7 | Bbm7 Eb7 | AbM7 | Abm7 Db7 | Gm7 | Abm7 Db7 | GbM7 | Fm7 Bb7 | AbM7 | Abm7 Db7 | Gm7 C7 | Fm7 Bb7 | Eb/Bb | Fm/Bb | Gm/Bb | Fm/Bb | Eb/Bb Fm/Bb | Gm/Bb Fm/Bb | Eb [object Object]N.C. | [object Object]N.C. |"
+  },
+  {
+    "id": 167,
+    "title": "Mr. P.C.",
+    "composer": "John Coltrane",
+    "style": "Up Tempo Swing",
+    "key": "Eb",
+    "rawChords": "| Cm7 | Cm7 | Cm7 | Cm7 | Fm7 | Fm7 | Cm7 | Cm7 | Dm7b5 | G7 | Cm7 | Cm7 |"
+  },
+  {
+    "id": 168,
+    "title": "My Favorite Things",
+    "composer": "Richard Rodgers",
+    "style": "Waltz",
+    "key": "G",
+    "rawChords": "| Em7 | Em7 | Em7 | Em7 | CM7 | CM7 | CM7 | CM7 | Am7 | D7 | GM7 | CM7 | GM7 | CM7 | F#m7b5 | B7 | EM7 | EM7 | EM7 | EM7 | AM7 | AM7 | AM7 | AM7 | Am7 | D7 | GM7 | CM7 | GM7 | CM7 | F#m7b5 | B7 | Em7 | Em7 | F#m7b5 | B7 | Em7 | Em7 | CM7 | CM7 | CM7 | CM7 | A7 | A7 | GM7 | CM7 | Am7 | D7 | G6 | CM7 | G6 | CM7 | GM7 | CM7 | F#m7b5 | B7 |"
+  },
+  {
+    "id": 169,
+    "title": "My Foolish Heart",
+    "composer": "Victor Young",
+    "style": "Ballad",
+    "key": "Bb",
+    "rawChords": "| BbM7 EbM7 | Dm7 G7 | Cm7 | Em7 A7 | Dm7 D7#9 | Gm7 | Cm7 | Cm7b5 F7b9 | BbM7 | Fm7 Bb7 | EbM7 | Am7b5 D7 | Gm7 D7#9 | Gm7 C7 | Cm7 G7 | Cm7 F7 | Cm7 Cm7/Bb | Am7b5 D7 | Gm7 Gm7/F | Ebm7 Ab7 | BbM7 EbM7 | Dm7b5 G7 | Cm7 G7 | C7 F7sus F7 | BbM7 | BbM7 |"
+  },
+  {
+    "id": 170,
+    "title": "My Funny Valentine",
+    "composer": "Richard Rodgers",
+    "style": "END",
+    "key": "Eb",
+    "rawChords": "| Cm | CmM7 | Cm7 | Cm6 | AbM7 | Fm7 | Dm7b5 | G7b9 | Cm | CmM7 | Cm7 | Cm6 | AbM7 | Am7b5 D7b9 Gm7 C7b9 | Fm7b5 | Bb7 | EbM7 Fm7 | Gm7 Fm7 | EbM7 Fm7 | Gm7 Fm7 | EbM7 Dm7b5 G7 | Cm7 Bbm7 A7b9 | AbM7 | Dm7b5 G7b9 | Cm6 | CmM7 | Cm7 | Cm6 | AbM7 | Dm7b5 G7b9 | Cm7 B7 | Bbm7 A7 | AbM7 | Fm7 Bb7 | Eb6 | Dm7b5 G7b9 |"
+  },
+  {
+    "id": 171,
+    "title": "My Ideal",
+    "composer": "Richard Whiting",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Eb6 C7 | Fm7 | Db7 C7 | F7 | Fm7 Bb7 | Fm7 G7b9 | Cm7 F7 | B7 Bb7 | Eb6 C7 | Fm7 | Db7 C7 | F7 | AbM7 Db7 | Eb D7 Db7 C7 | B7 Bb7 | Eb6 |"
+  },
+  {
+    "id": 172,
+    "title": "My Little Suede Shoes",
+    "composer": "Charlie Parker",
+    "style": "Latin",
+    "key": "Eb",
+    "rawChords": "| Fm7 Bb7 | Eb | Fm7 Bb7 | Eb | Fm7 Bb7 | Gm7 C7 | Fm7 Bb7 | Eb | Ab | Gm7 C7 | Fm7 Bb7 | Eb | Ab | Gm7 C7 | Fm7 Bb7 | Eb | Fm7 Bb7 | Eb | Fm7 Bb7 | Eb | Fm7 Bb7 | Gm7 C7 | Fm7 Bb7 | Eb |"
+  },
+  {
+    "id": 173,
+    "title": "My One And Only Love",
+    "composer": "Wood-Mellin",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| EbM7 Cm7 | Fm7 Bb7 B° | Cm7 AbM7 | Gm7 C7 | Fm7 Bb7 G7/B | Cm7 F7 | Fm7 Bb7 | Gm7 C7 Fm7 Bb7 | Eb6 Am7b5 D7 | Gm7 | Am7b5 D7 | Gm | Am7b5 D7 | Gm GmM7 | Gm7 Gm6 | Fm7 C7 | Fm7 Bb7 | EbM7 Cm7 | Fm7 Bb7 B° | Cm7 AbM7 | Gm7 C7 | Fm7 Bb7 G7/B | Cm7 F7 | Fm7 Bb7b9 | Eb |"
+  },
+  {
+    "id": 174,
+    "title": "My Romance",
+    "composer": "Richard Rodgers",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| BbM7 Cm7 | Dm7 Db°7 | Cm7 F7 | BbM7 D7 | Gm7 GmM7 | Gm7 G7 | Cm7 F7 | BbM7 Bb7 | EbM7 Ab7 | BbM7 Bb7 | EbM7 Ab7 | BbM7 | Em7b5 A7b9 | Dm7 Db7 | C7sus C7 | Cm7 F7 | BbM7 Bb7 | Eb G7/D | Cm7 Cm7/Bb | Am7b5 Ab7 | Gm7 Gb7 | BbM7/F | Cm7/F F7 | Bb | Cm7 F7 |"
+  },
+  {
+    "id": 175,
+    "title": "Naima",
+    "composer": "John Coltrane",
+    "style": "Ballad",
+    "key": "Ab",
+    "rawChords": "| Bbm7/Eb | Ebm9/Eb | AbM7#11/Eb GM7#5/Eb | AbM7/Eb | Bb7/Eb | Ebm9/Eb | AbM7#11/Eb GM7#5/Eb | AbM7/Eb | BM7#11/Bb | Bb7b9/Bb | BM7#11/Bb | Bb7b9/Bb | E7#11/Bb | BM7#11/Bb | AbM7/Bb | EM7#11 | Bbm7/Eb | Ebm9/Eb | AbM7#11/Eb GM7#5/Eb | AbM7/Eb |"
+  },
+  {
+    "id": 176,
+    "title": "Nancy (With The Laughing Face)",
+    "composer": "Jimmy Van-Heusen",
+    "style": "END",
+    "key": "Eb",
+    "rawChords": "| Fm7 C7b9 | Fm7 Bb7 | EbM7 Ab7 | Gm7 Gb°7 | Fm7 Fm7/Eb | Dm7b5 G7b9 | Cm7 F7 | Fm7 C7b9 | Cm7 F7 Bb7 | Eb6 Dm7b5 G7 | Cm6 | Dm7b5 G7b9 | Cm6 | F7 Fm7 Bb7 | EbM7 Cm7 | Fm7 Dm7b5 G7 | Cm7 F7 | Bb7sus C7b9 | Fm7 C7b9 | Fm7 Bb7 | EbM7 Ab7 | Gm7 Gb°7 | Fm7 Fm7/Eb | Dm7b5 G7b9 | Cm7 F7 Bb7 | Eb6 Gm7 C7 |"
+  },
+  {
+    "id": 177,
+    "title": "Nardis",
+    "composer": "Miles Davis",
+    "style": "Medium Swing",
+    "key": "G",
+    "rawChords": "| Em | FM7 | B7 | CM7 | Am7 | FM7 | EM7 | Em7 | Am7 | FM7#11 | Am7 | FM7#11 | Dm7 | G7 | CM7 | FM7#11 | Em | FM7 | B7 | CM7 | Am7 | FM7 | EM7 | Em |"
+  },
+  {
+    "id": 178,
+    "title": "Nearness Of You, The",
+    "composer": "Hoagy Carmichael",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| FM7 | Cm7 F7 | BbM7 | Bb°7 | Am7 Ab7 | Gm7 C7 | Am7 Ab7 | Gm7 C7 | F Bb | F | Gm7 | C7 | F Cm7 | F7 | Bb | Am7b5 D7 | G7#11 | C7 | FM7 | Cm7 F7 | BbM7 | Bb°7 | Am7 Ab7 | Gm7 C7 | Am7b5 | D7b9 | Gm7 | C7b9 | F | F |"
+  },
+  {
+    "id": 179,
+    "title": "Nica's Dream",
+    "composer": "Horace Silver",
+    "style": "SOLO",
+    "key": "Db",
+    "rawChords": "| BbmM7 | BbmM7 | AbmM7 | AbmM7 | BbmM7 | BbmM7 | Ebm7 | Ab7 | Abm7 | Db7 | GbM7 | C7b9 | Cm7b5 | F7 | BbmM7 | BbmM7 | Ebm7 | Ab7 | Fm7 | Bb7b9 | Eb7 | Ab7 | DbM7 | Em7 A7 | Ebm7 | Ab7 | Fm7 | Bb7b9 | Eb7 | Ab7 | DbM7 | F7 | BbmM7 | BbmM7 | AbmM7 | AbmM7 | BbmM7 | BbmM7 | Ebm7 | Ab7 | Abm7 | Db7 | GbM7 | C7b9 | Cm7b5 | F7 | BbmM7 | BbmM7 |"
+  },
+  {
+    "id": 180,
+    "title": "Night And Day",
+    "composer": "Cole Porter",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| BM7 | Bb7 | EbM7 | EbM7 | BM7 | Bb7 | EbM7 | EbM7 | Am7b5 | Abm7 | Gm7 | Gb°7 | Fm7 | Bb7 | Eb | Eb | Eb | GbM7 | GbM7 | EbM7 | EbM7 | GbM7 | GbM7 | EbM7 | EbM7 | Am7b5 | Abm7 | Gm7 | Gb°7 | Fm7 | Bb7 | Eb6 | Eb6 |"
+  },
+  {
+    "id": 181,
+    "title": "The Night Has A Thousand Eyes",
+    "composer": "Jerry-Brainin",
+    "style": "Latin",
+    "key": "G",
+    "rawChords": "| GM7/D | GM7/D | D7sus | D7sus | GM7/D | GM7/D | D7sus | D7 | Dm7 | G7 | CM7 | F7 | GM7/D | D7sus | G | D7sus | G | G | Cm7 | F7 | BbM7 | BbM7 | Bbm7 | Eb7 | AbM7 | AbM7 | Am7 | D7 | Bm7b5 | E7 | Am7 | D7 | G | G |"
+  },
+  {
+    "id": 182,
+    "title": "Night In Tunisia, A*",
+    "composer": "Dizzy Gillespie",
+    "style": "Latin",
+    "key": "F",
+    "rawChords": "| Eb7 | Dm6 | Eb7 | Dm6 | Eb7 | Dm6 | Em7b5 A7b5 | Dm | Dm | Am7b5 | D7b9 | Gm7 D7 | Gm | Gm7b5 | C7b9 | F | Em7b5 A7 |"
+  },
+  {
+    "id": 183,
+    "title": "Now's The Time",
+    "composer": "Charlie Parker",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F7 | F7 | F7 | F7 | Bb7 | B° | F7 | F7 | Gm7 | C7 | F7 | Gm7 C7 |"
+  },
+  {
+    "id": 184,
+    "title": "O Grande Amor",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Bossa Nova",
+    "key": "C",
+    "rawChords": "| Am | Ab°7 | Gm7 | C7 | Bm7b5 | E7b9 | Am | A7b9 | Dm7 | G7 | CM7 | FM7 | BbM7 | BbM7 | Bm7b5 | E7b9 | Am | Ab°7 | Gm7 | C7 | Bm7b5 | E7b9 | Em7b5 | A7b9 | Dm7 | D#°7 | C/E | FM7 | BbM7 | Bm7b5 E7b9 | Am | E7b9 |"
+  },
+  {
+    "id": 185,
+    "title": "Old Devil Moon",
+    "composer": "Burton Lane",
+    "style": "END",
+    "key": "F",
+    "rawChords": "| F7 | Eb7 | F7 | Eb7 | F7 | Eb7 | F7 | Cm7 F7 | Bb | Bb | Bbm7 | Eb7 | Abm7 Db7 | GbM7 C7 | F7 | Eb7 | F7 | Eb7 | DM7 | DM7 Dm7 | Dm7 | G7 | Gm7 | C7 | F7 | Eb7 | F7 | Eb7 | Am7 D7 | Gm7 C7 | F7 | Eb7 |"
+  },
+  {
+    "id": 186,
+    "title": "Old Folks",
+    "composer": "Willard Robison",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| Em7b5 A7 | Dm7 Db7 Cm7 F7 | BbM7 Eb7 | Am7b5 D7b9 | Gm7 C7 | Am7b5 D7b9 | G7 | Gm7 C7 | G7 C7 | F | Cm7 | F7 | Bb | Eb7 | F A7 | Dm7 | G7 | Gm7 C7 | Em7b5 A7 | Dm7 Db7 Cm7 F7 | BbM7 Eb7 | Am7b5 D7b9 | Gm7 C7 | Am7b5 D7b9 | G7 C7 | F |"
+  },
+  {
+    "id": 187,
+    "title": "Oleo",
+    "composer": "Sonny Rollins",
+    "style": "Up Tempo Swing",
+    "key": "Bb",
+    "rawChords": "| BbM7 Gm7 | Cm7 F7 | Dm7 G7 | Cm7 F7 | Bb Bb7 | Eb7 E°7 | Dm7/F G7 | Cm7 F7 | Dm7/F G7 | Cm7 F7 Bb | D7 | D7 | G7 | G7 | C7 | C7 | F7 | F7 | BbM7 Gm7 | Cm7 F7 | Dm7 G7 | Cm7 F7 | Bb Bb7 | Eb7 E°7 | Dm7/F G7 | Cm7 F7 Bb |"
+  },
+  {
+    "id": 188,
+    "title": "On A Clear Day ( On A Clear Day You Can See Forever )",
+    "composer": "Burton Lane",
+    "style": "Medium Swing",
+    "key": "G",
+    "rawChords": "| GM7 | GM7 | C7#11 | C7#11 | GM7 | GM7 | Bm7b5 | E7 | Am7 | Am7 | CmM7 | F7#11 | Bm7 | Bb°7 | Am7 | D7 | Dm7 | G7 | Dm7 | G7sus G7 | CM7 | A7 | Am7 | D7 | GM7 | GM7 | Bm7b5 | E7 | Am7 Bm7 | CM7 Bm7 | Am7 Bm7 | CM7 Bm7 | Am7/D | D7 | G6 | Am7 D7 |"
+  },
+  {
+    "id": 189,
+    "title": "On Green Dolphin Street",
+    "composer": "Bronislau Kaper",
+    "style": "Up Tempo Swing",
+    "key": "Eb",
+    "rawChords": "| Eb | Eb | GbM7/Eb | GbM7/Eb | F7/Eb | EM7/Eb | EbM7 | Gm7b5 C7 | Fm7 | Bb7 | EbM7 | EbM7 | Abm7 | Db7 | GbM7 | Fm7 Bb7 | Fm7 Fm7/Eb | Dm7b5 G7 | Cm7 Cm7/Bb | Am7b5 D7 | Gm7 C7 | Fm7 Bb7 | Eb6 | Fm7 Bb7 |"
+  },
+  {
+    "id": 190,
+    "title": "On The Sunny Side Of The Street",
+    "composer": "Jimmy McHugh",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| C6 | E7 | FM7 | Bm7b5 E7 | Am7 | D7 | Dm7 G7 | Em7 A7 Dm7 G7 | C6 | Gm7 | C7 | FM7 | FM7 | Am7 | D7 | Dm7 | G7 | C6 | E7 | FM7 | Bm7b5 E7 | Am7 | D7 | Dm7 G7 | C6 G7 |"
+  },
+  {
+    "id": 191,
+    "title": "Once I Loved",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Bossa Nova",
+    "key": "F",
+    "rawChords": "| Gm7 | C7 | FM7 | F#°7 | Gm7 | G#°7 | Am7 | Am7/G | Fm7 | Bb7 | EbM7 | EbM7 | Em7b5 | A7b9 | DM7 | D7b9 | DM7 | G7 | CM7 | F7 | BbM7 | BbM7 | B°7 | Bbm6 | Am6 | Ab7 | G7 | Gm7 A7b9 | Dm6 | Dm6 D7#9 |"
+  },
+  {
+    "id": 192,
+    "title": "One Note Samba",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Bossa Nova",
+    "key": "Bb",
+    "rawChords": "| Dm7 | Db7 | Cm7 | B7 | Dm7 | Db7 | Cm7 | B7 | Fm7 | Bb7 | EbM7 | Ab7 | Dm7 | Db7 | Cm7 B7 Bb6 | Bb6 | Ebm7 | Ab7 | DbM7 | DbM7 | Dbm7 | Gb7 | BM7 | Cm7b5 B7 | Fm7 | Bb7 | EbM7 | Ab7 | Db6 | C7 | BM7 | Bb6 |"
+  },
+  {
+    "id": 193,
+    "title": "Ornithology",
+    "composer": "Charlie Parker",
+    "style": "Up Tempo Swing",
+    "key": "G",
+    "rawChords": "| GM7 | GM7 | Gm7 | C7 | FM7 | FM7 | Fm7 | Bb7 | EbM7 | Am7b5 D7b9 | Gm7 | D7 | Bm7 | E7 | Am7 | D7 | GM7 | GM7 | Gm7 | C7 | FM7 | FM7 | Fm7 | Bb7 | EbM7 | Am7b5 D7b9 | GM7 | Am7 D7 | Bm7 E7 | Am7 D7 | G6 | Am7 D7 |"
+  },
+  {
+    "id": 194,
+    "title": "Out Of Nowhere",
+    "composer": "Johnny Green",
+    "style": "Medium Swing",
+    "key": "G",
+    "rawChords": "| GM7 | GM7 | Bbm7 | Eb7 | GM7 | GM7 | Bm7 | E7 | Am7 | E7b9 | Am7 | Am7 | Eb7 | Eb7 | D7sus | D7b9 | Am7 | E7b9 | Am7 | Cm6 | Bm7 Bb°7 | Am7 D7 | G | G |"
+  },
+  {
+    "id": 195,
+    "title": "Over The Rainbow (Somewhere)",
+    "composer": "Harold Arlen",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Eb Cm7 | Gm7 Eb7 | AbM7 Am7 D7 | Gm7 C7 | Fm7 Abm7 Db7 | EbM7 C7b9 | Fm7 Bb7 | Eb Fm7 Bb7 | Eb | EbM7 | Fm7 Bb7 | Gm7 C7 | Fm7 Bb7 | EbM7 | Am7b5 D7b9 | Gm7 C7 | Fm7 Bb7 | Eb Cm7 | Gm7 Eb7 | Ab Am7 D7 | Gm7 C7 | Fm7 Abm7 Db7 | Eb C7b9 | Fm7 Bb7 | Eb |"
+  },
+  {
+    "id": 196,
+    "title": "Peace",
+    "composer": "Horace Silver",
+    "style": "Ballad",
+    "key": "Bb",
+    "rawChords": "| Am7b5 D7b9 | Gm7 C7 | BM7 Cm7b5 F7 | BbM7 | Bm7 E7 | AM7 A/G# F#m7 F#m7/E | Ebm7b5 D7b5 | DbM7 | C7b5 B7b5 | BbM7 | BbM7 |"
+  },
+  {
+    "id": 197,
+    "title": "Pent Up House",
+    "composer": "Sonny Rollins",
+    "style": "Up Tempo Swing",
+    "key": "G",
+    "rawChords": "| Am7 | D7 | GM7 | GM7 E7 | Am7 | D7 | GM7 | GM7 | Dm7 | G7 | Cm7 | F7 | Am7 | D7 | GM7 | GM7 E7 |"
+  },
+  {
+    "id": 198,
+    "title": "Perdido",
+    "composer": "Juan Tizol",
+    "style": "END",
+    "key": "Bb",
+    "rawChords": "| Cm7 | F7 | Bb6 | Dm7 G7 | Cm7 | F7 | Bb6 | Dm7 G7 | Bb6 | Bb6 | D7 | D7 | G7 | G7 | C7 | C7 | Cm7 | F7 G7 | Cm7 | F7 | Bb6 | Dm7 G7 | Cm7 | F7 | Bb6 | Dm7 G7 |"
+  },
+  {
+    "id": 199,
+    "title": "Polkadots And Moonbeams",
+    "composer": "Jimmy Van-Heusen",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Eb Cm7 | Fm7 Bb7 | EbM7 Cm7 | Fm7 Dm7b5 G7 | Cm7 Abm7 | Gm7 Gbm7 | Fm7 Bb7 | Gm7 C7 Fm7 Bb7 | Eb Am7 D7 | GM7 E7 | Am7 D7 | GM7 E7 | Am7 D7 | GM7 E7 | Am7 D7 | GM7 C7 | Fm7 Bb7 | Eb Cm7 | Fm7 Bb7 | EbM7 Cm7 | Fm7 Dm7b5 G7 | Cm7 Abm7 | Gm7 Gbm7 | Fm7 Bb7 | Eb |"
+  },
+  {
+    "id": 200,
+    "title": "Prelude To A Kiss",
+    "composer": "Duke Ellington",
+    "style": "Ballad",
+    "key": "C",
+    "rawChords": "| D7 G7 | C7 FM7 | B7 E7 | A7 Dm7 | Dm7 G7 | Am7 D7 | Dm7 G7b9 | CM7 A7 | Dm7 G7b9 | C F#m7b5 B7 | EM7 C#m7 | F#m7b5 B7 | G#m7 G°7 | F#m7 F7 | EM7 C#m7 | F#m7b5 B7 | EM7 A7 | Dm7 Ebm7 Em7 Eb7 | D7 G7 | C7 FM7 | B7 E7 | A7 Dm7 | Dm7 G7 | Am7 D7 | Dm7 G7b9 | C |"
+  },
+  {
+    "id": 201,
+    "title": "Recado (Recado Bossa Nova)",
+    "composer": "Djalma Ferreira",
+    "style": "Bossa Nova",
+    "key": "F",
+    "rawChords": "| Dm | Dm | A7b9 | A7b9 | D7 | D7b9 | Gm | Gm | Em7b5 | A7#9 | Dm | Dm | E7 | E7b9 | A7 | A7b9 | Dm | EbM7 | A7 | Dm | Dm | D7b9 | D7b9 | Gm9 | Gm9 | E7b9 | E7b9 | Am7 | A7 | Dm | EbM7 | A7 | Dm | Dm |"
+  },
+  {
+    "id": 202,
+    "title": "Recorda Me",
+    "composer": "Joe Henderson",
+    "style": "Bossa Nova",
+    "key": "C",
+    "rawChords": "| Am | Am | Am | Am | Cm | Cm | Cm | Cm7 F7 | BbM7 | Bbm7 Eb7 | AbM7 | Abm7 Db7 | GbM7 | Gm7 C7 | FM7 | E7#9 | E7#9 |"
+  },
+  {
+    "id": 203,
+    "title": "Rhythm-a-ning",
+    "composer": "Thelonious Monk",
+    "style": "Medium Up Swing",
+    "key": "Bb",
+    "rawChords": "| Bb Bb7/D | Eb7 E°7 | Bb/F G7 | Cm7 F7 | Bb7 Bb7/D | Eb7 E°7 | Bb7 | Bb7 | Bb7 | D7 | D7 | G7 | G7 | C7 | C7 | F7 | F7 | Bb Bb7/D | Eb7 E°7 | Bb/F G7 | Cm7 F7 | Bb7 Bb7/D | Eb7 E°7 | Bb7 | Bb7 |"
+  },
+  {
+    "id": 204,
+    "title": "Road Song",
+    "composer": "Wes Montgomery",
+    "style": "Latin",
+    "key": "Bb",
+    "rawChords": "| Gm7 | Gm7 | Am7b5 | D7b9 | Gm7 Bb7/F | EbM7 | Em7b5 Cm7 | D7#9 Gm7 | D7#9 Gm7 | Cm7 | F7 | BbM7 | Bm7 E7 | Bbm7 | Eb7 | AbM7 | D7 | Gm7 | Gm7 | Am7b5 | D7b9 | Gm7 Bb7/F | EbM7 | Em7b5 Cm7 | D7#9 Gm7 |"
+  },
+  {
+    "id": 205,
+    "title": "Round Midnight",
+    "composer": "Thelonious Monk",
+    "style": "SOLO",
+    "key": "Gb",
+    "rawChords": "| Ebm Ebm/D Ebm7/Db | Cm7b5 Abm7 Db7 | Ebm7 Ab7 | Bm7 E7 Bbm7 Eb7 | Abm7 Db7 | Gb G7 Ab7#11 | Cm7b5 B7 | Bb7#11 | Cm7b5 F7 Fm7b5 Bb7 | Eb | Cm7b5 F7b9 | Bb7#11 | Cm7b5 F7b9 | Bb7#11 | Abm7 Db7 | Cm7b5 F7b9 | Bbm7 Eb7 Abm7 Db7 | Gbm7 B7 Fm7b5 Bb7b9 | Ebm Ebm/D Ebm7/Db | Cm7b5 Abm7 Db7 | Ebm7 Ab7 | Bm7 E7 Bbm7 Eb7 | Abm7 Db7 | Gb G7 Ab7#11 | Cm7b5 F7 Fm7b5 Bb7 | Eb |"
+  },
+  {
+    "id": 206,
+    "title": "Samba De Orfeu",
+    "composer": "Luiz Bonfa",
+    "style": "D.C. al 2nd ending",
+    "key": "C",
+    "rawChords": "| CM7 | CM7 | CM7 | CM7 | CM7 | Em7 A7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | G7 | G7 | E7 A7 | Dm7 G7 | G7 | C6 | C6 | Gm7 | C7 | FM7 | FM7 | Fm7 | Bb7 | EbM7 | G7 |"
+  },
+  {
+    "id": 207,
+    "title": "Satin Doll",
+    "composer": "Strayhorn-Ellington",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| Dm7 G7 | Dm7 G7 | Em7 A7 | Em7 A7 | Am7 D7 | Abm7 Db7 | CM7 | Em7b5 A7 | CM7 | CM7 | Gm7 C7 | Gm7 C7 | FM7 | FM7 | Am7 D7 | Am7 D7 | Dm7 | G7 | Dm7 G7 | Dm7 G7 | Em7 A7 | Em7 A7 | Am7 D7 | Abm7 Db7 | C | Em7 A7 |"
+  },
+  {
+    "id": 208,
+    "title": "Scrapple From The Apple",
+    "composer": "Charlie Parker",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| Gm7 | C7 | Gm7 | C7b9 | F | Bb B°7 | F Gm7 | Am7 D7 | F C7 | F | Em7 | A7 | Am7 | D7 | Dm7 | G7 | Gm7 | C7 | Gm7 | C7 | Gm7 | C7b9 | F | Bb B°7 | F C7 | F |"
+  },
+  {
+    "id": 209,
+    "title": "Secret Love",
+    "composer": "Sammy Fain",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Eb | Fm7/Bb | Eb | Fm7/Bb | Eb Ab7 | Gm7 C7b9 | Fm7 | Bb7 | Fm7 | Bb7 | F#m7 | B7 | Fm7 | Bb7 | Gm7 C7b9 | Fm7 Bb7b9 | Eb | Dm7b5 G7b9 | Cm7 | F7 | BbM7 | BbM7 | Bbm7 | Eb7 | AbM7 | Abm7 Db7 | Eb | Fm7 | Gm7b5 | C7b9 | Fm7 | Bb7b9 | Eb | Fm7 Bb7b9 |"
+  },
+  {
+    "id": 210,
+    "title": "Seven Steps To Heaven",
+    "composer": "Victor Feldman",
+    "style": "SOLO",
+    "key": "F",
+    "rawChords": "| F | Em7 A7 | Dm7 Ab7 | G7 | Gm7 | C7 | Am7 D7 | Gm7 C7 | Eb6 E6 | F6 | C | Dm7 G7 | CM7 | Fm7 Bb7 | Eb | Abm7 Db7 | GbM7 | Gm7 C7 | F | Em7 A7 | Dm7 Ab7 | G7 | Gm7 | C7 | Eb6 E6 | F6 |"
+  },
+  {
+    "id": 211,
+    "title": "The Shadow Of Your Smile",
+    "composer": "Johnny Mandel",
+    "style": "Bossa Nova",
+    "key": "Bb",
+    "rawChords": "| Am7 | D7 | Gm7 | C7 | Cm7 | F7 | BbM7 | EbM7 | Am7b5 | D7 | Gm7 | Gm7 Gm7/F | Em7b5 | A7 | Am7b5 | D7 | Am7 | D7 | Gm7 | C7 | Cm7 | F7 | Dm7b5 | G7 | Cm7 | Ebm7 Ab7 | Dm7 | G7b9 | C7 | Cm7 F7b9 | Bb6 | Bb6 |"
+  },
+  {
+    "id": 212,
+    "title": "Shiny Stockings",
+    "composer": "Frank Foster",
+    "style": "Medium Swing",
+    "key": "Ab",
+    "rawChords": "| Bbm7 | Eb7 | Bbm7 | Eb7 | Ab6 | Db7 | Cm7 | B°7 | Bbm7 | Eb7 | Cm7 | F7 | Dm7 | G7 | C6 | Cm7b5 F7b9 | F7 | Bbm7/Eb | Eb7 | Ab6 | Ab6 |"
+  },
+  {
+    "id": 213,
+    "title": "Smile",
+    "composer": "Charles Chaplin",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| FM7 | FM7 | F°7 | FM7 | F6/A | Ab°7 | Gm7 | D7b9 | Gm7 | Gm7 | Bbm7 | Eb7 | F A7b9 | Dm | G7 | C7 | F | F |"
+  },
+  {
+    "id": 214,
+    "title": "Smoke Gets In Your Eyes",
+    "composer": "Jerome Kern",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Eb Gm7 Gb°7 | Fm7 Bb7 | Eb G7b13 | AbM7 A°7 | Gm7/Bb Cm7 | Fm7 Bb7 | G7 C7 | Fm7 Bb7 | Eb Ab7 | Eb Dbm7 Gb7 | BM7 | Ab7 | Dbm7 Ab7 | Dbm7 Gb7 | BM7 | Abm7 Bb7 Bb7/Ab | Gm7 C7 | Fm7 Bb7 | Eb Gm7 Gb°7 | Fm7 Bb7 | Eb G7b13 | AbM7 A°7 | Gm7/Bb Cm7 | Fm7 Bb7 | Eb Cm7 | Fm7 Bb7 |"
+  },
+  {
+    "id": 215,
+    "title": "So What",
+    "composer": "Miles Davis",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Ebm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 | Dm7 |"
+  },
+  {
+    "id": 216,
+    "title": "Softly, As In A Morning Sunrise",
+    "composer": "Sigmund Romberg",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Cm7 | Dm7b5 G7 | Cm7 | Dm7b5 G7 | Cm7 | Dm7b5 G7b9 | Cm7 | Dm7b5 G7 | Fm7 Bb7 | EbM7 | EbM7 | C7b9 | C7b9 | Fm7 | Fm7 | Dm7b5 | G7b9 | Cm7 | Dm7b5 G7 | Cm7 | Dm7b5 G7 | Cm7 | Dm7b5 G7b9 | Cm7 | Dm7b5 G7b9 |"
+  },
+  {
+    "id": 217,
+    "title": "Solar",
+    "composer": "Miles Davis",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Cm | Cm | Gm7 | C7 | FM7 | FM7 | Fm7 | Bb7 | EbM7 | Ebm7 Ab7 | Db | Dm7b5 G7 |"
+  },
+  {
+    "id": 218,
+    "title": "Some Other Blues",
+    "composer": "John Coltrane",
+    "style": "SOLO",
+    "key": "F",
+    "rawChords": "| F7 | Bb7 | F7 | F7 | Bb7 | Bb7 | F7 | D7 | Gm7 | C7 | F7 | C7 |"
+  },
+  {
+    "id": 219,
+    "title": "Someday My Prince Will Come",
+    "composer": "Frank Churchill",
+    "style": "Waltz",
+    "key": "Bb",
+    "rawChords": "| BbM7 | D7b13 | EbM7 | G7b13 | Cm7 | G7b13 | Cm7 | F7 | Dm7 | Db°7 | Cm7 | F7 | Dm7 | Db°7 | Cm7 | F7 | Fm7 | Bb7 | EbM7 | E°7 | BbM7/F | F°7 | F7sus | F7 |"
+  },
+  {
+    "id": 220,
+    "title": "Someone To Watch Over Me",
+    "composer": "George Gershwin",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| EbM7 | Am7b5 Ab° | Eb/G F#° | Fm6 Gm7 C7 | Fm7 Gm7 Ab6 | A° Bb7 | Gm7 C7 | Fm7 Bb7 | EbM7 | Bbm7 Eb7 | AbM7 | AbM7 | Ab A° | Eb7/Bb | Am7b5 | D7 | Gm7 C7b9 | Fm7 Bb7b9 | EbM7 | Am7b5 Ab° | Eb/G F#° | Fm6 Gm7 C7 | Fm7 Gm7 Ab6 | A° Bb7 | Eb C7 | Fm7 Bb7 |"
+  },
+  {
+    "id": 221,
+    "title": "Song For My Father",
+    "composer": "Horace Silver",
+    "style": "Latin",
+    "key": "Ab",
+    "rawChords": "| Fm | Fm | Fm | Fm | Fm7 | Fm7 | Eb7 | Eb7 | Db7 | C7sus | Fm7 | Fm7 | Eb7 | Eb7 | Fm7 | Fm7 | Eb7 Db7 | C7 | Fm7 | Fm7 |"
+  },
+  {
+    "id": 222,
+    "title": "The Song Is You",
+    "composer": "Jerome Kern",
+    "style": "Up Tempo Swing",
+    "key": "C",
+    "rawChords": "| C | C#°7 | Dm7 | G7 | Em7 | A7 | Dm7 | G7 | Em7 | A7 | Dm7 | G7 | Dm7b5 | G7 | Em7 A7 | Dm7 G7 | Em7 | A7 | Dm7 | G7 | C6 | Fm7 Bb7 | C6 | F#m7b5 B7 | EM7 | F°7 | F#m7 | B7 | EM7 | EM7 | A#m7b5 | D#7b9 | G#m7 | G#m7 | C#7 | C#7 | C#m7 | F#7 | F#m7 | B7 | CM7 | C#°7 | Dm7 | G7 | CM7 | Gm7 C7 | FM7 | Fm7 Bb7 | Em7 | A7b9 | Dm7 | G7 | C6 | F7 | C6 | C6 |"
+  },
+  {
+    "id": 223,
+    "title": "Sonnymoon For Two",
+    "composer": "Sonny Rollins",
+    "style": "Medium Up Swing",
+    "key": "Bb",
+    "rawChords": "| Bb7 | Eb7 | Bb7 | Bb7 | Eb7 | Eb7 | Bb7 | Bb7 | Cm7 | F7 | Bb7 G7 | Cm7 F7 |"
+  },
+  {
+    "id": 224,
+    "title": "Sophisticated Lady",
+    "composer": "Duke Ellington",
+    "style": "Ballad",
+    "key": "Ab",
+    "rawChords": "| Bbm7 | Gb7 F7 E7 Eb7 | Ab | Ab7 G7 Gb7 F7 | Bb7 | Bbm7 Eb7 | AbM7 | F7b9 | Ab | Am7b5 D7b9 | G Em7 | Am7 D7 | Bm7 E7b9 | Am7 D7b9 | G Em7 | Am7 D7 | GM7 B° Cm7 | Eb7 Db7 Cm7b5 F7b9 | Bbm7 | Gb7 F7 E7 Eb7 | Ab | Ab7 G7 Gb7 F7 | Bb7 | Bbm7 Eb7 | Ab6 Db7 | Cm7 F7b9 |"
+  },
+  {
+    "id": 225,
+    "title": "Spain",
+    "composer": "Chick Corea",
+    "style": "SOLO",
+    "key": "D",
+    "rawChords": "| GM7 | GM7 | GM7 | GM7 | F#7 | F#7 | F#7 | F#7 | Em7 | Em7 | A7 | A7 | DM7 | DM7 | GM7 | GM7 | C#7 | C#7 | F#7 | F#7 | Bsus | Bsus | B7 | B7 |"
+  },
+  {
+    "id": 226,
+    "title": "Speak Low",
+    "composer": "Kurt Weill",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| Gm9 | C7 | Gm9 | C7 | Gm9 C7 | Gm9 C7 | Am7 | D7 | Bbm9 | Eb7 | Bbm7 | Eb7 | Am7 D7 | Gm7 C7 | F | D7 | F | F | AbM7 | AbM7 | Db7#11 | Db7#11 | EbM7 | EbM7 | Db7 | C7 | Gm9 | C7 | Gm9 | C7 | Gm9 C7 | Gm9 C7 | Am7 | D7 | Bbm9 | Eb7 | Am7 | D7 | Gm7 | C7 | F | F |"
+  },
+  {
+    "id": 227,
+    "title": "Spring Can Really Hang You Up The Most",
+    "composer": "Tommy Wolf",
+    "style": "SOLO",
+    "key": "C",
+    "rawChords": "| CM7 BbM7 | CM7 BbM7 | CM7 Am7 Dm7 G7 | Em7 A7b9 | F#m7b5 Fm7 | Em7 Am7 D7 | Dm7 G7 | CM7 BbM7 | Dm7 G7 | CM7 | Gm7 CM7 | Gm7 CM7 | Gm7 CM7 | Gm7 CM7 | Cm7 FM7 | Cm7 FM7 | F#m7 B7 EM7 | Am7 D7 | GM7 FM7 | CM7 BbM7 | CM7 Am7 Dm7 G7 | Em7 A7b9 | F#m7b5 Fm7 | Em7 Am7 D7 | Dm7 G7 | Em7 A7b9 | Dm7 G7 | CM7 BbM7 |"
+  },
+  {
+    "id": 228,
+    "title": "St. Thomas",
+    "composer": "Sonny Rollins",
+    "style": "Latin",
+    "key": "C",
+    "rawChords": "| C6 | A7 | Dm7 G7 | C6 | C6 | A7 | Dm7 G7 | C6 | Em7b5 | A7 | Dm7 | G7 | C C7/E | F6 F#°7 | C6/G G7 | C6 |"
+  },
+  {
+    "id": 229,
+    "title": "Stablemates",
+    "composer": "Benny Golson",
+    "style": "Medium Swing",
+    "key": "Db",
+    "rawChords": "| Em7 A7 | Ebm7 Ab7 | DbM7 | C7+ | Abm7 | Db7 | GbM7 | Gm7b5 C7 | Fm7 | Bb7#9 | Ebm7 | D7 | DbM7 | DbM7 | Fm7 | Gb7 | G7+ | C7 | B7 | Bb7 | A7 | Ab7 | Em7 A7 | Ebm7 Ab7 | DbM7 | C7+ | Abm7 | Db7 | Gb | Gm7b5 C7 | Fm7 | Bb7#9 | Ebm7 | D7 | DbM7 | DbM7 |"
+  },
+  {
+    "id": 230,
+    "title": "Star Eyes",
+    "composer": "Gene DePaul",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| EbM7 | Fm7 Bb7 | EbM7 | Ebm7 Ab7 | DbM7 | Gm7b5 C7#9 | FM7 | Fm7b5 Bb7 | Fm7b5 Bb7 Eb7 | AbM7 | AbM7 | Abm7 | Db7 | GbM7 | GbM7 | Fm7 | Bb7 | EbM7 | Fm7 Bb7 | EbM7 | Ebm7 Ab7 | DbM7 | Gm7b5 C7#9 | FM7 | Fm7b5 Bb7 | Eb7 D7 | Db7 C7 | Fm7 Bb7sus | Eb Bb7 |"
+  },
+  {
+    "id": 231,
+    "title": "Stardust",
+    "composer": "Hoagy Carmichael",
+    "style": "Ballad",
+    "key": "Db",
+    "rawChords": "| DbM7 | Gb7#11 | F7b9 | Bb7 | Ebm7 Ab7 | Fm7 Bb7 | Gm7 C7 | Ebm7 Ab7 | Ebm7 Ab7 | Db Db7 | Gb6 | Gb6 | Gbm6 | B7 | Db GbM7 | Fm7 Bb7 | Ebm7 Bb7 | Ebm7 | Ab7 | Ebm7 Ab7 | DbM7 Ebm7 E° | Fm7 Bbm7 | Eb7 | Bbm7 Eb7 | Ab Eb7 | Ab7 Db7+ | Gbm7 | B7 | DbM7 GbM7 | Fm7 Bb7 | Ebm7 | Ab7 | Db | Abm7 Db7 |"
+  },
+  {
+    "id": 232,
+    "title": "Stella By Starlight",
+    "composer": "Victor Young",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| Em7b5 | A7b9 | Cm7 | F7 | Fm7 | Bb7 | EbM7 | Ab7 | BbM7 | Em7b5 A7b9 | Dm7 | Bbm7 Eb7 | FM7 | Gm7 C7 | Am7b5 | D7b9 | G7b13 | G7b13 | Cm7 | Cm7 | Ab7#11 | Ab7#11 | BbM7 | BbM7 | Em7b5 | A7b9 | Dm7b5 | G7b9 | Cm7b5 | F7b9 | BbM7 | BbM7 |"
+  },
+  {
+    "id": 233,
+    "title": "Stolen Moments",
+    "composer": "Oliver Nelson",
+    "style": "Solos on C- Blues",
+    "key": "Eb",
+    "rawChords": "| Cm7 | Dm7/C | EbM7/C | Dm7/C | Cm7 | Cm6 | Cm7 | Cm6 | Fm7 | Fm6 | Cm7 | Cm6 | Dm11 D#m11 | Em11 Fm11 | F#m11 Fm11 | Em11 Ebm11 | Dm7 D#m11 | Em Fm | Cm | G7b13 |"
+  },
+  {
+    "id": 234,
+    "title": "Stompin' At The Savoy",
+    "composer": "Webb-Goodman-Sampson",
+    "style": "Medium Swing",
+    "key": "Db",
+    "rawChords": "| DbM7 | DbM7 Ab7 | DbM7 Gb7 | Fm7 Bb7b9 | Ebm7 | Ab7 | DbM7 Bb7 | Ebm7 Ab7 | DbM7 | DbM7 Db7 | Gb7 G7 | Gb7 | B7 C7 | B7 | E7 F7 | E7 | A7 | Ab7 | DbM7 | DbM7 Ab7 | DbM7 Gb7 | Fm7 Bb7b9 | Ebm7 | Ab7 | DbM7 | DbM7 |"
+  },
+  {
+    "id": 235,
+    "title": "Straight No Chaser",
+    "composer": "Thelonious Monk",
+    "style": "Medium Up Swing",
+    "key": "F",
+    "rawChords": "| F7 | Bb7 | F7 | F7 | Bb7 | Bb7 | F7 | Am7 D7 | Gm7 | C7 | F7 | F7 |"
+  },
+  {
+    "id": 236,
+    "title": "Strollin'",
+    "composer": "Horace Silver",
+    "style": "SOLO",
+    "key": "Db",
+    "rawChords": "| DbM7 | DbM7 | Em7 A7 | Ebm7 Ab7 | Db | Db | Abm7 Db7 | Gm7 C7 | Fm7 | Bb7 | Ebm7 | Ab7 | DbM7 | Bbm7 | Eb7#11 | D7#9 | Fm7 | Bbm7 | Eb7#11 | F#m7 B7 | Fm7 Bb7 | Ebm7 Ab7 | DbM7 Bb7 | Ebm7 Ab7 |"
+  },
+  {
+    "id": 237,
+    "title": "Summertime",
+    "composer": "George Gershwin",
+    "style": "Slow Swing",
+    "key": "C",
+    "rawChords": "| Am7 | Bm7b5 E7 | Am7 | Am7 | Dm7 | F7 | Bm7b5 | E7 | Am7 | Bm7b5 E7 | Am7 | Dm7 G7 | CM7 FM7 | Bm7b5 E7 | Am7 | Bm7b5 E7 |"
+  },
+  {
+    "id": 238,
+    "title": "Take Five",
+    "composer": "Paul Desmond",
+    "style": "Medium Up Swing",
+    "key": "Gb",
+    "rawChords": "| Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | BM7 Abm6 | Bbm7 Ebm7 | Abm7 Db7 | GbM7 | BM7 Abm6 | Bbm7 Ebm7 | Abm7 Db7 | Fm7 Bb7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 | Ebm Bbm7 |"
+  },
+  {
+    "id": 239,
+    "title": "Take The A Train",
+    "composer": "Billy Strayhorn",
+    "style": "Medium Up Swing",
+    "key": "C",
+    "rawChords": "| C6 | C6 | D7+ | D7+ | Dm7 | G7 | C6 | Dm7 G7 | Gm7 C7 | FM7 | FM7 | FM7 | FM7 | D7 | D7 | Dm7 | G7 G7b9 | C6 | C6 | D7+ | D7+ | Dm7 | G7 | C6 | C6 |"
+  },
+  {
+    "id": 240,
+    "title": "Tell me a bedtime story",
+    "composer": "Herbie Hancock",
+    "style": "Fine",
+    "key": "C",
+    "rawChords": "| GM7#11 | GM7#11 | F#m7 | F#m7 | GM7#11 | GM7#11 | F#m7 | F#m7 | GM7#11 | GM7#11 | F#m7 | F#m7 | GM7#11 | F#m7 | CM7#11 | CM7#11 | BM7 GM7 | EM7 CM7 | BM7 GM7 | EM7 CM7 | B7sus | B7+ | EM7 E7#9 | Eb7#9 | DM7 | Db7#9 | CM7#11 | CM7#11 | BM7 GM7 | EM7 CM7 | BM7 GM7 | EM7 CM7 | B7sus Bb7sus | A7sus | Abm7 | GM7 | Dbm7 | Ebm7 | Em7 | F#m7 | GM7#11 | GM7#11 | F#m7 | F#m7 | Em7 | A7 | DM7 | CM7 | BM7 GM7 | EM7 CM7 | BM7 GM7 | EM7 CM7 | EM7 CM7 | BM7 GM7 | EM7 CM7 | CM7 |"
+  },
+  {
+    "id": 241,
+    "title": "Tenderly",
+    "composer": "Walter Gross",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| EbM7 | Ab7 | Ebm7 | Ab7 | Fm7 | Db7#11 | EbM7 | Gm7b5 C7b9 | Fm7b5 | Bb7 | Fm7b5 | Bb7 B°7 | Cm7 | F7 | Fm7 | Bb7 | Fm7b5 | Bb7 B°7 | Cm7 | F7 F#°7 | Gm7 C7b13 | Fm7 Bb7 | Eb6 | Fm7 Bb7 |"
+  },
+  {
+    "id": 242,
+    "title": "Tenor Madness",
+    "composer": "Sonny Rollins",
+    "style": "Medium Up Swing",
+    "key": "Bb",
+    "rawChords": "| Bb7 | Eb7 | Bb7 | Bb7 | Eb7 | Eb7 | Bb7 | Bb7 | Cm7 | F7 | Bb7 | Bb7 |"
+  },
+  {
+    "id": 243,
+    "title": "There Is No Greater Love",
+    "composer": "Isham Jones",
+    "style": "Medium Swing",
+    "key": "Bb",
+    "rawChords": "| BbM7 | Eb7 | Ab7 | G7 | C7 | C7 | Cm7 | F7 | C7 | Cm7 F7 | Bb | Bb | Am7b5 D7 | Gm | Am7b5 D7 | Gm | Am7b5 D7 | Gm | C7 | F7 | BbM7 | Eb7 | Ab7 | G7 | C7 | Cm7 F7 | Bb | Cm7 F7 |"
+  },
+  {
+    "id": 244,
+    "title": "There Will Never Be Another You",
+    "composer": "Harry Warren",
+    "style": "Medium Up Swing",
+    "key": "Eb",
+    "rawChords": "| EbM7 | EbM7 | Dm7b5 | G7b9 | Cm7 | F7 | Bbm7 | Eb7 | AbM7 | Db7#11 | EbM7 | Cm7 | F7 | F7 | Fm7 | Bb7 | AbM7 | Db7#11 | EbM7 | Am7b5 D7 | Eb6 Ab7#11 | Gm7 C7 | Fm7 Bb7 | Eb6 Bb7 |"
+  },
+  {
+    "id": 245,
+    "title": "They Can't Take That Away From Me",
+    "composer": "George Gershwin",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| EbM7 Fm7 | Eb/G Gb°7 | Fm7 | Bb7sus | Bbm7 | Eb7 | AbM7 C7 | Fm7 Bb7sus | AbM7 Bb7 | EbM7 Am7b5 D7 | Gm7 D7 | Gm7 D7 | Gm7 Em7b5 | Am7b5 D7 | Gm7 D7 | Gm7 C7 | F7 | Bb7sus | EbM7 Fm7 | Eb/G Gb°7 | Fm7 | Bb7sus | Bbm7 | Eb7 | AbM7 Bb7 | Eb6 Abm6 | Gm7 C7 | Fm7 Bb7 | Eb6 | Fm7 Bb7 |"
+  },
+  {
+    "id": 246,
+    "title": "Triste",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "Bossa Nova",
+    "key": "Bb",
+    "rawChords": "| BbM7 | BbM7 | GbM7 | BM7#11 | BbM7 | BbM7 | Dm7 | G7b9 | Cm7 Cm7/Bb | Am7b5 D7#9 | Gm7 Gm7/F | Em7b5 A7#9 | DM7 | Em7 A7 | Dm7 G7 | Cm7 F7 | BbM7 | BbM7 | Bbm7 | Eb7 | BbM7 | BbM7 | Fm7 | Bb7b9 | EbM7 | Ab7#11 | Dm7 Gm7 | C7#11 | Cm7 | F7 | Bbm7 Eb7 | Bbm7 Eb7 | Bbm7 Eb7 | Bbm7 Eb7 |"
+  },
+  {
+    "id": 247,
+    "title": "Tune Up",
+    "composer": "Miles Davis",
+    "style": "Up Tempo Swing",
+    "key": "Bb",
+    "rawChords": "| Em7 | A7 | DM7 | DM7 | Dm7 | G7 | CM7 | CM7 | Cm7 | F7 | BbM7 | Gm7 | Em7 | F7 | BbM7 | A7 | Em7 | A7 | DM7 | DM7 |"
+  },
+  {
+    "id": 248,
+    "title": "Two For The Road",
+    "composer": "Henry Mancini",
+    "style": "Ballad",
+    "key": "C",
+    "rawChords": "| Bm7b5 | E7b9 | Am9 Am7/G | FM7 FM7/E | Dm7 | G7sus G7b9 | F°7/C CM7 | CM7 Bm7b5 E7 | Am7 E7b9 | Am7 D7 | Gm7 GmM7 | Gm7 Gm6 | Am7b5 D7b9 | Gm7b5 C7b9 | FM7 | FM7 | Gm7 C7 | FM7 | Fm6 Bb7 | C/E | FM7 F#m7b5 B7 | Em7 Am7 | Dm7 G7 | C6 | C6 |"
+  },
+  {
+    "id": 249,
+    "title": "Up Jumped Spring",
+    "composer": "Freddie Hubbard",
+    "style": "D.C. al 3rd ending",
+    "key": "Bb",
+    "rawChords": "| BbM7 | G7b13 | Cm7 | F7 F#°7 | Gm7 | Fm7 | Em7 | A7 | Dm7 | Ebm7 | Dm7 | Ebm7 | Bm7b5 | E7 | Cm7b5 | F7 | Cm7 | F7 | Bb6 | Am7b5 D7 | Gm7 | C7 | FM7 | Dm7 | Abm7 | Db7 | Cm7 | F7 | Cm7 | F7 | BM7 | BM7 BbM7 |"
+  },
+  {
+    "id": 250,
+    "title": "Very Early",
+    "composer": "Bill Evans",
+    "style": "Waltz",
+    "key": "C",
+    "rawChords": "| CM7 | Bb7 | EbM7 | Ab7#9 | DbM7 | G7 | CM7 | Bb7 | DM7 | Am7 | F#m7 | B7b9 | Em7 | Ab7 | DbM7 | G7 | G7 | BM7 | Ab7 | DbM7 | Bb7 | BM7 | G7 | CM7 | Ab7 | DbM7 | G7 | CM7 | A7 | Dm7 Em7 | F G7 | CM7 | G7 |"
+  },
+  {
+    "id": 251,
+    "title": "Walkin'",
+    "composer": "Richard Carpenter",
+    "style": "Up Tempo Swing",
+    "key": "F",
+    "rawChords": "| F7 | Bb7 | F7 | F7 | Bb7 | Bb7 | F7 | F7 | Gm7 | C7 | F7 | C7 |"
+  },
+  {
+    "id": 252,
+    "title": "Waltz For Debby",
+    "composer": "Bill Evans",
+    "style": "SOLO",
+    "key": "F",
+    "rawChords": "| Am7 Dm7 | Gm7 C7 | A7 D7 | G7 C7 | F7 Bb6 | Gm7b5 C7 | Am7 Dm7 | Gm7 C7 | Am7 Dm7 | Gm7 C7 | A7 D7 | G7 C7 | A7 Dm7 | B7 E7 | AM7 | AM7 | Gm7 C7 | Am7 D7 | Gm7 A7 | Dm7 Cm7 | BbM7 A7 | Dm7 G7 | AbM7 DbM7 | Gm7 C7 | Am7 Dm7 | Gm7 C7 | A7 D7 | G7 C7 | F7 Bb6 | Gm7b5 C7 | Am7 D7 | Bm7 E7 | Am7 F7 | BbM7 A7b9 | Dm7 | G7 Ab°7 | Am7 Ab°7 | Gm7 C7 | F6 Dm7 | Gm7 C7 |"
+  },
+  {
+    "id": 253,
+    "title": "Watermelon Man",
+    "composer": "Herbie Hancock",
+    "style": "Even 8ths",
+    "key": "F",
+    "rawChords": "| F7 | F7 | F7 | F7 | Bb7 | Bb7 | F7 | F7 | C7 | Bb7 | C7 | Bb7 | C7 | Bb7 | F7 | F7 |"
+  },
+  {
+    "id": 254,
+    "title": "Wave",
+    "composer": "Antonio-Carlos Jobim",
+    "style": "END",
+    "key": "D",
+    "rawChords": "| DM7 | Bb°7 | Am7 | D7b9 | GM7 | C7 | F#7 | B7 | E7 | Bb7 A7 | Dm7 G7 | Dm7 G7 | Dm7 G7 | Gm7 | C7 | FM7 | FM7 | Fm7 | Bb7 | EbM7 | A7b9 | DM7 | Bb°7 | Am7 | D7b9 | GM7 | C7 | F#7 | B7 | E7 | Bb7 A7 | Dm7 G7 | Dm7 G7 |"
+  },
+  {
+    "id": 255,
+    "title": "Well You Needn't",
+    "composer": "Thelonious Monk",
+    "style": "Medium Swing",
+    "key": "F",
+    "rawChords": "| F7 | Gb7 | F7 | Gb7 | F7 | Gb7 | F7 | F7 | G7 | G7 | Ab7 | Ab7 | A7 Bb7 | B7 Bb7 | A7 Ab7 | G7 C7 | F7 | Gb7 | F7 | Gb7 | F7 | Gb7 | F7 | F7 |"
+  },
+  {
+    "id": 256,
+    "title": "What A Difference A Day Made",
+    "composer": "Maria Grever",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Fm7 | Bb7 | EbM7 Ab7 | Gm7 C7#9 | Fm7 | Bb7 | EbM7 | EbM7 | Dm7 | G7 | Cm | Cm | Cm7 | F7 | Fm7 | Bb7 | Fm7 | Bb7 | EbM7 Ab7 | Gm7 C7#9 | Fm7 | Bb7 | Bbm7 | Eb7 | AbM7 | Db7#11 | EbM7 | Gb°7 | Fm7 | Bb7 | Eb6 | Gm7 C7 |"
+  },
+  {
+    "id": 257,
+    "title": "What A Wonderful World",
+    "composer": "Weiss-Thiele",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| F Am | BbM7 Am | Gm7 F | A7b9 Dm | DbM7 | Gm7 C7 | F B7#11 | BbM7 C7 | F Am | BbM7 Am | Gm7 F | A7b9 Dm | DbM7 | Gm7 C7 | F Bb/F | F7sus F | Gm7 C7 | F | Gm7 C7 | F | Dm C | Dm C | Dm F#°7 | Gm7 C7 | F Am | BbM7 Am | Gm7 F | A7b9 Dm | DbM7 | Gm7 C7 | F Am7b5/Eb | D7 | Gm7 | Gm7/C C7 | F Bb/F | F |"
+  },
+  {
+    "id": 258,
+    "title": "What Are You Doing The Rest Of Your Life?",
+    "composer": "Michel Legrand",
+    "style": "Ballad",
+    "key": "C",
+    "rawChords": "| Am AmM7 | Am7 Am6 | FM7 | FM7 Em7 | Dm7 | Dm7 Dm7/C | Bm7b5 | E7 | Bm7b5 E7 | AM7 | AM7 | Bm7 E7 | AM7 F#m7 | Bm7 E7 | AM7 | Abm7 Db7 | GbM7 | Gm7 C7 | FM7 E7 | Am AmM7 | Am7 Am6 | FM7 | FM7 Em7 | Dm7 | Dm7 Dm7/C | Bm7b5 | E7 | FM7 | Bm7b5 E7 | FM7 | F7#11 | Am/E | Bm7 E7 | Am | Bm7b5 E7b9 |"
+  },
+  {
+    "id": 259,
+    "title": "What Is This Thing Called Love",
+    "composer": "Cole Porter",
+    "style": "Up Tempo Swing",
+    "key": "C",
+    "rawChords": "| Gm7b5 | C7 | Fm | Fm | Dm7b5 | G7b13 | CM7 | CM7 | C | C | Cm7 | F7 | BbM7 | BbM7 | Ab7 | Ab7 | G7 | G7 | Gm7b5 | C7 | Fm | Fm | Dm7b5 | G7b13 | C | C |"
+  },
+  {
+    "id": 260,
+    "title": "What's New",
+    "composer": "Bob Haggard",
+    "style": "Ballad",
+    "key": "C",
+    "rawChords": "| C6 | Bbm7 Eb7 | AbM7 | Dm7b5 G7 | Cm Cm/B Cm/Bb Cm/A | AbM7 G7b13 | C6 Am7 | Dm7 G7 | C6 | C7 | F6 | Ebm7 Ab7 | DbM7 | Gm7b5 C7 | Fm Fm/E Fm/Eb Fm/D | DbM7 C7b13 | F6 | Dm7b5 G7 | C6 | Bbm7 Eb7 | AbM7 | Dm7b5 G7 | Cm Cm/B Cm/Bb Cm/A | AbM7 G7b13 | C6 Am7 | Dm7 G7 |"
+  },
+  {
+    "id": 261,
+    "title": "When I Fall In Love",
+    "composer": "Victor Young",
+    "style": "Ballad",
+    "key": "Eb",
+    "rawChords": "| Eb C7b13 | Fm7 Bb7 | EbM7 C7 | Fm7 Bb7 | EbM7 Ab7 | Db7 C7 | Fm7 | Bb7 | EbM7 A7 | AbM7 Db7 | Gm7 AbM7 | Gm7b5 C7b13 | Fm7 D7#9 | Db7 C7 | Fm7 C7b13 | Fm7 Bb7 | EbM7 EbM7/D EbM7/C EbM7/Bb | Am7b5 D7 | Gm7 C7 | Fm7 Db7 | EbM7 C7 | B7 Bb7 | Eb6 | Fm7 Bb7 |"
+  },
+  {
+    "id": 262,
+    "title": "When Sunny Gets Blue",
+    "composer": "Marvin Fisher",
+    "style": "Ballad",
+    "key": "F",
+    "rawChords": "| Gm7 C7 | Bbm7 Eb7 | FM7 Gm7 | Am7 D7 | Bm7b5 Bbm7 Eb7 | F/A Abm7 Db7 | Gm7 C7 Bb7 | Am7 D7b9 | Em7 A7b9 | DM7 Em7 | F#m7 B7 | Em7 A7 | DM7 | Dm7 G7 | CM7 Am7 | FM7 Dm7 G7 | Gm7 C7 | Gm7 C7 | Bbm7 Eb7 | FM7 Gm7 | Am7 D7 | Bm7b5 Bbm7 Eb7 | F/A Abm7 Db7 | Gm7 C7#9 | FM7 Gb7 | FM7 Gb7 | Gm7 C7#9 | FM7 | FM7 |"
+  },
+  {
+    "id": 263,
+    "title": "When You Wish Upon A Star",
+    "composer": "Leigh Harline",
+    "style": "Ballad",
+    "key": "C",
+    "rawChords": "| C A7 | Dm7 | Dm7 G7 | C | Em7 Eb°7 | Dm7 | Dm7 G7 | Em7 A7 Dm7 G7 | Dm7 G7 | C | Dm7 G7 | C | Dm7 G7 | C | Am7 | D7 | Dm7b5 | G7 | C A7 | Dm7 | Dm7 G7 | C | Em7 Eb°7 | Dm7 | Dm7 G7 | C |"
+  },
+  {
+    "id": 264,
+    "title": "Whisper Not",
+    "composer": "Benny Golson",
+    "style": "Medium Swing",
+    "key": "Eb",
+    "rawChords": "| Cm7 Cm7/Bb | Am7b5 D7b9 | Gm Gm/F | Em7b5 A7b9 | Dm7 Bm7b5 | Em7b5 A7b9 | Dm7 Em7 | Fm7 G7b9 | Em7b5 A7b9 | Dm7 Em7 | Fm7 Bb7 | Am7b5 | D7 C/E D7/F# | Gm7 | Gm7/F | Em7b5 | A7b9 | Dm7b5 | G7b9 | Cm7 Cm7/Bb | Am7b5 D7b9 | Gm Gm/F | Em7b5 A7b9 | Dm7 Bm7b5 | Em7b5 A7b9 | Dm7 Dm7/C | Ab7 G7#9 |"
+  },
+  {
+    "id": 265,
+    "title": "White Christmas",
+    "composer": "Irving Berlin",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| C | A7 | Dm7 | G7 | F | G7 | C | Dm7 G7 | C | Gm7 C7 | F | Fm7 | Em7 | A7 | Dm7 | G7 | C | Gm7 C7 | F | Fm7 | Em7 A7 | Dm7 G7 | C | Dm7 G7 |"
+  },
+  {
+    "id": 266,
+    "title": "Woody'n You",
+    "composer": "Dizzy Gillespie",
+    "style": "Up Tempo Swing",
+    "key": "Db",
+    "rawChords": "| Gm7b5 | C7#9 | Fm7b5 | Bb7#9 | Ebm7b5 | Ab7#9 | DbM7 | DbM7 | Abm7 Db7 | Abm7 Db7 | Abm7 Db7 | GbM7 | Bbm7 Eb7 | Bbm7 Eb7 | Bbm7 Eb7 | AbM7 | Gm7b5 | C7#9 | Fm7b5 | Bb7#9 | Ebm7b5 | Ab7#9 | DbM7 | DbM7 |"
+  },
+  {
+    "id": 267,
+    "title": "Work Song",
+    "composer": "Nat Adderley",
+    "style": "Medium Up Swing",
+    "key": "Ab",
+    "rawChords": "| Fm | Fm | Fm | Fm | Fm | Fm | G7 | C7 | Fm | Fm | Fm | Fm | F7 | Bb7 | C#7 C7 | Fm |"
+  },
+  {
+    "id": 268,
+    "title": "Yardbird Suite",
+    "composer": "Charlie Parker",
+    "style": "Medium Up Swing",
+    "key": "C",
+    "rawChords": "| C | Fm7 Bb7 | C7 Bb7 | A7 | D7 | G7 | Em7 A7 | Dm7 G7 | C7 | F#m7b5 B7 | Em7 | F#m7b5 B7#9 | Em7 | A7 | Dm7 | Em7b5 A7 | D7 | Dm7 G7 | C | Fm7 Bb7 | C7 Bb7 | A7 | D7 | Dm7 G7 | C | Dm7 G7 |"
+  },
+  {
+    "id": 269,
+    "title": "Yes And No",
+    "composer": "Wayne Shorter",
+    "style": "D.C. al Fine",
+    "key": "D",
+    "rawChords": "| D7sus | D7sus | D7sus | D7sus | DM7 | DM7 | DM7 | DM7 | Am7 D7 | GM7 F7 | BbM7 | BbM7 | Em7 | Em7 | Am7b5 | Am7b5 | D7b9 | D7b9 | Gm7 | Gm7 | C7 | C7 | Fm7 | Fm7 | Bb7 | Bb7 | EbM7 | EbM7 | Am7 | D7 |"
+  },
+  {
+    "id": 270,
+    "title": "Yesterdays",
+    "composer": "Jerome Kern",
+    "style": "Medium Up Swing",
+    "key": "F",
+    "rawChords": "| Dm | Em7b5 A7 | Dm | Em7b5 A7 | Dm DmM7/C# | Dm7/C | Bm7b5 | E7 | A7b13 | D7 | G7 | C7 | F7 | BbM7 | Em7b5 | A7 | F7 | BbM7 | Em7b5 | A7 |"
+  },
+  {
+    "id": 271,
+    "title": "You And The Night And The Music",
+    "composer": "Arthur Schwartz",
+    "style": "Medium Up Swing",
+    "key": "Eb",
+    "rawChords": "| Cm9 | Dm7b5 G7 | Gm7b5 C7b9 | Fm7 | Dm7b5 | G7b9 | CM7 | Ab7 G7 | Ab7 G7 | Ab7 | Ab7 | G7 | G7 | Ab7 | Ab7 | G7 | G7 | Cm9 | Dm7b5 G7 | Gm7b5 C7b9 | Fm7 | Dm7b5 G7b9 | Cm7 Am7b5 | Ab7 G7 | Cm9 |"
+  },
+  {
+    "id": 272,
+    "title": "You Don't Know What Love Is",
+    "composer": "Raye-DePaul",
+    "style": "Ballad",
+    "key": "Ab",
+    "rawChords": "| Fm7 | Db7 C7b9 | Fm7 Gb7 | Db7 | Gm7b5 C7b9 | Fm7 Bb7 Ebm7 Ab7 | Db7 | Gm7b5 C7b9 | Db7 C7b9 | Fm6 | Bbm7 Eb7 | AbM7 F7 | Bbm7 Eb7 | AbM7 | Dm7 G7 | CM7 | Db7#11 | C7b9 | Fm7 | Db7 C7b9 | Fm7 Gb7 | Db7 | Gm7b5 C7b9 | Fm7 Bb7 Ebm7 Ab7 | Db7 C7b9 | Fm6 |"
+  },
+  {
+    "id": 273,
+    "title": "You Must Believe In Spring",
+    "composer": "Michel Legrand",
+    "style": "Ballad",
+    "key": "D",
+    "rawChords": "| C#m7b5 G7 F#7 | C#m7b5/B Bm7/A | GM7 Em7 A7 | C#°/D DM7 | G#m7b5 C#7sus C#7 | F#m7b5 B7sus B7 | Em7 A7sus A7 | DM7 Ab7+ | Gm7b5 C7sus C7 | Fm7 Bb7sus Bb7 | EbM7 A7+ | Dm7b5 Ab7 G7 | Dm7b5/C Cm7/Bb | AbM7 Fm7 Bb7 | D°/Eb EbM7 | Am7b5 D7sus D7 | Gm7b5 C7sus C7 | Fm7 Bbsus Bb7 | EbM7 Ab7#11 | Dm7b5 Ab7 G7 | Cm |"
+  },
+  {
+    "id": 274,
+    "title": "You Stepped Out Of A Dream (Ziegfeld Girl)",
+    "composer": "Gus Kahn",
+    "style": "Medium Swing",
+    "key": "C",
+    "rawChords": "| CM7 | CM7 | DbM7 | DbM7 | Eb7 | Eb7 | AbM7 | AbM7 | Gm7 | C7 | FM7 | FM7 | Am7 | D7 | Ebm7 Ab7 | Dm7 G7 | CM7 | CM7 | DbM7 | DbM7 | Eb7 | Eb7 | Gb7#11 | F7 | Dm7b5 | G7 | C7 F7#11 | Em7 Am7 | Dm7 | G7 | CM7 A7 | Dm7 G7 |"
+  },
+  {
+    "id": 275,
+    "title": "You'd Be So Nice To Come Home To",
+    "composer": "Cole Porter",
+    "style": "Medium Up Swing",
+    "key": "Bb",
+    "rawChords": "| Gm | Am7b5 D7 | Gm | Gm | Fm7 | Bb7 | EbM7 | EbM7 | Am7b5 | D7 | Am7b5 D7 | Gm7 | Em7b5 | A7 | Am7b5 | D7 | Gm | Am7b5 D7 | Gm7 | Gm7 | Fm7 | Bb7 | EbM7 | EbM7 | Em7b5 A7 | Dm7 | Am7b5 D7 | Gm7 | C7 | F7 | Bb | Am7b5 D7 |"
+  }
+]

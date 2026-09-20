@@ -49,14 +49,18 @@ class AudioEngine {
     this.backingEnabled = enabled;
   }
 
-  // 演奏スタート (countInBeats: 0, 4, 8)
-  start(countInBeats = 4) {
+  // 演奏スタート (countInBeats: 0, 4, 8, startMeasure: 開始小節インデックス)
+  start(countInBeats = 4, startMeasure = 0) {
     this.initAudio();
-    this.stop();
+
+    if (this.timerId) clearTimeout(this.timerId);
+    this.stopActiveBackingTones();
 
     this.isPlaying = true;
     this.isPaused = false;
-    this.currentMeasure = 0;
+    
+    const maxIdx = (this.songData?.measures?.length || 1) - 1;
+    this.currentMeasure = Math.max(0, Math.min(startMeasure, maxIdx));
     this.currentBeat = 0;
     this.countInBeatsLeft = countInBeats;
 

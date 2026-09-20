@@ -20,7 +20,8 @@ const state = {
   showFretboard: false,
   enableBacking: true,
   isPlaying: false,
-  isPaused: false
+  isPaused: false,
+  selectedMeasureIndex: 0
 };
 
 // DOM要素参照
@@ -105,6 +106,7 @@ function updateTransposeOptions(originalKeyStr) {
 // 曲の読み込み
 function loadSong(song) {
   audioEngine.stop();
+  state.selectedMeasureIndex = 0;
   updatePlayButtonsState(false, false);
 
   state.currentSong = song;
@@ -117,7 +119,7 @@ function loadSong(song) {
   elements.songInfoBadge.textContent = `${song.title} | 原曲Key: ${song.key} | ${song.style}`;
 
   // 初期表示のリードシート、表示エリアの更新
-  renderCurrentState();
+  renderCurrentState(0, 0);
 }
 
 // アプリ全体の表示を現在の設定と曲状態に合わせて再描画
@@ -159,6 +161,7 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
     state.transposition,
     currentMeasureIdx,
     (clickedMeasureIdx) => {
+      state.selectedMeasureIndex = clickedMeasureIdx;
       audioEngine.jumpToMeasure(clickedMeasureIdx);
       renderCurrentState(clickedMeasureIdx, 0);
     }
@@ -240,10 +243,10 @@ function setupEventListeners() {
   // スタート / 一時停止 トグルボタン
   elements.btnStart.addEventListener('click', () => {
     if (!state.isPlaying && !state.isPaused) {
-      // 最初からのスタート
+      // 選択中の小節から再生スタート
       audioEngine.setBpm(state.bpm);
       audioEngine.setBackingEnabled(state.enableBacking);
-      audioEngine.start(state.countInBeats);
+      audioEngine.start(state.countInBeats, state.selectedMeasureIndex);
       updatePlayButtonsState(true, false);
     } else if (state.isPlaying) {
       // 再生中 -> 一時停止へ
@@ -259,6 +262,7 @@ function setupEventListeners() {
   // リセット
   elements.btnReset.addEventListener('click', () => {
     audioEngine.stop();
+    state.selectedMeasureIndex = 0;
     updatePlayButtonsState(false, false);
     elements.countinBadge.style.display = 'none';
     renderCurrentState(0, 0);

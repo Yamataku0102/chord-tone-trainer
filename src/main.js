@@ -3,7 +3,7 @@
  */
 import songsData from './data/songs.json';
 import { parseIrealChords } from './irealParser.js';
-import { transposeChord, formatChordForDisplay, getFormattedChordTones } from './chordUtils.js';
+import { transposeChord, formatChordForDisplay, getFormattedChordTonesByOrder } from './chordUtils.js';
 import { audioEngine } from './audioEngine.js';
 import { renderLeadSheet } from './components/LeadSheet.js';
 import { renderFretboard } from './components/Fretboard.js';
@@ -14,8 +14,7 @@ const state = {
   parsedSong: null,
   transposition: 0,
   bpm: 60,
-  countMode: 'R+3+5+7',
-  startDegree: 'R',
+  selectedDegreeOrder: ['R', '3', '5', '7'], // 表示・出順の度数配列
   countInBeats: 4,
   showFretboard: false,
   enableBacking: true,
@@ -39,9 +38,12 @@ const elements = {
   transposeSelect: document.getElementById('transpose-select'),
   toggleFretboard: document.getElementById('toggle-fretboard'),
   toggleBacking: document.getElementById('toggle-backing'),
-  countModeSelect: document.getElementById('count-mode-select'),
-  startDegreeSelect: document.getElementById('start-degree-select'),
   countinSelect: document.getElementById('countin-select'),
+  btnDegR: document.getElementById('btn-deg-R'),
+  btnDeg3: document.getElementById('btn-deg-3'),
+  btnDeg5: document.getElementById('btn-deg-5'),
+  btnDeg7: document.getElementById('btn-deg-7'),
+  degreeSortableList: document.getElementById('degree-sortable-list'),
   songInfoBadge: document.getElementById('song-info-badge'),
   bigChord: document.getElementById('big-chord'),
   nextChord: document.getElementById('next-chord'),
@@ -52,10 +54,14 @@ const elements = {
   measureProgressText: document.getElementById('measure-progress-text')
 };
 
+// ドラッグ中アイテムのインデックス保持
+let draggedIndex = null;
+
 // 初期化
 function init() {
   populateSongList(songsData);
   loadSong(songsData[0]);
+  renderDegreeSortableList();
   setupEventListeners();
 }
 
@@ -173,8 +179,8 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   elements.nextChord.textContent = nextChordDisplay;
   elements.measureProgressText.textContent = `小節: ${currentMeasureIdx + 1} / ${measures.length}`;
 
-  // 度数 & 音名カード表示
-  const formattedTones = getFormattedChordTones(activeChordTransposed, state.countMode, state.startDegree);
+  // 度数 & 音名カード表示 (並び替えられた度数順)
+  const formattedTones = getFormattedChordTonesByOrder(activeChordTransposed, state.selectedDegreeOrder);
   renderChordTonesCards(formattedTones);
 
   // リードシートの描画 (全体移調 & 現在小節ハイライト & 小節タップで途中再生/選択)
@@ -193,6 +199,129 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   // ギター指板の描画 (音名表記 & 表示/非表示トグル)
   const targetNoteNames = formattedTones.map(t => t.note);
   renderFretboard(elements.fretboardContainer, targetNoteNames, state.showFretboard);
+}
+
+// 並び替え可能リスト (Sortable List) の描画
+function renderDegreeSortableList() {
+  if (!elements.degreeSortableList) return;
+  elements.degreeSortableList.innerHTML = '';
+
+  state.selectedDegreeOrder.forEach((deg, idx) => {
+    const chip = document.createElement('div');
+    chip.className = 'degree-chip';
+    chip.setAttribute('draggable', 'true');
+    chip.dataset.index = idx;
+    chip.dataset.degree = deg;
+
+    chip.innerHTML = `
+      <span class="drag-handle">⋮⋮</span>
+      <span>${deg}</span>
+      <button class="chip-move-btn left-btn" title="左へ移動" data-action="left">‹</button>
+      <button class="chip-move-btn right-btn" title="右へ移動" data-action="right">›</button>
+    `;
+
+    // 矢印ボタンのクリックイベント
+    chip.querySelector('.left-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (idx > 0) {
+        swapDegreeOrder(idx, idx - 1);
+      }
+    });
+
+    chip.querySelector('.right-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (idx < state.selectedDegreeOrder.length - 1) {
+        swapDegreeOrder(idx, idx + 1);
+      }
+    });
+
+    // ドラッグ＆ドロップイベント
+    chip.addEventListener('dragstart', (e) => {
+      draggedIndex = idx;
+      chip.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', idx);
+    });
+
+    chip.addEventListener('dragend', () => {
+      chip.classList.remove('dragging');
+      draggedIndex = null;
+      document.querySelectorAll('.degree-chip').forEach(c => c.classList.remove('drag-over'));
+    });
+
+    chip.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      chip.classList.add('drag-over');
+    });
+
+    chip.addEventListener('dragleave', () => {
+      chip.classList.remove('drag-over');
+    });
+
+    chip.addEventListener('drop', (e) => {
+      e.preventDefault();
+      chip.classList.remove('drag-over');
+      if (draggedIndex !== null && draggedIndex !== idx) {
+        const itemToMove = state.selectedDegreeOrder.splice(draggedIndex, 1)[0];
+        state.selectedDegreeOrder.splice(idx, 0, itemToMove);
+        renderDegreeSortableList();
+        renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+      }
+    });
+
+    elements.degreeSortableList.appendChild(chip);
+  });
+}
+
+// 度数順序の入れ替え処理
+function swapDegreeOrder(fromIdx, toIdx) {
+  const temp = state.selectedDegreeOrder[fromIdx];
+  state.selectedDegreeOrder[fromIdx] = state.selectedDegreeOrder[toIdx];
+  state.selectedDegreeOrder[toIdx] = temp;
+  renderDegreeSortableList();
+  renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+}
+
+// 度数トグルボタンの状態更新
+function updateDegreeToggleButtonUI(degreeStr, isActive) {
+  const btnMap = {
+    'R': elements.btnDegR,
+    '3': elements.btnDeg3,
+    '5': elements.btnDeg5,
+    '7': elements.btnDeg7
+  };
+  const btn = btnMap[degreeStr];
+  if (!btn) return;
+  if (isActive) {
+    btn.classList.add('active');
+  } else {
+    btn.classList.remove('active');
+  }
+}
+
+// 度数トグルのクリックハンドラー
+function toggleDegree(degreeStr) {
+  const isPresent = state.selectedDegreeOrder.includes(degreeStr);
+
+  if (isPresent) {
+    // 最後の1つの場合は非アクティブ化を防止（全OFFを防ぐ）
+    if (state.selectedDegreeOrder.length <= 1) {
+      return;
+    }
+    state.selectedDegreeOrder = state.selectedDegreeOrder.filter(d => d !== degreeStr);
+    updateDegreeToggleButtonUI(degreeStr, false);
+  } else {
+    // 追加時は標準順序 (R -> 3 -> 5 -> 7) の適切な位置、または末尾に挿入
+    const defaultOrder = ['R', '3', '5', '7'];
+    state.selectedDegreeOrder.push(degreeStr);
+    // デフォルトの相対順序で綺麗に並べる
+    state.selectedDegreeOrder.sort((a, b) => defaultOrder.indexOf(a) - defaultOrder.indexOf(b));
+    updateDegreeToggleButtonUI(degreeStr, true);
+  }
+
+  renderDegreeSortableList();
+  renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
 }
 
 // 度数・音名カードのレンダリング
@@ -228,6 +357,12 @@ function updatePlayButtonsState(isPlaying, isPaused) {
 
 // イベントリスナーの登録
 function setupEventListeners() {
+  // 度数トグルボタンのリスナー
+  elements.btnDegR?.addEventListener('click', () => toggleDegree('R'));
+  elements.btnDeg3?.addEventListener('click', () => toggleDegree('3'));
+  elements.btnDeg5?.addEventListener('click', () => toggleDegree('5'));
+  elements.btnDeg7?.addEventListener('click', () => toggleDegree('7'));
+
   // 曲検索
   elements.songSearch.addEventListener('input', (e) => {
     const rawQuery = e.target.value.toLowerCase().trim();
@@ -345,18 +480,6 @@ function setupEventListeners() {
   elements.toggleBacking.addEventListener('change', (e) => {
     state.enableBacking = e.target.checked;
     audioEngine.setBackingEnabled(state.enableBacking);
-  });
-
-  // 表示音数設定
-  elements.countModeSelect.addEventListener('change', (e) => {
-    state.countMode = e.target.value;
-    renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
-  });
-
-  // 開始度数設定
-  elements.startDegreeSelect.addEventListener('change', (e) => {
-    state.startDegree = e.target.value;
-    renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
   });
 
   // カウントイン設定

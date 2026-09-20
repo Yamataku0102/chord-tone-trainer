@@ -40,17 +40,6 @@
         <span id="bpm-val" class="bpm-display">60</span>
       </div>
 
-      <!-- 表示音数 -->
-      <div class="select-group">
-        <label for="count-mode-select">⚙️ 表示音数:</label>
-        <select id="count-mode-select">
-          <option value="R+3+5+7" selected>R + 3 + 5 + 7 (全構成音)</option>
-          <option value="R+3+5">R + 3 + 5 (トライアド)</option>
-          <option value="R+3">R + 3</option>
-          <option value="R">R のみ</option>
-        </select>
-      </div>
-
       <!-- 移調 (Transposition) -->
       <div class="select-group">
         <label for="transpose-select">🔑 移調 (Key):</label>
@@ -71,17 +60,25 @@
         </select>
       </div>
 
-      <!-- 開始度数 (パターン) -->
-      <div class="select-group">
-        <label for="start-degree-select">🎯 開始度数:</label>
-        <select id="start-degree-select">
-          <option value="R" selected>ルート始まり (R → 3 → 5 → 7)</option>
-          <option value="3">3度始まり (3 → 5 → 7 → R)</option>
-          <option value="5">5度始まり (5 → 7 → R → 3)</option>
-          <option value="7">7度始まり (7 → R → 3 → 5)</option>
-          <option value="descending">下行パターン (7 → 5 → 3 → R)</option>
-        </select>
+      <!-- 度数選択 ＆ ドラッグ並び替え -->
+      <div class="degree-selector-wrapper">
+        <div class="degree-toggle-group">
+          <span class="control-label">🎯 表示度数選択:</span>
+          <div class="degree-buttons">
+            <button class="btn-degree active" data-degree="R" id="btn-deg-R">R</button>
+            <button class="btn-degree active" data-degree="3" id="btn-deg-3">3</button>
+            <button class="btn-degree active" data-degree="5" id="btn-deg-5">5</button>
+            <button class="btn-degree active" data-degree="7" id="btn-deg-7">7</button>
+          </div>
+        </div>
+        <div class="degree-sort-group">
+          <span class="control-label">⇄ 出順並び替え (ドラッグ可):</span>
+          <div id="degree-sortable-list" class="degree-sortable-list">
+            <!-- JSで動的に並び替えチップを生成 -->
+          </div>
+        </div>
       </div>
+
 
       <!-- カウントイン -->
       <div class="select-group">

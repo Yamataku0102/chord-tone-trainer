@@ -317,6 +317,34 @@ export function getFormattedChordTones(symbol, countMode = 'R+3+5+7', startDegre
 }
 
 /**
+ * カスタム指定された度数の配列順序（例: ['3', 'R', '7']）に基づいて、
+ * 指定コードの構成音を抽出・ソートして返します。
+ * degreeOrder: ['R', '3', '5', '7'] などのユーザー選択・並び替え配列
+ */
+export function getFormattedChordTonesByOrder(symbol, degreeOrder = ['R', '3', '5', '7']) {
+  const tones = getChordTones(symbol);
+  if (!tones || tones.length === 0) return [];
+
+  const degreeMap = {};
+  tones.forEach(t => {
+    if (t.degree === 'R') degreeMap['R'] = t;
+    else if (t.degree.includes('3') || t.degree === '4') degreeMap['3'] = t;
+    else if (t.degree.includes('5')) degreeMap['5'] = t;
+    else if (t.degree.includes('7')) degreeMap['7'] = t;
+  });
+
+  const result = [];
+  (degreeOrder || []).forEach(degKey => {
+    if (degreeMap[degKey]) {
+      result.push(degreeMap[degKey]);
+    }
+  });
+
+  return result;
+}
+
+
+/**
  * ギター指板上のノート位置（音名ベース）を算出
  * コード構成音の音名リスト（例: ['A', 'C#', 'E', 'G#']）が含まれる全フレット位置を返す
  */

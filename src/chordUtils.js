@@ -56,8 +56,8 @@ export function parseChordSymbol(symbol) {
 
   let s = symbol.trim();
   
-  // 1N, 2N, N1, N2, C1, C2 などの不要なセクション/繰り返しタグを除去
-  s = s.replace(/N\d|C\d|\dN|\dC/g, '');
+  // 1N, 2N, N1, N2 などの不要な繰り返しタグのみを除去 (C7 や C6 などのルートCコードを破壊しない)
+  s = s.replace(/N\d|\dN/g, '');
 
   let bass = null;
   if (s.includes('/')) {
@@ -119,8 +119,8 @@ export function formatChordForDisplay(symbol) {
   if (!symbol) return '';
   let formatted = symbol.trim();
 
-  // 1N, 2N などの不要なタグ削除
-  formatted = formatted.replace(/N\d|C\d|\dN|\dC/g, '');
+  // 1N, 2N などの不要な繰り返しタグ削除 (C7 や C6 を破壊しない)
+  formatted = formatted.replace(/N\d|\dN/g, '');
   formatted = formatted.replace(/[()\[\]{}|]/g, '');
 
   const parsed = parseChordSymbol(formatted);
@@ -208,8 +208,8 @@ export function getChordTones(symbol) {
     .replace(/♭/g, 'b')
     .replace(/♯/g, '#');
 
-  // 1. Minor系の判定 (小文字の m, -, min, minor にマッチ。ただし MAJ, Maj, M7 の大文字MやMajは除く)
-  // 例: "m", "-7", "m7", "min7", "m7b5"
+  // 1. Minor系の判定 (小文字の m, -, min, minor にマッチ。ただし MAJ, Maj などの Maj は除く)
+  // 例: "m", "-7", "m7", "min7", "m7b5", "m6"
   const isMinor = /^(m(?!aj)|-|min)/.test(normType) || /(^|[^a-zA-Z])(m(?!aj)|-|min)/.test(normType);
 
   if (isMinor) {
@@ -232,13 +232,19 @@ export function getChordTones(symbol) {
   // 3. 7度 / 6度の判定
   let hasSeventh = false;
 
-  // Major 7th (M7, MA7, MAJ7, maj7, Δ7, Δ, ^7, ^)
-  const isMajor7th = /M7|MA7|MAJ7|maj7|Δ|\^/i.test(normType) || (origType.includes('M') && !origType.includes('min'));
+  // Major 7th (大文字 M7, MA7, MAJ7, Maj7, maj7, Δ7, Δ, ^7, ^)
+  // ※ 大文字・小文字を厳密に区別。小文字の m7 や -7 は絶対マッチさせない！
+  const isMajor7th = /^(M7|MA7|MAJ7|Maj7|maj7|Δ|\^)/.test(normType) ||
+                     /(^|[^a-zA-Z])(M7|MA7|MAJ7|Maj7|maj7|Δ|\^)/.test(normType) ||
+                     (origType.includes('M') && !origType.includes('m') && !origType.includes('min'));
+
   // Diminished 7th (o7, dim7)
   const isDim7 = /o7|dim7/i.test(normType);
+
   // 6th (6, m6, M6)
-  const is6th = /6/.test(normType);
-  // 7th (7, m7, dom7, h7, h)
+  const is6th = /(^|[^0-9b#♭♯])6($|[^0-9])/.test(normType);
+
+  // 7th (7, m7, dom7, h7, h) - 7 を含むが Major 7th や Dim7 ではないもの
   const is7th = /7|h/i.test(normType);
 
   if (isMajor7th) {

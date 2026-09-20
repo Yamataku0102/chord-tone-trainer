@@ -122,6 +122,37 @@ function loadSong(song) {
   renderCurrentState(0, 0);
 }
 
+// 現在のコードと異なる、未来で最初に登場する次のコードを探索 (先回り予告)
+function getNextDifferentChord(measures, currentMeasureIdx, currentBeatIdx, transposition) {
+  if (!measures || measures.length === 0) return '-';
+
+  const currentChordRaw = measures[currentMeasureIdx]?.chords[currentBeatIdx];
+  const currentChordFormatted = formatChordForDisplay(transposeChord(currentChordRaw, transposition));
+
+  // 現在位置から曲末尾に向かって未来のコードを探索
+  for (let mIdx = currentMeasureIdx; mIdx < measures.length; mIdx++) {
+    const m = measures[mIdx];
+    const startBeat = (mIdx === currentMeasureIdx) ? currentBeatIdx + 1 : 0;
+    for (let bIdx = startBeat; bIdx < m.chords.length; bIdx++) {
+      const futureRaw = m.chords[bIdx];
+      const futureFormatted = formatChordForDisplay(transposeChord(futureRaw, transposition));
+
+      if (futureFormatted && futureFormatted !== '/' && futureFormatted !== 'x' && futureFormatted !== currentChordFormatted) {
+        return futureFormatted;
+      }
+    }
+  }
+
+  // もし曲の末尾まで同じコードが続く場合は曲頭のコードをプレビュー
+  const firstChordRaw = measures[0]?.chords[0];
+  const firstChordFormatted = formatChordForDisplay(transposeChord(firstChordRaw, transposition));
+  if (firstChordFormatted !== currentChordFormatted) {
+    return firstChordFormatted;
+  }
+
+  return currentChordFormatted || '-';
+}
+
 // アプリ全体の表示を現在の設定と曲状態に合わせて再描画
 function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   if (!state.parsedSong || state.parsedSong.measures.length === 0) return;
@@ -134,16 +165,8 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   const activeChordTransposed = transposeChord(rawChord, state.transposition);
   const activeChordDisplay = formatChordForDisplay(activeChordTransposed);
 
-  // ネクストコードの決定
-  let nextChordDisplay = '-';
-  if (currentBeatIdx + 1 < currentMeasure.chords.length) {
-    const nc = currentMeasure.chords[currentBeatIdx + 1];
-    nextChordDisplay = formatChordForDisplay(transposeChord(nc, state.transposition));
-  } else if (currentMeasureIdx + 1 < measures.length) {
-    const nextM = measures[currentMeasureIdx + 1];
-    const nc = nextM.chords[0];
-    nextChordDisplay = formatChordForDisplay(transposeChord(nc, state.transposition));
-  }
+  // ネクストコードの決定 (次に変化する新しいコードを1拍目から先回り予告)
+  const nextChordDisplay = getNextDifferentChord(measures, currentMeasureIdx, currentBeatIdx, state.transposition);
 
   // 大文字コード・ネクストコード表示
   elements.bigChord.textContent = activeChordDisplay || 'C';

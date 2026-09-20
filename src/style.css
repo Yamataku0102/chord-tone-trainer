@@ -29,7 +29,8 @@
   --radius-lg: 20px;
   --radius-full: 9999px;
 
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-mincho: 'Shippori Mincho', 'Noto Serif JP', 'Yu Mincho', '游明朝', 'Hiragino Mincho ProN', serif;
+  --font-serif: 'Playfair Display', var(--font-mincho);
 
   --shadow-main: 0 10px 30px -5px rgba(0, 0, 0, 0.65);
   --glow-cyan: 0 0 20px rgba(161, 75, 44, 0.5);
@@ -48,7 +49,7 @@ html, body {
 }
 
 body {
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-mincho), 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--bg-primary);
   background-image: 
     radial-gradient(at 10% 10%, rgba(161, 75, 44, 0.18) 0px, transparent 50%),
@@ -58,6 +59,7 @@ body {
   padding: 20px;
   line-height: 1.5;
 }
+
 
 /* アプリコンテナ */
 .app-container {

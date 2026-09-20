@@ -229,22 +229,18 @@ export function getChordTones(symbol) {
     fifthDegree = '♯5';
   }
 
-  // 3. 7度 / 6度の判定
+  // 3. 7度の判定 (R, 3, 5, 7度のみ対応。6thコードの6度音はユーザー指示により不要)
   let hasSeventh = false;
 
   // Major 7th (大文字 M7, MA7, MAJ7, Maj7, maj7, Δ7, Δ, ^7, ^)
-  // ※ 大文字・小文字を厳密に区別。小文字の m7 や -7 は絶対マッチさせない！
   const isMajor7th = /^(M7|MA7|MAJ7|Maj7|maj7|Δ|\^)/.test(normType) ||
                      /(^|[^a-zA-Z])(M7|MA7|MAJ7|Maj7|maj7|Δ|\^)/.test(normType) ||
                      (origType.includes('M') && !origType.includes('m') && !origType.includes('min'));
 
-  // Diminished 7th (o7, dim7)
+  // Diminished 7th (o7, dim7) -> ♭♭7
   const isDim7 = /o7|dim7/i.test(normType);
 
-  // 6th (6, m6, M6)
-  const is6th = /(^|[^0-9b#♭♯])6($|[^0-9])/.test(normType);
-
-  // 7th (7, m7, dom7, h7, h) - 7 を含むが Major 7th や Dim7 ではないもの
+  // Minor 7th / Minor 7th(♭5) / Dominant 7th (7, m7, -7, h7, h, m7b5, dom7) -> 必ず ♭7 (10半音)
   const is7th = /7|h/i.test(normType);
 
   if (isMajor7th) {
@@ -255,11 +251,8 @@ export function getChordTones(symbol) {
     seventhInterval = 9;
     seventhDegree = '♭♭7';
     hasSeventh = true;
-  } else if (is6th) {
-    seventhInterval = 9;
-    seventhDegree = '6';
-    hasSeventh = true;
   } else if (is7th) {
+    // m7, m7♭5, 7 等のすべての 7th コードで 7度音は ♭7 (10半音)
     seventhInterval = 10;
     seventhDegree = '♭7';
     hasSeventh = true;

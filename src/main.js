@@ -69,6 +69,39 @@ function populateSongList(songs) {
   });
 }
 
+// 移調オプションの動的生成 (-6半音 〜 +6半音, 中央に0原曲キー)
+function updateTransposeOptions(originalKeyStr) {
+  if (!elements.transposeSelect) return;
+  const currentShift = state.transposition;
+  elements.transposeSelect.innerHTML = '';
+
+  for (let shift = -6; shift <= 6; shift++) {
+    const opt = document.createElement('option');
+    opt.value = shift;
+
+    let keyLabel = '';
+    if (originalKeyStr) {
+      const shiftedChord = transposeChord(originalKeyStr, shift);
+      const formattedKey = formatChordForDisplay(shiftedChord);
+      keyLabel = ` (${formattedKey})`;
+    }
+
+    if (shift === 0) {
+      opt.textContent = `原曲キー (±0)${keyLabel}`;
+    } else if (shift > 0) {
+      opt.textContent = `+${shift} 半音${keyLabel}`;
+    } else {
+      opt.textContent = `${shift} 半音${keyLabel}`;
+    }
+
+    if (shift === currentShift) {
+      opt.selected = true;
+    }
+
+    elements.transposeSelect.appendChild(opt);
+  }
+}
+
 // 曲の読み込み
 function loadSong(song) {
   audioEngine.stop();
@@ -76,6 +109,8 @@ function loadSong(song) {
 
   state.currentSong = song;
   state.parsedSong = parseIrealChords(song.rawChords);
+
+  updateTransposeOptions(song.key);
 
   audioEngine.setSong(state.parsedSong, state.transposition);
 

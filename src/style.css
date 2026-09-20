@@ -1,35 +1,37 @@
 /* ==========================================================================
-   コードトーン練習アプリ - モダンダークデザインシステム (Vanilla CSS)
+   コードトーン練習アプリ - モダンダークウッド＆テラコッタデザイン (Vanilla CSS)
+   カラーパレット: #120C0A | #2A1712 | #4A2618 | #A14B2C | #F3CFB7
    ========================================================================== */
 
 :root {
-  --bg-primary: #0b0f19;
-  --bg-secondary: #161e2e;
-  --bg-card: rgba(25, 34, 52, 0.7);
-  --bg-card-hover: rgba(35, 48, 74, 0.85);
+  --bg-primary: #120c0a;                 /* 最も濃いダークブラウン */
+  --bg-secondary: #2a1712;               /* ダークブラウン */
+  --bg-card: rgba(42, 23, 18, 0.75);     /* カード背景 */
+  --bg-card-hover: rgba(74, 38, 24, 0.85); /* ホバー時ミディアムブラウン */
 
-  --accent-blue: #3b82f6;
-  --accent-cyan: #06b6d4;
-  --accent-purple: #8b5cf6;
-  --accent-pink: #ec4899;
-  --accent-gold: #f59e0b;
-  --accent-green: #10b981;
+  --accent-primary: #a14b2c;             /* テラコッタオレンジ */
+  --accent-blue: #a14b2c;                /* テラコッタ */
+  --accent-cyan: #a14b2c;                /* メインアクセント */
+  --accent-purple: #4a2618;
+  --accent-pink: #d86941;
+  --accent-gold: #f3cfb7;                /* クリームベージュ */
+  --accent-green: #2e8b57;
 
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --text-dim: #6b7280;
+  --text-main: #f3cfb7;                  /* クリームベージュテキスト */
+  --text-muted: #d4b5a0;                 /* サブテキスト */
+  --text-dim: #9e7b68;                   /* 控えめテキスト */
 
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-highlight: rgba(59, 130, 246, 0.5);
+  --border-color: rgba(243, 207, 183, 0.15);
+  --border-highlight: rgba(161, 75, 44, 0.6);
 
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-full: 9999px;
 
-  --shadow-main: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
-  --glow-cyan: 0 0 20px rgba(6, 182, 212, 0.4);
-  --glow-gold: 0 0 25px rgba(245, 158, 11, 0.5);
+  --shadow-main: 0 10px 30px -5px rgba(0, 0, 0, 0.65);
+  --glow-cyan: 0 0 20px rgba(161, 75, 44, 0.5);
+  --glow-gold: 0 0 25px rgba(243, 207, 183, 0.35);
 }
 
 * {
@@ -47,8 +49,8 @@ body {
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--bg-primary);
   background-image: 
-    radial-gradient(at 10% 10%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-    radial-gradient(at 90% 90%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+    radial-gradient(at 10% 10%, rgba(161, 75, 44, 0.18) 0px, transparent 50%),
+    radial-gradient(at 90% 90%, rgba(74, 38, 24, 0.25) 0px, transparent 50%);
   color: var(--text-main);
   min-height: 100vh;
   padding: 20px;
@@ -85,7 +87,7 @@ body {
 
 .brand-icon {
   font-size: 1.8rem;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  background: linear-gradient(135deg, #f3cfb7, #a14b2c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -93,7 +95,7 @@ body {
 .brand-logo h1 {
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #ffffff, #9ca3af);
+  background: linear-gradient(135deg, #f3cfb7, #d4b5a0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -158,19 +160,20 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+  background: linear-gradient(135deg, #a14b2c, #80371e);
+  color: #f3cfb7;
+  box-shadow: 0 4px 15px rgba(161, 75, 44, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
+  box-shadow: 0 6px 20px rgba(161, 75, 44, 0.6);
 }
 
 .btn-warning {
-  background: linear-gradient(135deg, var(--accent-gold), #d97706);
-  color: #fff;
+  background: linear-gradient(135deg, #4a2618, #2a1712);
+  color: #f3cfb7;
+  border: 1px solid rgba(243, 207, 183, 0.3);
 }
 
 .btn-secondary {
@@ -324,7 +327,7 @@ select {
 
 /* 大文字コード表示エリア (Big Chord Display) */
 .play-chord-box {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+  background: linear-gradient(135deg, rgba(42, 23, 18, 0.9), rgba(18, 12, 10, 0.95));
   border: 2px solid var(--border-highlight);
   border-radius: var(--radius-lg);
   padding: 30px;
@@ -338,8 +341,8 @@ select {
   position: absolute;
   top: 15px;
   left: 15px;
-  background: var(--accent-gold);
-  color: #000;
+  background: var(--text-main);
+  color: #120c0a;
   font-weight: 800;
   padding: 4px 12px;
   border-radius: var(--radius-full);
@@ -355,7 +358,7 @@ select {
 .big-chord-symbol {
   font-size: 4rem;
   font-weight: 900;
-  background: linear-gradient(135deg, #ffffff, var(--accent-cyan));
+  background: linear-gradient(135deg, #f3cfb7, #a14b2c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
@@ -369,7 +372,7 @@ select {
 }
 
 .next-chord-val {
-  color: var(--accent-pink);
+  color: #f3cfb7;
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -383,7 +386,7 @@ select {
 }
 
 .tone-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(74, 38, 24, 0.45);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 12px;
@@ -393,19 +396,19 @@ select {
 
 .tone-card:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(74, 38, 24, 0.7);
 }
 
 .tone-degree {
   font-size: 0.85rem;
-  color: var(--accent-cyan);
+  color: #d4b5a0;
   font-weight: 700;
 }
 
 .tone-note {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #fff;
+  color: #f3cfb7;
 }
 
 /* リードシート (Lead Sheet Grid) */
@@ -419,7 +422,7 @@ select {
 }
 
 .measure-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(42, 23, 18, 0.4);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   padding: 12px 8px;
@@ -433,13 +436,13 @@ select {
 }
 
 .measure-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(6, 182, 212, 0.5);
+  background: rgba(74, 38, 24, 0.6);
+  border-color: rgba(161, 75, 44, 0.6);
 }
 
 .measure-card.active-measure {
-  background: rgba(6, 182, 212, 0.2);
-  border-color: var(--accent-cyan);
+  background: rgba(161, 75, 44, 0.35);
+  border-color: var(--accent-primary);
   box-shadow: var(--glow-cyan);
   transform: scale(1.03);
 }
@@ -510,8 +513,8 @@ select {
 }
 
 .active-note {
-  background: linear-gradient(135deg, var(--accent-gold), #d97706);
-  color: #000;
+  background: linear-gradient(135deg, #f3cfb7, #a14b2c);
+  color: #120c0a;
   font-weight: 900;
   font-size: 0.95rem;
   width: 32px;
@@ -521,7 +524,7 @@ select {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  box-shadow: var(--glow-gold);
+  box-shadow: 0 0 12px rgba(161, 75, 44, 0.6);
 }
 
 .note-slot {

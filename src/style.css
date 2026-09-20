@@ -29,6 +29,8 @@
   --radius-lg: 20px;
   --radius-full: 9999px;
 
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+
   --shadow-main: 0 10px 30px -5px rgba(0, 0, 0, 0.65);
   --glow-cyan: 0 0 20px rgba(161, 75, 44, 0.5);
   --glow-gold: 0 0 25px rgba(243, 207, 183, 0.35);
@@ -356,13 +358,14 @@ select {
 }
 
 .big-chord-symbol {
-  font-size: 4rem;
-  font-weight: 900;
+  font-family: var(--font-serif);
+  font-size: 4.2rem;
+  font-weight: 700;
   background: linear-gradient(135deg, #f3cfb7, #a14b2c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .next-chord-preview {
@@ -372,9 +375,10 @@ select {
 }
 
 .next-chord-val {
+  font-family: var(--font-serif);
   color: #f3cfb7;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 /* コードトーン音名 & 度数カード */
@@ -406,8 +410,9 @@ select {
 }
 
 .tone-note {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 700;
   color: #f3cfb7;
 }
 
@@ -458,8 +463,9 @@ select {
 .measure-chords {
   display: flex;
   gap: 8px;
+  font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--text-main);
 }
 

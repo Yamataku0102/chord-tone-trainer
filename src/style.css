@@ -1038,5 +1038,31 @@ select {
   font-size: 0.9rem;
 }
 
+/* 音伸ばし持続プログレスバー */
+.mic-hold-progress-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hold-progress-bar {
+  width: 90px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.hold-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #a14b2c, #4ed879);
+  width: 0%;
+  transition: width 0.05s ease-out;
+  border-radius: var(--radius-full);
+}
+
+
 
 

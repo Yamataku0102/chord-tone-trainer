@@ -15,8 +15,9 @@ class PitchDetector {
     this.onPitchDetected = null; // callback: ({ note, freq, clarity, normNote }) => {}
     this.bufferSize = 2048;
     this.buffer = new Float32Array(this.bufferSize);
-    this.minVolumeRMS = 0.015; // ノイズ除去用最小音量閾値
+    this.minVolumeRMS = 0.035; // ノイズ・環境音除去用最小音量閾値
   }
+
 
   // マイクアクセスの開始
   async start(onPitchDetectedCallback) {

@@ -128,6 +128,8 @@ function updateTransposeOptions(originalKeyStr) {
 function loadSong(song) {
   audioEngine.stop();
   state.selectedMeasureIndex = 0;
+  state.targetToneIndex = 0;
+  state.matchHoldCount = 0;
   updatePlayButtonsState(false, false);
 
   state.currentSong = song;
@@ -206,10 +208,13 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
     currentMeasureIdx,
     (clickedMeasureIdx) => {
       state.selectedMeasureIndex = clickedMeasureIdx;
+      state.targetToneIndex = 0;
+      state.matchHoldCount = 0;
       audioEngine.jumpToMeasure(clickedMeasureIdx);
       renderCurrentState(clickedMeasureIdx, 0);
     }
   );
+
 
   // ギター指板の描画 (音名表記 & 表示/非表示トグル)
   const targetNoteNames = formattedTones.map(t => t.note);
@@ -616,10 +621,13 @@ function setupEventListeners() {
   elements.btnReset.addEventListener('click', () => {
     audioEngine.stop();
     state.selectedMeasureIndex = 0;
+    state.targetToneIndex = 0; // 一番左の度数(1番目の音)にフォーカスをリセット
+    state.matchHoldCount = 0;
     updatePlayButtonsState(false, false);
     elements.countinBadge.style.display = 'none';
     renderCurrentState(0, 0);
   });
+
 
   // BPMの共通更新処理
   const setBpmValue = (newBpm) => {

@@ -22,7 +22,13 @@ class AudioEngine {
 
     this.songData = null; // { beatsPerMeasure, measures }
     this.transposition = 0;
+    this.playMode = 'auto'; // 'auto' | 'mic'
   }
+
+  setPlayMode(mode) {
+    this.playMode = mode;
+  }
+
 
   // AudioContextの有効化（ユーザー操作イベント内で実行）
   initAudio() {
@@ -170,13 +176,19 @@ class AudioEngine {
         });
       }
 
-      // 次の拍に進める
-      this.currentBeat++;
-      if (this.currentBeat >= beatsPerMeasure) {
-        this.currentBeat = 0;
-        this.currentMeasure++;
+      // マイク音判定モード時は、時間経過で小節を進めない（メトロノーム拍のみ巡回）
+      if (this.playMode === 'mic') {
+        this.currentBeat = (this.currentBeat + 1) % beatsPerMeasure;
+      } else {
+        // 自動進行モード時: 次の拍に進める
+        this.currentBeat++;
+        if (this.currentBeat >= beatsPerMeasure) {
+          this.currentBeat = 0;
+          this.currentMeasure++;
+        }
       }
     }
+
 
     this.timerId = setTimeout(() => this.scheduleNextTick(), intervalMs);
   }

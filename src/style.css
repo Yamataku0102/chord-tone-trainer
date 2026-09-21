@@ -879,4 +879,164 @@ select {
   }
 }
 
+/* ==========================================================================
+   マイク音判定練習モード用スタイル
+   ========================================================================== */
+.mode-switch-group {
+  display: flex;
+  background: rgba(18, 12, 10, 0.6);
+  border: 1px solid var(--border-color);
+  padding: 3px;
+  border-radius: var(--radius-md);
+  gap: 4px;
+}
+
+.btn-mode {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mincho), sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-mode:hover {
+  color: var(--text-main);
+}
+
+.btn-mode.active {
+  background: linear-gradient(135deg, var(--accent-primary), #d86941);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(161, 75, 44, 0.4);
+}
+
+/* マイクステータスバー */
+.mic-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(74, 38, 24, 0.8), rgba(42, 23, 18, 0.9));
+  border: 1px solid var(--border-highlight);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mic-status-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mic-icon-badge {
+  font-size: 1.3rem;
+  animation: pulse-mic 2s infinite ease-in-out;
+}
+
+@keyframes pulse-mic {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+.mic-note-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mic-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.target-note-highlight {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #ffffff;
+  background: var(--accent-primary);
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 10px var(--accent-primary);
+  display: inline-block;
+  min-width: 36px;
+  text-align: center;
+}
+
+.detected-note-val {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  min-width: 48px;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.detected-note-val.match-success {
+  color: #4ed879;
+  text-shadow: 0 0 10px #4ed879;
+  transform: scale(1.2);
+}
+
+.btn-mic-toggle {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-highlight);
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-mic-toggle:hover {
+  background: var(--accent-primary);
+  color: #ffffff;
+}
+
+.btn-mic-toggle.active {
+  background: #2e8b57;
+  border-color: #4ed879;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(46, 139, 87, 0.5);
+}
+
+/* ターゲット音カードのリアルタイムハイライト */
+.tone-card.target-active {
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 0 20px var(--accent-primary), inset 0 0 15px rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-4px) scale(1.05) !important;
+  animation: pulse-target 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse-target {
+  0%, 100% { box-shadow: 0 0 15px var(--accent-primary); }
+  50% { box-shadow: 0 0 25px #ffffff, 0 0 30px var(--accent-pink); }
+}
+
+.tone-card.tone-cleared {
+  opacity: 0.6;
+  border-color: #2e8b57 !important;
+}
+
+.tone-card.tone-cleared::after {
+  content: "✓";
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  color: #4ed879;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+
 

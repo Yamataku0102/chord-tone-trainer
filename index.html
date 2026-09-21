@@ -19,10 +19,18 @@
         <span class="brand-icon">🎵</span>
         <h1>コードトーン トレーニング</h1>
       </div>
+      
+      <!-- 練習モード切り替えタブ -->
+      <div class="mode-switch-group">
+        <button id="mode-auto" class="btn-mode active" title="一定テンポで自動進行">🎵 自動進行</button>
+        <button id="mode-mic" class="btn-mode" title="楽器の音をマイクで検出して合格で次へ進む">🎤 マイク音判定</button>
+      </div>
+
       <div class="brand-subtitle" style="color: var(--text-muted); font-size: 0.9rem;">
         黒本 ver5 (全275曲 A〜Z) 対応
       </div>
     </header>
+
 
     <!-- 1. 設定パネル -->
     <section class="controls-bar settings-panel">
@@ -131,7 +139,24 @@
           <span id="song-info-badge" style="color: var(--accent-cyan); font-weight: 600;">-</span>
         </div>
 
+        <!-- マイク判定モード用リアルタイムステータスバー -->
+        <div id="mic-status-bar" class="mic-status-bar" style="display: none;">
+          <div class="mic-status-info">
+            <span class="mic-icon-badge">🎤</span>
+            <div class="mic-note-box">
+              <span class="mic-label">狙う音 (Target):</span>
+              <span id="target-note-val" class="target-note-highlight">-</span>
+            </div>
+            <div class="mic-note-box">
+              <span class="mic-label">マイク検出音:</span>
+              <span id="detected-note-val" class="detected-note-val">--</span>
+            </div>
+          </div>
+          <button id="btn-toggle-mic" class="btn-mic-toggle">🎙️ マイク起動</button>
+        </div>
+
         <div class="play-chord-box">
+
           <div id="countin-badge" class="countin-badge" style="display: none;">COUNT IN: 4</div>
           <div id="big-chord" class="big-chord-symbol">C</div>
           <div class="next-chord-preview">

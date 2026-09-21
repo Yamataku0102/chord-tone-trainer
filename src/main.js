@@ -3,10 +3,11 @@
  */
 import songsData from './data/songs.json';
 import { parseIrealChords } from './irealParser.js';
-import { transposeChord, formatChordForDisplay, getFormattedChordTonesByOrder } from './chordUtils.js';
+import { transposeChord, formatChordForDisplay, getFormattedChordTonesByOrder, noteToIndex } from './chordUtils.js';
 import { audioEngine } from './audioEngine.js';
 import { renderLeadSheet } from './components/LeadSheet.js';
 import { renderFretboard } from './components/Fretboard.js';
+import { pitchDetector } from './pitchDetector.js';
 
 // アプリ全体の状態管理
 const state = {
@@ -20,7 +21,11 @@ const state = {
   enableBacking: true,
   isPlaying: false,
   isPaused: false,
-  selectedMeasureIndex: 0
+  selectedMeasureIndex: 0,
+  playMode: 'auto', // 'auto' | 'mic'
+  targetToneIndex: 0, // マイク判定モード用: 現在目標の構成音インデックス
+  isMicActive: false,
+  matchHoldCount: 0 // 連続一致フレームカウント
 };
 
 // DOM要素参照
@@ -51,8 +56,15 @@ const elements = {
   chordTonesContainer: document.getElementById('chord-tones-container'),
   leadsheetContainer: document.getElementById('leadsheet-container'),
   fretboardContainer: document.getElementById('fretboard-container'),
-  measureProgressText: document.getElementById('measure-progress-text')
+  measureProgressText: document.getElementById('measure-progress-text'),
+  modeAutoBtn: document.getElementById('mode-auto'),
+  modeMicBtn: document.getElementById('mode-mic'),
+  micStatusBar: document.getElementById('mic-status-bar'),
+  targetNoteVal: document.getElementById('target-note-val'),
+  detectedNoteVal: document.getElementById('detected-note-val'),
+  btnToggleMic: document.getElementById('btn-toggle-mic')
 };
+
 
 // ドラッグ中アイテムのインデックス保持
 let draggedIndex = null;
@@ -201,6 +213,159 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   renderFretboard(elements.fretboardContainer, targetNoteNames, state.showFretboard);
 }
 
+// 度数・音名カードのレンダリング
+function renderChordTonesCards(tones) {
+  elements.chordTonesContainer.innerHTML = '';
+
+  if (state.playMode === 'mic') {
+    if (state.targetToneIndex >= tones.length) {
+      state.targetToneIndex = 0;
+    }
+    const currentTargetTone = tones[state.targetToneIndex];
+    if (elements.targetNoteVal) {
+      elements.targetNoteVal.textContent = currentTargetTone ? currentTargetTone.note : '-';
+    }
+  }
+
+  tones.forEach((t, idx) => {
+    const card = document.createElement('div');
+    card.className = 'tone-card';
+
+    if (state.playMode === 'mic') {
+      if (idx === state.targetToneIndex) {
+        card.classList.add('target-active');
+      } else if (idx < state.targetToneIndex) {
+        card.classList.add('tone-cleared');
+      }
+    }
+
+    card.innerHTML = `
+      <div class="tone-degree">${t.degree}</div>
+      <div class="tone-note">${t.note}</div>
+    `;
+    elements.chordTonesContainer.appendChild(card);
+  });
+}
+
+// モード切替（自動進行 / マイク音判定）
+function switchPlayMode(newMode) {
+  state.playMode = newMode;
+  state.targetToneIndex = 0;
+  audioEngine.setPlayMode(newMode);
+
+  if (newMode === 'mic') {
+    elements.modeAutoBtn?.classList.remove('active');
+    elements.modeMicBtn?.classList.add('active');
+    if (elements.micStatusBar) elements.micStatusBar.style.display = 'flex';
+
+    if (!state.isMicActive) {
+      startMicListening();
+    }
+  } else {
+    elements.modeAutoBtn?.classList.add('active');
+    elements.modeMicBtn?.classList.remove('active');
+    if (elements.micStatusBar) elements.micStatusBar.style.display = 'none';
+  }
+
+  renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+}
+
+// マイクアクセスの開始/停止トグル
+async function startMicListening() {
+  const success = await pitchDetector.start((pitchData) => {
+    handlePitchDetected(pitchData);
+  });
+
+  if (success) {
+    state.isMicActive = true;
+    if (elements.btnToggleMic) {
+      elements.btnToggleMic.textContent = '🟢 マイク機能中';
+      elements.btnToggleMic.classList.add('active');
+    }
+  } else {
+    state.isMicActive = false;
+    alert('マイクの使用許可が得られませんでした。ブラウザの設定でマイクへのアクセスを許可してください。');
+  }
+}
+
+function stopMicListening() {
+  pitchDetector.stop();
+  state.isMicActive = false;
+  if (elements.btnToggleMic) {
+    elements.btnToggleMic.textContent = '🎙️ マイク起動';
+    elements.btnToggleMic.classList.remove('active');
+  }
+  if (elements.detectedNoteVal) {
+    elements.detectedNoteVal.textContent = '--';
+  }
+}
+
+// マイク入力ピッチのリアルタイム判定ロジック
+function handlePitchDetected(pitchData) {
+  if (!elements.detectedNoteVal) return;
+
+  if (!pitchData || !pitchData.note) {
+    elements.detectedNoteVal.textContent = '--';
+    elements.detectedNoteVal.classList.remove('match-success');
+    state.matchHoldCount = 0;
+    return;
+  }
+
+  const detectedNote = pitchData.note; // 例: "F", "C#", "Eb" など
+  elements.detectedNoteVal.textContent = detectedNote;
+
+  if (state.playMode === 'mic' && state.parsedSong) {
+    const measures = state.parsedSong.measures;
+    const currentMeasure = measures[audioEngine.currentMeasure] || measures[0];
+    const rawChord = currentMeasure.chords[audioEngine.currentBeat] || currentMeasure.chords[0];
+    const activeChordTransposed = transposeChord(rawChord, state.transposition);
+    const formattedTones = getFormattedChordTonesByOrder(activeChordTransposed, state.selectedDegreeOrder);
+
+    if (!formattedTones || formattedTones.length === 0) return;
+
+    if (state.targetToneIndex >= formattedTones.length) {
+      state.targetToneIndex = 0;
+    }
+
+    const targetTone = formattedTones[state.targetToneIndex];
+    if (!targetTone) return;
+
+    // オクターブ不問マッチング: noteToIndex でピッチクラス(0..11)の一致を比較
+    const targetIdx = noteToIndex(targetTone.note);
+    const detectedIdx = noteToIndex(detectedNote);
+
+    if (targetIdx === detectedIdx) {
+      state.matchHoldCount++;
+
+      // 安定検知のため 2フレーム連続一致で合格とみなす
+      if (state.matchHoldCount >= 2) {
+        elements.detectedNoteVal.classList.add('match-success');
+        state.matchHoldCount = 0;
+
+        advanceTargetNote(formattedTones);
+      }
+    } else {
+      state.matchHoldCount = 0;
+      elements.detectedNoteVal.classList.remove('match-success');
+    }
+  }
+}
+
+// 正しい音が演奏された時の進行ロジック (次の音・次の小節へ)
+function advanceTargetNote(formattedTones) {
+  state.targetToneIndex++;
+
+  // 構成音をすべて合格した場合 -> 次の小節へ移動！
+  if (state.targetToneIndex >= formattedTones.length) {
+    state.targetToneIndex = 0;
+    const nextMeasureIdx = (audioEngine.currentMeasure + 1) % state.parsedSong.measures.length;
+    audioEngine.jumpToMeasure(nextMeasureIdx);
+  }
+
+  renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+}
+
+
 // 並び替え可能リスト (Sortable List) の描画
 function renderDegreeSortableList() {
   if (!elements.degreeSortableList) return;
@@ -324,19 +489,7 @@ function toggleDegree(degreeStr) {
   renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
 }
 
-// 度数・音名カードのレンダリング
-function renderChordTonesCards(tones) {
-  elements.chordTonesContainer.innerHTML = '';
-  tones.forEach(t => {
-    const card = document.createElement('div');
-    card.className = 'tone-card';
-    card.innerHTML = `
-      <div class="tone-degree">${t.degree}</div>
-      <div class="tone-note">${t.note}</div>
-    `;
-    elements.chordTonesContainer.appendChild(card);
-  });
-}
+
 
 // 演奏ボタンの状態制御
 function updatePlayButtonsState(isPlaying, isPaused) {
@@ -357,11 +510,25 @@ function updatePlayButtonsState(isPlaying, isPaused) {
 
 // イベントリスナーの登録
 function setupEventListeners() {
+  // 練習モード切替ボタン (自動進行 / マイク音判定)
+  elements.modeAutoBtn?.addEventListener('click', () => switchPlayMode('auto'));
+  elements.modeMicBtn?.addEventListener('click', () => switchPlayMode('mic'));
+
+  // マイクON/OFFボタン
+  elements.btnToggleMic?.addEventListener('click', () => {
+    if (state.isMicActive) {
+      stopMicListening();
+    } else {
+      startMicListening();
+    }
+  });
+
   // 度数トグルボタンのリスナー
   elements.btnDegR?.addEventListener('click', () => toggleDegree('R'));
   elements.btnDeg3?.addEventListener('click', () => toggleDegree('3'));
   elements.btnDeg5?.addEventListener('click', () => toggleDegree('5'));
   elements.btnDeg7?.addEventListener('click', () => toggleDegree('7'));
+
 
   // 曲検索
   elements.songSearch.addEventListener('input', (e) => {

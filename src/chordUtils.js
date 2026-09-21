@@ -17,20 +17,32 @@ export const GUITAR_STRINGS = [
   { stringNum: 6, openNote: 'E', openIndex: 4 }   // 6弦 Low E
 ];
 
-// 音名をインデックス(0-11)に変換
+// 音名（A-G + 変音記号 ♭/♯/b/#/bb/##）をピッチクラス(0-11)に完全変換（異名同音 Fb=E, Cb=B, E#=F, B#=C 等に完全対応）
+const BASE_PITCHES = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+
 export function noteToIndex(noteStr) {
   if (!noteStr) return 0;
-  // フラット/シャープ正規化
-  const n = noteStr.trim().replace(/♭/g, 'b').replace(/♯/g, '#');
-  let idx = NOTES_FLAT.indexOf(n);
-  if (idx !== -1) return idx;
-  idx = NOTES_SHARP.indexOf(n);
-  if (idx !== -1) return idx;
 
-  // 異名同音マッチ
-  const altMap = { 'C#': 1, 'Db': 1, 'D#': 3, 'Eb': 3, 'F#': 6, 'Gb': 6, 'G#': 8, 'Ab': 8, 'A#': 10, 'Bb': 10 };
-  return altMap[n] ?? 0;
+  const trimmed = noteStr.trim();
+  const rootLetter = trimmed[0].toUpperCase();
+  if (!(rootLetter in BASE_PITCHES)) return 0;
+
+  let pitch = BASE_PITCHES[rootLetter];
+
+  // 変音記号の解析 (#, ♯ は +1, b, ♭ は -1)
+  const acc = trimmed.slice(1);
+  for (let i = 0; i < acc.length; i++) {
+    const char = acc[i];
+    if (char === '#' || char === '♯') {
+      pitch += 1;
+    } else if (char === 'b' || char === '♭') {
+      pitch -= 1;
+    }
+  }
+
+  return ((pitch % 12) + 12) % 12;
 }
+
 
 // インデックス(0-11)を音名表記に変換
 export function indexToNote(idx, preferSharp = false) {

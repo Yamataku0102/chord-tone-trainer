@@ -25,7 +25,8 @@ const state = {
   playMode: 'auto', // 'auto' | 'mic'
   targetToneIndex: 0, // マイク判定モード用: 現在目標の構成音インデックス
   isMicActive: false,
-  matchHoldCount: 0 // 連続一致フレームカウント
+  matchHoldCount: 0, // 連続一致フレームカウント
+  hideNotes: false // 音名非表示 (ブラインド練習) フラグ
 };
 
 // DOM要素参照
@@ -43,7 +44,9 @@ const elements = {
   transposeSelect: document.getElementById('transpose-select'),
   toggleFretboard: document.getElementById('toggle-fretboard'),
   toggleBacking: document.getElementById('toggle-backing'),
+  toggleHideNotes: document.getElementById('toggle-hide-notes'),
   countinSelect: document.getElementById('countin-select'),
+
   btnDegR: document.getElementById('btn-deg-R'),
   btnDeg3: document.getElementById('btn-deg-3'),
   btnDeg5: document.getElementById('btn-deg-5'),
@@ -223,7 +226,11 @@ function renderChordTonesCards(tones) {
     }
     const currentTargetTone = tones[state.targetToneIndex];
     if (elements.targetNoteVal) {
-      elements.targetNoteVal.textContent = currentTargetTone ? currentTargetTone.note : '-';
+      if (state.hideNotes) {
+        elements.targetNoteVal.textContent = currentTargetTone ? '?' : '-';
+      } else {
+        elements.targetNoteVal.textContent = currentTargetTone ? currentTargetTone.note : '-';
+      }
     }
   }
 
@@ -239,13 +246,16 @@ function renderChordTonesCards(tones) {
       }
     }
 
+    const displayNote = state.hideNotes ? '?' : t.note;
+
     card.innerHTML = `
       <div class="tone-degree">${t.degree}</div>
-      <div class="tone-note">${t.note}</div>
+      <div class="tone-note">${displayNote}</div>
     `;
     elements.chordTonesContainer.appendChild(card);
   });
 }
+
 
 // モード切替（自動進行 / マイク音判定）
 function switchPlayMode(newMode) {
@@ -541,7 +551,14 @@ function setupEventListeners() {
   elements.btnDeg7?.addEventListener('click', () => toggleDegree('7'));
 
 
+  // 音名非表示 (ブラインド練習) トグル
+  elements.toggleHideNotes?.addEventListener('change', (e) => {
+    state.hideNotes = e.target.checked;
+    renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+  });
+
   // 曲検索
+
   elements.songSearch.addEventListener('input', (e) => {
     const rawQuery = e.target.value.toLowerCase().trim();
     // タイポ吸収 ('autumun' や 'autum' など)

@@ -319,13 +319,10 @@ function stopMicListening() {
 function handlePitchDetected(pitchData) {
   if (!elements.detectedNoteVal) return;
 
-  const progressFill = document.getElementById('hold-progress-fill');
-
   if (!pitchData || !pitchData.note) {
     elements.detectedNoteVal.textContent = '--';
     elements.detectedNoteVal.classList.remove('match-success');
     state.matchHoldCount = 0;
-    if (progressFill) progressFill.style.width = '0%';
     return;
   }
 
@@ -352,29 +349,23 @@ function handlePitchDetected(pitchData) {
     const targetIdx = noteToIndex(targetTone.note);
     const detectedIdx = noteToIndex(detectedNote);
 
-    const REQUIRED_HOLD_FRAMES = 12; // 約 0.25〜0.3 秒しっかり音を伸ばしてキープする必要あり
-
     if (targetIdx === detectedIdx) {
       state.matchHoldCount++;
 
-      const progressPct = Math.min(100, Math.round((state.matchHoldCount / REQUIRED_HOLD_FRAMES) * 100));
-      if (progressFill) progressFill.style.width = `${progressPct}%`;
-
-      // 音を一定時間キープできたら合格！
-      if (state.matchHoldCount >= REQUIRED_HOLD_FRAMES) {
+      // ギター生音の単音ピッキングで即座に反応 (2フレーム一致でサクサク合格)
+      if (state.matchHoldCount >= 2) {
         elements.detectedNoteVal.classList.add('match-success');
         state.matchHoldCount = 0;
-        if (progressFill) progressFill.style.width = '0%';
 
         advanceTargetNote(formattedTones);
       }
     } else {
       state.matchHoldCount = 0;
-      if (progressFill) progressFill.style.width = '0%';
       elements.detectedNoteVal.classList.remove('match-success');
     }
   }
 }
+
 
 
 // 正しい音が演奏された時の進行ロジック (次の音・次の小節へ)

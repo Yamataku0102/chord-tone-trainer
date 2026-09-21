@@ -87,9 +87,10 @@ function extractChordsFromMeasureText(text) {
   const chords = [];
 
   for (let t of rawTokens) {
-    // 繰り返し記号 N1, N2, 1N, 2N やレイアウトタグの除去
-    t = t.replace(/N\d|C\d|\dN|\dC/g, '').trim();
+    // ゴミ文字・余分なレイアウト文字のトリム
+    t = t.trim();
     if (!t) continue;
+
 
     // リピート・継続 'x', '%'
     if (t === 'x' || t === '%') {

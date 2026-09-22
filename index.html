@@ -158,6 +158,21 @@
               <span id="detected-note-val" class="detected-note-val">--</span>
             </div>
           </div>
+
+          <!-- マイク感度（ゲイン）調整 & 音量メーター -->
+          <div class="mic-controls-group">
+            <div class="mic-sensitivity-control">
+              <label for="mic-gain-slider" class="mic-label" title="スマホ・iPad等のマイク音量を増幅します">🎚️ 感度: <span id="mic-gain-val" class="gain-val-display">200%</span></label>
+              <input type="range" id="mic-gain-slider" min="50" max="500" step="10" value="200" title="マイク入力倍率 (50%〜500%)" />
+            </div>
+            <div class="mic-meter-box" title="現在のマイク音量レベル">
+              <span class="mic-label">音量:</span>
+              <div class="mic-meter-track">
+                <div id="mic-level-bar" class="mic-level-bar" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+
           <button id="btn-toggle-mic" class="btn-mic-toggle">🎙️ マイク起動</button>
         </div>
 

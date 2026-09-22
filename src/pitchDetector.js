@@ -9,16 +9,29 @@ class PitchDetector {
   constructor() {
     this.audioCtx = null;
     this.analyser = null;
+    this.gainNode = null;
     this.mediaStream = null;
     this.isListening = false;
     this.animationId = null;
-    this.onPitchDetected = null; // callback: ({ note, freq, clarity, normNote }) => {}
+    this.onPitchDetected = null; // callback: ({ note, freq, clarity, normNote, rms }) => {}
     this.bufferSize = 2048;
     this.buffer = new Float32Array(this.bufferSize);
-    this.minVolumeRMS = 0.025; // ギター生音用バランス音量閾値 (雑音排除しつつ生音ピック弾きを感度よくキャッチ)
+    this.minVolumeRMS = 0.008; // ギター生音・モバイル内蔵マイク用感度を高めた音量閾値
+    this.gainValue = 2.0; // デフォルトゲイン (2.0倍ブースト)
   }
 
+  // ゲイン（マイク倍率）のリアルタイム変更
+  setGain(gain) {
+    this.gainValue = Math.max(0.5, Math.min(10.0, gain));
+    if (this.gainNode && this.audioCtx) {
+      this.gainNode.gain.setTargetAtTime(this.gainValue, this.audioCtx.currentTime, 0.01);
+    }
+  }
 
+  // 最小音量閾値（感度）の変更
+  setMinVolumeRMS(threshold) {
+    this.minVolumeRMS = Math.max(0.001, Math.min(0.05, threshold));
+  }
 
   // マイクアクセスの開始
   async start(onPitchDetectedCallback) {
@@ -29,19 +42,28 @@ class PitchDetector {
       const AudioContextClass = window.AudioContext || window.webkitAudioContext;
       this.audioCtx = new AudioContextClass();
       
+      // スマホ・iPad等のモバイル端末で楽器音が消音されないよう、音響フィルターをOFFにする
       this.mediaStream = await navigator.mediaDevices.getUserMedia({
         audio: {
-          echoCancellation: true,
-          noiseSuppression: true,
+          echoCancellation: false,
+          noiseSuppression: false,
           autoGainControl: false
         }
       });
 
       const source = this.audioCtx.createMediaStreamSource(this.mediaStream);
+      
+      // 入力音量を手動ブーストできる GainNode を作成
+      this.gainNode = this.audioCtx.createGain();
+      this.gainNode.gain.value = this.gainValue;
+
       this.analyser = this.audioCtx.createAnalyser();
       this.analyser.fftSize = this.bufferSize;
 
-      source.connect(this.analyser);
+      // 接続: source -> gainNode -> analyser
+      source.connect(this.gainNode);
+      this.gainNode.connect(this.analyser);
+      
       this.isListening = true;
 
       this.processLoop();
@@ -68,6 +90,7 @@ class PitchDetector {
       this.audioCtx.close();
       this.audioCtx = null;
     }
+    this.gainNode = null;
   }
 
   // ループ解析
@@ -77,10 +100,19 @@ class PitchDetector {
     this.analyser.getFloatTimeDomainData(this.buffer);
     const result = this.autoCorrelate(this.buffer, this.audioCtx.sampleRate);
 
-    if (result && this.onPitchDetected) {
-      this.onPitchDetected(result);
-    } else if (this.onPitchDetected) {
-      this.onPitchDetected({ note: null, freq: 0 });
+    if (this.onPitchDetected) {
+      if (result) {
+        this.onPitchDetected(result);
+      } else {
+        // ピッチが検出されなくても、現在の入力音量レベル (RMS) は通知
+        let sumOfSquares = 0;
+        for (let i = 0; i < this.buffer.length; i++) {
+          const val = this.buffer[i];
+          sumOfSquares += val * val;
+        }
+        const rms = Math.sqrt(sumOfSquares / this.buffer.length);
+        this.onPitchDetected({ note: null, freq: 0, rms });
+      }
     }
 
     this.animationId = requestAnimationFrame(() => this.processLoop());

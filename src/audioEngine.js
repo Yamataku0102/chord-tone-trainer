@@ -121,6 +121,63 @@ class AudioEngine {
     }
   }
 
+  // 現在のコードが小節内で占める拍の範囲 [startBeat, endBeat] を取得
+  getCurrentChordBeatRange() {
+    if (!this.songData || !this.songData.measures) return { start: 0, end: 3 };
+    const m = this.songData.measures[this.currentMeasure];
+    if (!m || !m.chords || m.chords.length === 0) return { start: 0, end: 3 };
+
+    const currentChord = m.chords[this.currentBeat] || m.chords[0];
+    let start = this.currentBeat;
+    while (start > 0 && m.chords[start - 1] === currentChord) {
+      start--;
+    }
+    let end = this.currentBeat;
+    while (end < m.chords.length - 1 && m.chords[end + 1] === currentChord) {
+      end++;
+    }
+    return { start, end };
+  }
+
+  // 小節内で「次の異なるコード」が始まる拍のインデックスを取得 (無ければ -1)
+  getNextChordBeatIndex() {
+    if (!this.songData || !this.songData.measures) return -1;
+    const m = this.songData.measures[this.currentMeasure];
+    if (!m || !m.chords) return -1;
+
+    const currentChord = m.chords[this.currentBeat] || m.chords[0];
+    for (let i = this.currentBeat + 1; i < m.chords.length; i++) {
+      if (m.chords[i] !== currentChord) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  // マイク判定モード用: 現在のコードクリア時に「同一小節内の次のコード」または「次の小節の頭コード」へ進行
+  advanceToNextChord() {
+    if (!this.songData || !this.songData.measures) return;
+
+    const nextBeatIdx = this.getNextChordBeatIndex();
+    if (nextBeatIdx !== -1) {
+      // 同じ小節内の次のコードへ進行
+      this.currentBeat = nextBeatIdx;
+    } else {
+      // 次の小節の頭コードへ進行
+      this.currentMeasure = (this.currentMeasure + 1) % this.songData.measures.length;
+      this.currentBeat = 0;
+    }
+
+    if (this.isPlaying) {
+      this.stopActiveBackingTones();
+      const m = this.songData.measures[this.currentMeasure];
+      const chord = m?.chords[this.currentBeat];
+      if (this.backingEnabled && chord) {
+        this.playBackingChord(chord);
+      }
+    }
+  }
+
   // タイマー進行ループ
   scheduleNextTick() {
     if (!this.isPlaying) return;
@@ -176,9 +233,13 @@ class AudioEngine {
         });
       }
 
-      // マイク音判定モード時は、時間経過で小節を進めない（メトロノーム拍のみ巡回）
+      // マイク音判定モード時は、クリアするまで同一コードの拍範囲内でのみメトロノーム拍を巡回
       if (this.playMode === 'mic') {
-        this.currentBeat = (this.currentBeat + 1) % beatsPerMeasure;
+        const range = this.getCurrentChordBeatRange();
+        this.currentBeat++;
+        if (this.currentBeat > range.end) {
+          this.currentBeat = range.start;
+        }
       } else {
         // 自動進行モード時: 次の拍に進める
         this.currentBeat++;

@@ -562,14 +562,57 @@ select {
   }
 
   body {
-    padding: 10px;
+    padding: 8px;
   }
 
   .app-container {
-    gap: 12px;
+    gap: 10px;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+  }
+
+  /* ヘッダーのスマホ表示最適化 */
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+
+  .brand-logo {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .brand-logo h1 {
+    font-size: 1.25rem;
+    white-space: nowrap;
+  }
+
+  .mode-switch-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    gap: 4px;
+  }
+
+  .btn-mode {
+    flex: 1;
+    text-align: center;
+    padding: 9px 6px;
+    font-size: 0.85rem;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    justify-content: center;
+  }
+
+  .brand-subtitle {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 2px;
   }
 
   /* コントロールバー */
@@ -845,8 +888,8 @@ select {
   .degree-selector-wrapper {
     flex-direction: column;
     align-items: stretch;
-    padding: 10px 12px;
-    gap: 10px;
+    padding: 10px 10px;
+    gap: 8px;
   }
 
   .degree-toggle-group {
@@ -863,13 +906,25 @@ select {
 
   .degree-sortable-list {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 6px;
+    gap: 4px;
   }
 
   .degree-chip {
-    padding: 6px 8px;
-    font-size: 0.85rem;
+    padding: 4px 6px;
+    font-size: 0.8rem;
+    gap: 3px;
+    flex: 1;
+    min-width: calc(25% - 4px);
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .chip-move-btn {
+    padding: 1px 3px;
+    font-size: 0.75rem;
   }
 
   .btn-degree {
@@ -882,13 +937,15 @@ select {
 /* ==========================================================================
    マイク音判定練習モード用スタイル
    ========================================================================== */
+/* モード切り替えタブ */
 .mode-switch-group {
   display: flex;
   background: rgba(18, 12, 10, 0.6);
   border: 1px solid var(--border-color);
-  padding: 3px;
+  padding: 4px;
   border-radius: var(--radius-md);
   gap: 4px;
+  flex-shrink: 0;
 }
 
 .btn-mode {
@@ -898,10 +955,15 @@ select {
   font-family: var(--font-mincho), sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: var(--radius-sm);
   cursor: pointer;
+  white-space: nowrap;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .btn-mode:hover {
@@ -968,6 +1030,59 @@ select {
   display: inline-block;
   min-width: 36px;
   text-align: center;
+}
+
+/* マイク感度コントロール ＆ レベルメーター */
+.mic-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.mic-sensitivity-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gain-val-display {
+  color: var(--accent-cyan);
+  font-weight: 700;
+  min-width: 42px;
+  display: inline-block;
+  text-align: right;
+}
+
+.mic-sensitivity-control input[type="range"] {
+  width: 90px;
+  height: 6px;
+  accent-color: var(--accent-cyan);
+  cursor: pointer;
+}
+
+.mic-meter-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mic-meter-track {
+  width: 80px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mic-level-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4caf50, #ffeb3b, #f44336);
+  border-radius: 4px;
+  transition: width 0.05s ease-out;
 }
 
 .detected-note-val {

@@ -65,7 +65,10 @@ const elements = {
   micStatusBar: document.getElementById('mic-status-bar'),
   targetNoteVal: document.getElementById('target-note-val'),
   detectedNoteVal: document.getElementById('detected-note-val'),
-  btnToggleMic: document.getElementById('btn-toggle-mic')
+  btnToggleMic: document.getElementById('btn-toggle-mic'),
+  micGainSlider: document.getElementById('mic-gain-slider'),
+  micGainVal: document.getElementById('mic-gain-val'),
+  micLevelBar: document.getElementById('mic-level-bar')
 };
 
 
@@ -77,6 +80,18 @@ function init() {
   populateSongList(songsData);
   loadSong(songsData[0]);
   renderDegreeSortableList();
+  
+  // 保存されたマイク感度（ゲイン）設定の復元
+  const savedGain = localStorage.getItem('mic_gain_percent');
+  if (savedGain && elements.micGainSlider) {
+    const gainVal = parseInt(savedGain, 10);
+    elements.micGainSlider.value = gainVal;
+    if (elements.micGainVal) elements.micGainVal.textContent = `${gainVal}%`;
+    pitchDetector.setGain(gainVal / 100);
+  } else {
+    pitchDetector.setGain(2.0); // デフォルト200% (2倍ブースト)
+  }
+
   setupEventListeners();
 }
 
@@ -313,11 +328,20 @@ function stopMicListening() {
   if (elements.detectedNoteVal) {
     elements.detectedNoteVal.textContent = '--';
   }
+  if (elements.micLevelBar) {
+    elements.micLevelBar.style.width = '0%';
+  }
 }
 
 // マイク入力ピッチのリアルタイム判定ロジック
 function handlePitchDetected(pitchData) {
   if (!elements.detectedNoteVal) return;
+
+  // リアルタイム音量レベルメーターの描画 (RMS -> 幅%)
+  if (elements.micLevelBar && pitchData && typeof pitchData.rms === 'number') {
+    const levelPercent = Math.min(100, Math.max(0, Math.round((pitchData.rms / 0.06) * 100)));
+    elements.micLevelBar.style.width = `${levelPercent}%`;
+  }
 
   if (!pitchData || !pitchData.note) {
     elements.detectedNoteVal.textContent = '--';
@@ -368,15 +392,14 @@ function handlePitchDetected(pitchData) {
 
 
 
-// 正しい音が演奏された時の進行ロジック (次の音・次の小節へ)
+// 正しい音が演奏された時の進行ロジック (次の音・次のコード/小節へ)
 function advanceTargetNote(formattedTones) {
   state.targetToneIndex++;
 
-  // 構成音をすべて合格した場合 -> 次の小節へ移動！
+  // 構成音をすべて合格した場合 -> 次のコード (または次の小節) へ進行！
   if (state.targetToneIndex >= formattedTones.length) {
     state.targetToneIndex = 0;
-    const nextMeasureIdx = (audioEngine.currentMeasure + 1) % state.parsedSong.measures.length;
-    audioEngine.jumpToMeasure(nextMeasureIdx);
+    audioEngine.advanceToNextChord();
   }
 
   renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
@@ -538,6 +561,14 @@ function setupEventListeners() {
     } else {
       startMicListening();
     }
+  });
+
+  // マイク感度（ゲイン）スライダー
+  elements.micGainSlider?.addEventListener('input', (e) => {
+    const val = parseInt(e.target.value, 10);
+    if (elements.micGainVal) elements.micGainVal.textContent = `${val}%`;
+    pitchDetector.setGain(val / 100);
+    localStorage.setItem('mic_gain_percent', val);
   });
 
   // 度数トグルボタンのリスナー

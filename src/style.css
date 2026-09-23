@@ -1580,6 +1580,231 @@ select {
   border-radius: var(--radius-full);
 }
 
+/* ==========================================================================
+   スマホ・タブレット横画面 (Landscape Mode) 最適化ダッシュボード
+   ========================================================================== */
+@media (orientation: landscape) and (max-height: 600px) {
+  html, body {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden !important;
+    padding: 2px 6px;
+  }
+
+  .app-container {
+    height: 100%;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 1. ヘッダーの極小スリム化 */
+  .app-header {
+    padding: 4px 10px;
+    gap: 8px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand-logo h1 {
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .mode-switch-group {
+    width: auto;
+    gap: 4px;
+  }
+
+  .btn-mode {
+    padding: 3px 8px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* 2. コントロールバー・検索パネルのスリム化 */
+  .controls-bar {
+    padding: 4px 8px;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+
+  .select-group label {
+    font-size: 0.75rem;
+  }
+
+  .song-action-panel {
+    padding: 4px 8px;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .song-select-row {
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .search-input, .song-select {
+    padding: 4px 8px;
+    font-size: 0.82rem;
+  }
+
+  .main-btn-group .btn {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+
+  /* 3. メインレイアウト: 左右2カラム構造 (Left: コード・構成音, Right: ギター指板) */
+  .main-workspace {
+    flex: 1;
+    overflow: hidden;
+    margin-bottom: 2px;
+  }
+
+  .primary-workspace-card {
+    height: 100%;
+    padding: 6px 10px;
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 8px;
+    overflow: hidden;
+  }
+
+  .primary-workspace-card > .panel-title {
+    grid-column: 1 / -1;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+
+  /* 左エリア (コード表記 & 音名・度数ガイド) */
+  .chord-display-row {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .play-chord-box {
+    padding: 6px 10px;
+    min-height: 54px;
+  }
+
+  .big-chord-symbol {
+    font-size: 2.2rem !important;
+  }
+
+  .big-chord-symbol.chord-size-sm {
+    font-size: 1.7rem !important;
+  }
+
+  .big-chord-symbol.chord-size-xs {
+    font-size: 1.4rem !important;
+  }
+
+  .next-chord-preview {
+    margin-top: 2px;
+    font-size: 0.75rem;
+  }
+
+  .tones-card-box {
+    padding: 6px;
+    flex: 1;
+  }
+
+  .chord-tones-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4px !important;
+  }
+
+  .tone-card {
+    padding: 4px 2px !important;
+  }
+
+  .tone-degree {
+    font-size: 0.7rem !important;
+  }
+
+  .tone-note {
+    font-size: 1.1rem !important;
+  }
+
+  /* 右エリア (指板図: 全高さを使い切る) */
+  .fretboard-section {
+    grid-column: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .fretboard-card {
+    height: 100%;
+    margin-top: 0;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .fretboard-header-bar {
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+  }
+
+  .fretboard-title-text {
+    font-size: 0.8rem !important;
+  }
+
+  .fretboard-main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .string-row {
+    height: 28px;
+  }
+
+  .string-label-box {
+    width: 60px;
+    min-width: 60px;
+  }
+
+  .string-num-tag {
+    font-size: 0.65rem;
+  }
+
+  .string-open-note {
+    font-size: 0.8rem;
+  }
+
+  .note-badge {
+    width: 22px;
+    height: 22px;
+  }
+
+  .badge-degree {
+    font-size: 0.7rem;
+  }
+
+  .badge-note-sub {
+    font-size: 0.5rem;
+  }
+
+  /* リードシート (楽譜) は横画面時には非表示にし一画面完結を優先 */
+  .leadsheet-accordion {
+    display: none !important;
+  }
+}
+
 
 
 

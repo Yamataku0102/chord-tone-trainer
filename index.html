@@ -89,30 +89,15 @@
         </div>
       </div>
 
-      <!-- 開始フレット & 表示フレット数設定 -->
+      <!-- 開始フレット & 表示フレット数設定 (数値直接入力) -->
       <div class="select-group">
-        <label for="fret-start-select">🎸 開始フレット:</label>
-        <select id="fret-start-select">
-          <option value="0" selected>0 (開放〜)</option>
-          <option value="1">1 フレット</option>
-          <option value="3">3 フレット</option>
-          <option value="5">5 フレット</option>
-          <option value="7">7 フレット</option>
-          <option value="9">9 フレット</option>
-          <option value="12">12 フレット</option>
-        </select>
+        <label for="fret-start-input">🎸 開始フレット:</label>
+        <input type="number" id="fret-start-input" min="0" max="21" value="0" class="input-fret-number" title="0 (開放〜) からの開始フレット数を入力" />
       </div>
 
       <div class="select-group">
-        <label for="fret-count-select">📏 表示フレット数:</label>
-        <select id="fret-count-select">
-          <option value="3">3 フレット</option>
-          <option value="4">4 フレット</option>
-          <option value="5" selected>5 フレット (デフォルト)</option>
-          <option value="7">7 フレット</option>
-          <option value="9">9 フレット</option>
-          <option value="12">12 フレット</option>
-        </select>
+        <label for="fret-count-input">📏 表示フレット数:</label>
+        <input type="number" id="fret-count-input" min="1" max="24" value="5" class="input-fret-number" title="表示するフレット数を入力 (デフォルト 5)" />
       </div>
 
       <!-- カウントイン -->
@@ -146,43 +131,38 @@
     </section>
 
 
-    <!-- 2. 楽曲検索 & 曲選択 -->
-    <section class="song-selector-panel">
-      <input type="text" id="song-search" class="search-input" placeholder="🔍 曲名または作曲者で検索..." />
-      <select id="song-select" class="song-select">
-        <!-- JSで275曲をA-Z順に注入 -->
-      </select>
-    </section>
-
-    <!-- 3. スタートボタン (アクションバー) -->
-    <section class="action-bar">
-      <div class="btn-group main-btn-group">
+    <!-- 2. 楽曲検索 & 曲選択 & アクションバー -->
+    <section class="song-action-panel">
+      <div class="song-select-row">
+        <input type="text" id="song-search" class="search-input" placeholder="🔍 曲名/作曲者で検索..." />
+        <select id="song-select" class="song-select">
+          <!-- JSで275曲をA-Z順に注入 -->
+        </select>
+      </div>
+      <div class="main-btn-group">
         <button id="btn-start" class="btn btn-primary btn-large">▶️ スタート</button>
         <button id="btn-reset" class="btn btn-secondary">🔄 リセット</button>
       </div>
     </section>
 
-    <!-- 4. メインコンテンツ (演奏ビュー & リードシート) -->
-    <main class="main-grid">
-      <!-- 左: 演奏ビュー (Big Chord & Chord Tones) -->
-      <div class="card-panel">
+    <!-- 3. メインコンテンツ (コード画面 + 指板画面を優先して一画面に配置) -->
+    <main class="main-workspace">
+      <!-- 演奏 ＆ 指板統合カード -->
+      <div class="card-panel primary-workspace-card">
         <div class="panel-title">
-          <span>🎸 演奏モード</span>
+          <span>🎸 演奏 & 指板トレーニング</span>
           <span id="song-info-badge" style="color: var(--accent-cyan); font-weight: 600;">-</span>
         </div>
 
-        <!-- 指板当てゲームモード用ステータスバー -->
+        <!-- 指板当てゲームモード用ステータスバー (スリム化: 不要な長文お題テキスト削除) -->
         <div id="fretgame-status-bar" class="fretgame-status-bar" style="display: none;">
           <div class="fretgame-info-left">
             <span class="fretgame-icon-badge">🎮</span>
-            <div class="fretgame-prompt-box">
-              <span class="fretgame-label">目標のお題:</span>
-              <span id="fretgame-target-text" class="fretgame-target-highlight">-</span>
-            </div>
+            <span class="fretgame-mode-tag">指板当てゲーム進行中</span>
           </div>
           <div class="fretgame-progress-box">
             <span id="fretgame-progress-text" class="fretgame-progress-badge">正解: 0 / 4</span>
-            <button id="fretgame-skip-btn" class="btn btn-secondary btn-small">⏭️ 次へスキップ</button>
+            <button id="fretgame-skip-btn" class="btn btn-secondary btn-small">⏭️ スキップ</button>
           </div>
         </div>
 
@@ -191,23 +171,21 @@
           <div class="mic-status-info">
             <span class="mic-icon-badge">🎤</span>
             <div class="mic-note-box">
-              <span class="mic-label">狙う音 (Target):</span>
+              <span class="mic-label">目標音:</span>
               <span id="target-note-val" class="target-note-highlight">-</span>
             </div>
             <div class="mic-note-box">
-              <span class="mic-label">マイク検出音:</span>
+              <span class="mic-label">検出音:</span>
               <span id="detected-note-val" class="detected-note-val">--</span>
             </div>
           </div>
 
-          <!-- マイク感度（ゲイン）調整 & 音量メーター -->
           <div class="mic-controls-group">
             <div class="mic-sensitivity-control">
-              <label for="mic-gain-slider" class="mic-label" title="スマホ・iPad等のマイク音量を増幅します">🎚️ 感度: <span id="mic-gain-val" class="gain-val-display">200%</span></label>
-              <input type="range" id="mic-gain-slider" min="50" max="500" step="10" value="200" title="マイク入力倍率 (50%〜500%)" />
+              <label for="mic-gain-slider" class="mic-label">🎚️ 感度: <span id="mic-gain-val" class="gain-val-display">200%</span></label>
+              <input type="range" id="mic-gain-slider" min="50" max="500" step="10" value="200" />
             </div>
-            <div class="mic-meter-box" title="現在のマイク音量レベル">
-              <span class="mic-label">音量:</span>
+            <div class="mic-meter-box">
               <div class="mic-meter-track">
                 <div id="mic-level-bar" class="mic-level-bar" style="width: 0%;"></div>
               </div>
@@ -217,42 +195,43 @@
           <button id="btn-toggle-mic" class="btn-mic-toggle">🎙️ マイク起動</button>
         </div>
 
+        <!-- コード表示 ＆ 音名度数カードエリア -->
+        <div class="chord-display-row">
+          <div class="play-chord-box">
+            <div id="countin-badge" class="countin-badge" style="display: none;">COUNT IN: 4</div>
+            <div id="big-chord" class="big-chord-symbol">C</div>
+            <div class="next-chord-preview">
+              NEXT: <span id="next-chord" class="next-chord-val">-</span>
+            </div>
+          </div>
 
-
-        <div class="play-chord-box">
-
-          <div id="countin-badge" class="countin-badge" style="display: none;">COUNT IN: 4</div>
-          <div id="big-chord" class="big-chord-symbol">C</div>
-          <div class="next-chord-preview">
-            NEXT: <span id="next-chord" class="next-chord-val">-</span>
+          <div class="tones-card-box">
+            <div class="tones-header">
+              <span>音名・度数ガイド</span>
+            </div>
+            <div id="chord-tones-container" class="chord-tones-grid">
+              <!-- JSで音名と度数カードを動的注入 -->
+            </div>
           </div>
         </div>
 
-        <!-- 度数 & 音名カード -->
-        <div class="panel-title" style="margin-top: 10px;">
-          <span>音名・度数ガイド</span>
-        </div>
-        <div id="chord-tones-container" class="chord-tones-grid">
-          <!-- JSで音名と度数カードを動的注入 -->
-        </div>
+        <!-- ギター指板表示エリア (一画面に収まるようコード画面直下に配置) -->
+        <section id="fretboard-container" class="fretboard-section">
+          <!-- JSでギター指板を注入 -->
+        </section>
       </div>
 
-      <!-- 右: リードシート (楽譜) -->
-      <div class="card-panel">
-        <div class="panel-title">
+      <!-- リードシート (全小節コード進行: アコーディオン/折りたたみで一画面を圧迫しない) -->
+      <details class="card-panel leadsheet-accordion" open>
+        <summary class="panel-title accordion-summary">
           <span>📄 リードシート (全小節コード進行)</span>
           <span id="measure-progress-text" style="font-size: 0.9rem; color: var(--text-dim);">小節: 1 / --</span>
-        </div>
-        <div id="leadsheet-container">
+        </summary>
+        <div id="leadsheet-container" class="leadsheet-content-box">
           <!-- JSで全小節カードを注入 -->
         </div>
-      </div>
+      </details>
     </main>
-
-    <!-- 5. ギター指板表示エリア -->
-    <section id="fretboard-container">
-      <!-- JSでギター指板を注入 -->
-    </section>
   </div>
 
   <script type="module" src="./src/main.js"></script>

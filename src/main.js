@@ -48,8 +48,8 @@ const elements = {
   bpmPlus1: document.getElementById('bpm-plus-1'),
   bpmPlus10: document.getElementById('bpm-plus-10'),
   transposeSelect: document.getElementById('transpose-select'),
-  fretStartSelect: document.getElementById('fret-start-select'),
-  fretCountSelect: document.getElementById('fret-count-select'),
+  fretStartInput: document.getElementById('fret-start-input'),
+  fretCountInput: document.getElementById('fret-count-input'),
   toggleFretboard: document.getElementById('toggle-fretboard'),
   toggleBacking: document.getElementById('toggle-backing'),
   toggleHideNotes: document.getElementById('toggle-hide-notes'),
@@ -277,18 +277,12 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   });
 }
 
-// 指板当てゲーム用プロンプト表示の更新
+// 指板当てゲーム用プロンプト表示の更新 (不要長文テキスト削除・プログレスのみ更新)
 function updateFretGamePrompt(chordSymbol, formattedTones) {
   if (!formattedTones || formattedTones.length === 0) return;
 
   if (state.gameTargetIndex >= formattedTones.length) {
     state.gameTargetIndex = 0;
-  }
-
-  const currentTarget = formattedTones[state.gameTargetIndex];
-  if (elements.fretgameTargetText && currentTarget) {
-    const noteText = state.hideNotes ? '?' : `(${currentTarget.note})`;
-    elements.fretgameTargetText.textContent = `コード [ ${chordSymbol} ] の 【 ${currentTarget.degree} ${noteText} 】 を押してください！`;
   }
 
   if (elements.fretgameProgressText) {
@@ -658,16 +652,19 @@ function setupEventListeners() {
     renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
   });
 
-  // 開始フレット & 表示フレット数の変更
-  elements.fretStartSelect?.addEventListener('change', (e) => {
-    state.startFret = parseInt(e.target.value, 10);
+  // 開始フレット & 表示フレット数の変更 (数値直接入力)
+  const handleFretInputChange = () => {
+    const startVal = parseInt(elements.fretStartInput?.value, 10);
+    const countVal = parseInt(elements.fretCountInput?.value, 10);
+    state.startFret = isNaN(startVal) ? 0 : Math.max(0, startVal);
+    state.fretCount = isNaN(countVal) ? 5 : Math.max(1, countVal);
     renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
-  });
+  };
 
-  elements.fretCountSelect?.addEventListener('change', (e) => {
-    state.fretCount = parseInt(e.target.value, 10);
-    renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
-  });
+  elements.fretStartInput?.addEventListener('input', handleFretInputChange);
+  elements.fretStartInput?.addEventListener('change', handleFretInputChange);
+  elements.fretCountInput?.addEventListener('input', handleFretInputChange);
+  elements.fretCountInput?.addEventListener('change', handleFretInputChange);
 
   elements.btnToggleMic?.addEventListener('click', () => {
     if (state.isMicActive) stopMicListening();

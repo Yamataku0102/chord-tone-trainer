@@ -24,6 +24,7 @@
       <div class="mode-switch-group">
         <button id="mode-auto" class="btn-mode active" title="一定テンポで自動進行">🎵 自動進行</button>
         <button id="mode-mic" class="btn-mode" title="楽器の音をマイクで検出して合格で次へ進む">🎤 マイク音判定</button>
+        <button id="mode-fretgame" class="btn-mode" title="指板図をタップして度数を当てるゲーム">🎮 指板当てゲーム</button>
       </div>
 
       <div class="brand-subtitle" style="color: var(--text-muted); font-size: 0.9rem;">
@@ -88,6 +89,31 @@
         </div>
       </div>
 
+      <!-- 開始フレット & 表示フレット数設定 -->
+      <div class="select-group">
+        <label for="fret-start-select">🎸 開始フレット:</label>
+        <select id="fret-start-select">
+          <option value="0" selected>0 (開放〜)</option>
+          <option value="1">1 フレット</option>
+          <option value="3">3 フレット</option>
+          <option value="5">5 フレット</option>
+          <option value="7">7 フレット</option>
+          <option value="9">9 フレット</option>
+          <option value="12">12 フレット</option>
+        </select>
+      </div>
+
+      <div class="select-group">
+        <label for="fret-count-select">📏 表示フレット数:</label>
+        <select id="fret-count-select">
+          <option value="3">3 フレット</option>
+          <option value="4">4 フレット</option>
+          <option value="5" selected>5 フレット (デフォルト)</option>
+          <option value="7">7 フレット</option>
+          <option value="9">9 フレット</option>
+          <option value="12">12 フレット</option>
+        </select>
+      </div>
 
       <!-- カウントイン -->
       <div class="select-group">
@@ -143,6 +169,21 @@
         <div class="panel-title">
           <span>🎸 演奏モード</span>
           <span id="song-info-badge" style="color: var(--accent-cyan); font-weight: 600;">-</span>
+        </div>
+
+        <!-- 指板当てゲームモード用ステータスバー -->
+        <div id="fretgame-status-bar" class="fretgame-status-bar" style="display: none;">
+          <div class="fretgame-info-left">
+            <span class="fretgame-icon-badge">🎮</span>
+            <div class="fretgame-prompt-box">
+              <span class="fretgame-label">目標のお題:</span>
+              <span id="fretgame-target-text" class="fretgame-target-highlight">-</span>
+            </div>
+          </div>
+          <div class="fretgame-progress-box">
+            <span id="fretgame-progress-text" class="fretgame-progress-badge">正解: 0 / 4</span>
+            <button id="fretgame-skip-btn" class="btn btn-secondary btn-small">⏭️ 次へスキップ</button>
+          </div>
         </div>
 
         <!-- マイク判定モード用リアルタイムステータスバー -->

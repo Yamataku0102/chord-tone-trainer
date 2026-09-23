@@ -354,7 +354,34 @@ class AudioEngine {
     });
     this.activeBackingNodes = [];
   }
+
+  // 弦とフレットから音をポーンと鳴らす（ギター音源風エミュレーション）
+  playFretNote(stringNum, fret) {
+    this.initAudio();
+    const stringBaseMidi = { 1: 64, 2: 59, 3: 55, 4: 50, 5: 45, 6: 40 };
+    const baseMidi = stringBaseMidi[stringNum] || 60;
+    const midiNote = baseMidi + fret;
+    const freq = 440 * Math.pow(2, (midiNote - 69) / 12);
+    
+    const now = this.audioCtx.currentTime;
+    const osc = this.audioCtx.createOscillator();
+    const gain = this.audioCtx.createGain();
+
+    // ギター風の倍音成分のあるトライアングル波
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(freq, now);
+
+    gain.gain.setValueAtTime(0.35, now);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2); // 1.2秒かけて減衰
+
+    osc.connect(gain);
+    gain.connect(this.audioCtx.destination);
+
+    osc.start(now);
+    osc.stop(now + 1.25);
+  }
 }
 
 export const audioEngine = new AudioEngine();
+
 

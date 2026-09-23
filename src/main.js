@@ -18,12 +18,18 @@ const state = {
   selectedDegreeOrder: ['R', '3', '5', '7'], // 表示・出順の度数配列
   countInBeats: 4,
   showFretboard: false,
+  startFret: 0,   // 開始フレット
+  fretCount: 5,   // 表示フレット数
   enableBacking: true,
   isPlaying: false,
   isPaused: false,
   selectedMeasureIndex: 0,
-  playMode: 'auto', // 'auto' | 'mic'
+  playMode: 'auto', // 'auto' | 'mic' | 'fretgame'
   targetToneIndex: 0, // マイク判定モード用: 現在目標の構成音インデックス
+  gameTargetIndex: 0, // 指板当てゲーム用: 現在目標の構成音インデックス
+  fixedNotes: [],     // 指板当てゲーム用: 正解固定表示されたノートの配列 [{ string, fret, degree, note }]
+  activePopNote: null, // タップ直後の試聴/判定用ノート { string, fret, note, isCorrect, degree }
+  popTimerId: null,
   isMicActive: false,
   matchHoldCount: 0, // 連続一致フレームカウント
   hideNotes: false // 音名非表示 (ブラインド練習) フラグ
@@ -42,6 +48,8 @@ const elements = {
   bpmPlus1: document.getElementById('bpm-plus-1'),
   bpmPlus10: document.getElementById('bpm-plus-10'),
   transposeSelect: document.getElementById('transpose-select'),
+  fretStartSelect: document.getElementById('fret-start-select'),
+  fretCountSelect: document.getElementById('fret-count-select'),
   toggleFretboard: document.getElementById('toggle-fretboard'),
   toggleBacking: document.getElementById('toggle-backing'),
   toggleHideNotes: document.getElementById('toggle-hide-notes'),
@@ -60,15 +68,23 @@ const elements = {
   leadsheetContainer: document.getElementById('leadsheet-container'),
   fretboardContainer: document.getElementById('fretboard-container'),
   measureProgressText: document.getElementById('measure-progress-text'),
+
   modeAutoBtn: document.getElementById('mode-auto'),
   modeMicBtn: document.getElementById('mode-mic'),
+  modeFretGameBtn: document.getElementById('mode-fretgame'),
+
   micStatusBar: document.getElementById('mic-status-bar'),
   targetNoteVal: document.getElementById('target-note-val'),
   detectedNoteVal: document.getElementById('detected-note-val'),
   btnToggleMic: document.getElementById('btn-toggle-mic'),
   micGainSlider: document.getElementById('mic-gain-slider'),
   micGainVal: document.getElementById('mic-gain-val'),
-  micLevelBar: document.getElementById('mic-level-bar')
+  micLevelBar: document.getElementById('mic-level-bar'),
+
+  fretgameStatusBar: document.getElementById('fretgame-status-bar'),
+  fretgameTargetText: document.getElementById('fretgame-target-text'),
+  fretgameProgressText: document.getElementById('fretgame-progress-text'),
+  fretgameSkipBtn: document.getElementById('fretgame-skip-btn')
 };
 
 
@@ -144,6 +160,9 @@ function loadSong(song) {
   audioEngine.stop();
   state.selectedMeasureIndex = 0;
   state.targetToneIndex = 0;
+  state.gameTargetIndex = 0;
+  state.fixedNotes = [];
+  state.activePopNote = null;
   state.matchHoldCount = 0;
   updatePlayButtonsState(false, false);
 
@@ -203,7 +222,7 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   const activeChordTransposed = transposeChord(rawChord, state.transposition);
   const activeChordDisplay = formatChordForDisplay(activeChordTransposed);
 
-  // ネクストコードの決定 (次に変化する新しいコードを1拍目から先回り予告)
+  // ネクストコードの決定
   const nextChordDisplay = getNextDifferentChord(measures, currentMeasureIdx, currentBeatIdx, state.transposition);
 
   // 大文字コード・ネクストコード表示
@@ -215,7 +234,12 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   const formattedTones = getFormattedChordTonesByOrder(activeChordTransposed, state.selectedDegreeOrder);
   renderChordTonesCards(formattedTones);
 
-  // リードシートの描画 (全体移調 & 現在小節ハイライト & 小節タップで途中再生/選択)
+  // 指板当てゲームのプロンプト・プログレス更新
+  if (state.playMode === 'fretgame') {
+    updateFretGamePrompt(activeChordDisplay, formattedTones);
+  }
+
+  // リードシートの描画
   renderLeadSheet(
     elements.leadsheetContainer,
     state.parsedSong,
@@ -224,33 +248,137 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
     (clickedMeasureIdx) => {
       state.selectedMeasureIndex = clickedMeasureIdx;
       state.targetToneIndex = 0;
+      state.gameTargetIndex = 0;
+      state.fixedNotes = [];
+      state.activePopNote = null;
       state.matchHoldCount = 0;
       audioEngine.jumpToMeasure(clickedMeasureIdx);
       renderCurrentState(clickedMeasureIdx, 0);
     }
   );
 
+  // ギター指板の描画
+  const isFretGame = state.playMode === 'fretgame';
+  const isFretboardVisible = state.showFretboard || isFretGame;
 
-  // ギター指板の描画 (音名表記 & 表示/非表示トグル)
-  const targetNoteNames = formattedTones.map(t => t.note);
-  renderFretboard(elements.fretboardContainer, targetNoteNames, state.showFretboard);
+  renderFretboard(elements.fretboardContainer, {
+    targetChordTones: formattedTones,
+    startFret: state.startFret,
+    fretCount: state.fretCount,
+    fixedNotes: state.fixedNotes,
+    activePopNote: state.activePopNote,
+    onFretClick: (stringNum, fret, noteName) => {
+      handleFretClick(stringNum, fret, noteName);
+    },
+    interactive: true,
+    mode: isFretGame ? 'game' : 'guide',
+    hideNotes: state.hideNotes,
+    visible: isFretboardVisible
+  });
+}
+
+// 指板当てゲーム用プロンプト表示の更新
+function updateFretGamePrompt(chordSymbol, formattedTones) {
+  if (!formattedTones || formattedTones.length === 0) return;
+
+  if (state.gameTargetIndex >= formattedTones.length) {
+    state.gameTargetIndex = 0;
+  }
+
+  const currentTarget = formattedTones[state.gameTargetIndex];
+  if (elements.fretgameTargetText && currentTarget) {
+    const noteText = state.hideNotes ? '?' : `(${currentTarget.note})`;
+    elements.fretgameTargetText.textContent = `コード [ ${chordSymbol} ] の 【 ${currentTarget.degree} ${noteText} 】 を押してください！`;
+  }
+
+  if (elements.fretgameProgressText) {
+    elements.fretgameProgressText.textContent = `正解: ${state.fixedNotes.length} / ${formattedTones.length}`;
+  }
+}
+
+// 指板タップ時のゲーム判定・サウンド再生ロジック
+function handleFretClick(stringNum, fret, noteName) {
+  // まず押した場所の音を鳴らす
+  audioEngine.playFretNote(stringNum, fret);
+
+  // ガイドモードやマイクモードのときはクリック試聴ポップのみ
+  if (state.playMode !== 'fretgame') {
+    if (state.popTimerId) clearTimeout(state.popTimerId);
+    state.activePopNote = { string: stringNum, fret, note: noteName, isCorrect: true };
+    state.popTimerId = setTimeout(() => {
+      state.activePopNote = null;
+      renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+    }, 600);
+    renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+    return;
+  }
+
+  const measures = state.parsedSong.measures;
+  const currentMeasure = measures[audioEngine.currentMeasure] || measures[0];
+  const rawChord = currentMeasure.chords[audioEngine.currentBeat] || currentMeasure.chords[0];
+  const activeChordTransposed = transposeChord(rawChord, state.transposition);
+  const formattedTones = getFormattedChordTonesByOrder(activeChordTransposed, state.selectedDegreeOrder);
+
+  if (!formattedTones || formattedTones.length === 0) return;
+
+  const currentTarget = formattedTones[state.gameTargetIndex];
+  if (!currentTarget) return;
+
+  const targetPitchIdx = noteToIndex(currentTarget.note);
+  const clickedPitchIdx = noteToIndex(noteName);
+
+  if (state.popTimerId) clearTimeout(state.popTimerId);
+
+  if (targetPitchIdx === clickedPitchIdx) {
+    // 【正解！】
+    const newFixed = { string: stringNum, fret, degree: currentTarget.degree, note: noteName };
+    // 重複登録の防止
+    const exists = state.fixedNotes.some(n => n.string === stringNum && n.fret === fret);
+    if (!exists) {
+      state.fixedNotes.push(newFixed);
+    }
+
+    state.activePopNote = { string: stringNum, fret, note: noteName, isCorrect: true, degree: currentTarget.degree };
+    state.gameTargetIndex++;
+
+    if (state.gameTargetIndex >= formattedTones.length) {
+      // 現在のコードの構成音をすべて達成！
+      state.popTimerId = setTimeout(() => {
+        state.activePopNote = null;
+        state.fixedNotes = [];
+        state.gameTargetIndex = 0;
+        audioEngine.advanceToNextChord();
+        renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+      }, 750);
+    } else {
+      state.popTimerId = setTimeout(() => {
+        state.activePopNote = null;
+        renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+      }, 450);
+    }
+  } else {
+    // 【不正解】
+    state.activePopNote = { string: stringNum, fret, note: noteName, isCorrect: false };
+    state.popTimerId = setTimeout(() => {
+      state.activePopNote = null;
+      renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+    }, 650);
+  }
+
+  renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
 }
 
 // 度数・音名カードのレンダリング
 function renderChordTonesCards(tones) {
   elements.chordTonesContainer.innerHTML = '';
 
+  const activeIdx = (state.playMode === 'fretgame') ? state.gameTargetIndex : state.targetToneIndex;
+
   if (state.playMode === 'mic') {
-    if (state.targetToneIndex >= tones.length) {
-      state.targetToneIndex = 0;
-    }
+    if (state.targetToneIndex >= tones.length) state.targetToneIndex = 0;
     const currentTargetTone = tones[state.targetToneIndex];
     if (elements.targetNoteVal) {
-      if (state.hideNotes) {
-        elements.targetNoteVal.textContent = currentTargetTone ? '?' : '-';
-      } else {
-        elements.targetNoteVal.textContent = currentTargetTone ? currentTargetTone.note : '-';
-      }
+      elements.targetNoteVal.textContent = state.hideNotes ? '?' : (currentTargetTone ? currentTargetTone.note : '-');
     }
   }
 
@@ -258,10 +386,10 @@ function renderChordTonesCards(tones) {
     const card = document.createElement('div');
     card.className = 'tone-card';
 
-    if (state.playMode === 'mic') {
-      if (idx === state.targetToneIndex) {
+    if (state.playMode === 'mic' || state.playMode === 'fretgame') {
+      if (idx === activeIdx) {
         card.classList.add('target-active');
-      } else if (idx < state.targetToneIndex) {
+      } else if (idx < activeIdx) {
         card.classList.add('tone-cleared');
       }
     }
@@ -277,24 +405,28 @@ function renderChordTonesCards(tones) {
 }
 
 
-// モード切替（自動進行 / マイク音判定）
+// モード切替（自動進行 / マイク音判定 / 指板当てゲーム）
 function switchPlayMode(newMode) {
   state.playMode = newMode;
   state.targetToneIndex = 0;
+  state.gameTargetIndex = 0;
+  state.fixedNotes = [];
+  state.activePopNote = null;
   audioEngine.setPlayMode(newMode);
 
-  if (newMode === 'mic') {
-    elements.modeAutoBtn?.classList.remove('active');
-    elements.modeMicBtn?.classList.add('active');
-    if (elements.micStatusBar) elements.micStatusBar.style.display = 'flex';
+  elements.modeAutoBtn?.classList.toggle('active', newMode === 'auto');
+  elements.modeMicBtn?.classList.toggle('active', newMode === 'mic');
+  elements.modeFretGameBtn?.classList.toggle('active', newMode === 'fretgame');
 
-    if (!state.isMicActive) {
-      startMicListening();
-    }
-  } else {
-    elements.modeAutoBtn?.classList.add('active');
-    elements.modeMicBtn?.classList.remove('active');
-    if (elements.micStatusBar) elements.micStatusBar.style.display = 'none';
+  if (elements.micStatusBar) {
+    elements.micStatusBar.style.display = (newMode === 'mic') ? 'flex' : 'none';
+  }
+  if (elements.fretgameStatusBar) {
+    elements.fretgameStatusBar.style.display = (newMode === 'fretgame') ? 'flex' : 'none';
+  }
+
+  if (newMode === 'mic') {
+    if (!state.isMicActive) startMicListening();
   }
 
   renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
@@ -337,7 +469,6 @@ function stopMicListening() {
 function handlePitchDetected(pitchData) {
   if (!elements.detectedNoteVal) return;
 
-  // リアルタイム音量レベルメーターの描画 (RMS -> 幅%)
   if (elements.micLevelBar && pitchData && typeof pitchData.rms === 'number') {
     const levelPercent = Math.min(100, Math.max(0, Math.round((pitchData.rms / 0.06) * 100)));
     elements.micLevelBar.style.width = `${levelPercent}%`;
@@ -350,7 +481,7 @@ function handlePitchDetected(pitchData) {
     return;
   }
 
-  const detectedNote = pitchData.note; // 例: "F", "C#", "Eb" など
+  const detectedNote = pitchData.note;
   elements.detectedNoteVal.textContent = detectedNote;
 
   if (state.playMode === 'mic' && state.parsedSong) {
@@ -369,18 +500,14 @@ function handlePitchDetected(pitchData) {
     const targetTone = formattedTones[state.targetToneIndex];
     if (!targetTone) return;
 
-    // オクターブ不問マッチング: noteToIndex でピッチクラス(0..11)の一致を比較
     const targetIdx = noteToIndex(targetTone.note);
     const detectedIdx = noteToIndex(detectedNote);
 
     if (targetIdx === detectedIdx) {
       state.matchHoldCount++;
-
-      // ギター生音の単音ピッキングで即座に反応 (2フレーム一致でサクサク合格)
       if (state.matchHoldCount >= 2) {
         elements.detectedNoteVal.classList.add('match-success');
         state.matchHoldCount = 0;
-
         advanceTargetNote(formattedTones);
       }
     } else {
@@ -390,21 +517,15 @@ function handlePitchDetected(pitchData) {
   }
 }
 
-
-
-// 正しい音が演奏された時の進行ロジック (次の音・次のコード/小節へ)
+// 正しい音が演奏された時の進行ロジック
 function advanceTargetNote(formattedTones) {
   state.targetToneIndex++;
-
-  // 構成音をすべて合格した場合 -> 次のコード (または次の小節) へ進行！
   if (state.targetToneIndex >= formattedTones.length) {
     state.targetToneIndex = 0;
     audioEngine.advanceToNextChord();
   }
-
   renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
 }
-
 
 // 並び替え可能リスト (Sortable List) の描画
 function renderDegreeSortableList() {
@@ -425,22 +546,16 @@ function renderDegreeSortableList() {
       <button class="chip-move-btn right-btn" title="右へ移動" data-action="right">›</button>
     `;
 
-    // 矢印ボタンのクリックイベント
     chip.querySelector('.left-btn').addEventListener('click', (e) => {
       e.stopPropagation();
-      if (idx > 0) {
-        swapDegreeOrder(idx, idx - 1);
-      }
+      if (idx > 0) swapDegreeOrder(idx, idx - 1);
     });
 
     chip.querySelector('.right-btn').addEventListener('click', (e) => {
       e.stopPropagation();
-      if (idx < state.selectedDegreeOrder.length - 1) {
-        swapDegreeOrder(idx, idx + 1);
-      }
+      if (idx < state.selectedDegreeOrder.length - 1) swapDegreeOrder(idx, idx + 1);
     });
 
-    // ドラッグ＆ドロップイベント
     chip.addEventListener('dragstart', (e) => {
       draggedIndex = idx;
       chip.classList.add('dragging');
@@ -479,7 +594,6 @@ function renderDegreeSortableList() {
   });
 }
 
-// 度数順序の入れ替え処理
 function swapDegreeOrder(fromIdx, toIdx) {
   const temp = state.selectedDegreeOrder[fromIdx];
   state.selectedDegreeOrder[fromIdx] = state.selectedDegreeOrder[toIdx];
@@ -488,39 +602,24 @@ function swapDegreeOrder(fromIdx, toIdx) {
   renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
 }
 
-// 度数トグルボタンの状態更新
 function updateDegreeToggleButtonUI(degreeStr, isActive) {
-  const btnMap = {
-    'R': elements.btnDegR,
-    '3': elements.btnDeg3,
-    '5': elements.btnDeg5,
-    '7': elements.btnDeg7
-  };
+  const btnMap = { 'R': elements.btnDegR, '3': elements.btnDeg3, '5': elements.btnDeg5, '7': elements.btnDeg7 };
   const btn = btnMap[degreeStr];
   if (!btn) return;
-  if (isActive) {
-    btn.classList.add('active');
-  } else {
-    btn.classList.remove('active');
-  }
+  if (isActive) btn.classList.add('active');
+  else btn.classList.remove('active');
 }
 
-// 度数トグルのクリックハンドラー
 function toggleDegree(degreeStr) {
   const isPresent = state.selectedDegreeOrder.includes(degreeStr);
 
   if (isPresent) {
-    // 最後の1つの場合は非アクティブ化を防止（全OFFを防ぐ）
-    if (state.selectedDegreeOrder.length <= 1) {
-      return;
-    }
+    if (state.selectedDegreeOrder.length <= 1) return;
     state.selectedDegreeOrder = state.selectedDegreeOrder.filter(d => d !== degreeStr);
     updateDegreeToggleButtonUI(degreeStr, false);
   } else {
-    // 追加時は標準順序 (R -> 3 -> 5 -> 7) の適切な位置、または末尾に挿入
     const defaultOrder = ['R', '3', '5', '7'];
     state.selectedDegreeOrder.push(degreeStr);
-    // デフォルトの相対順序で綺麗に並べる
     state.selectedDegreeOrder.sort((a, b) => defaultOrder.indexOf(a) - defaultOrder.indexOf(b));
     updateDegreeToggleButtonUI(degreeStr, true);
   }
@@ -529,9 +628,6 @@ function toggleDegree(degreeStr) {
   renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
 }
 
-
-
-// 演奏ボタンの状態制御
 function updatePlayButtonsState(isPlaying, isPaused) {
   state.isPlaying = isPlaying;
   state.isPaused = isPaused;
@@ -550,20 +646,34 @@ function updatePlayButtonsState(isPlaying, isPaused) {
 
 // イベントリスナーの登録
 function setupEventListeners() {
-  // 練習モード切替ボタン (自動進行 / マイク音判定)
   elements.modeAutoBtn?.addEventListener('click', () => switchPlayMode('auto'));
   elements.modeMicBtn?.addEventListener('click', () => switchPlayMode('mic'));
+  elements.modeFretGameBtn?.addEventListener('click', () => switchPlayMode('fretgame'));
 
-  // マイクON/OFFボタン
-  elements.btnToggleMic?.addEventListener('click', () => {
-    if (state.isMicActive) {
-      stopMicListening();
-    } else {
-      startMicListening();
-    }
+  // 指板当てゲームの「スキップ」ボタン
+  elements.fretgameSkipBtn?.addEventListener('click', () => {
+    state.fixedNotes = [];
+    state.gameTargetIndex = 0;
+    audioEngine.advanceToNextChord();
+    renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
   });
 
-  // マイク感度（ゲイン）スライダー
+  // 開始フレット & 表示フレット数の変更
+  elements.fretStartSelect?.addEventListener('change', (e) => {
+    state.startFret = parseInt(e.target.value, 10);
+    renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+  });
+
+  elements.fretCountSelect?.addEventListener('change', (e) => {
+    state.fretCount = parseInt(e.target.value, 10);
+    renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
+  });
+
+  elements.btnToggleMic?.addEventListener('click', () => {
+    if (state.isMicActive) stopMicListening();
+    else startMicListening();
+  });
+
   elements.micGainSlider?.addEventListener('input', (e) => {
     const val = parseInt(e.target.value, 10);
     if (elements.micGainVal) elements.micGainVal.textContent = `${val}%`;
@@ -571,24 +681,18 @@ function setupEventListeners() {
     localStorage.setItem('mic_gain_percent', val);
   });
 
-  // 度数トグルボタンのリスナー
   elements.btnDegR?.addEventListener('click', () => toggleDegree('R'));
   elements.btnDeg3?.addEventListener('click', () => toggleDegree('3'));
   elements.btnDeg5?.addEventListener('click', () => toggleDegree('5'));
   elements.btnDeg7?.addEventListener('click', () => toggleDegree('7'));
 
-
-  // 音名非表示 (ブラインド練習) トグル
   elements.toggleHideNotes?.addEventListener('change', (e) => {
     state.hideNotes = e.target.checked;
     renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
   });
 
-  // 曲検索
-
   elements.songSearch.addEventListener('input', (e) => {
     const rawQuery = e.target.value.toLowerCase().trim();
-    // タイポ吸収 ('autumun' や 'autum' など)
     const normQuery = rawQuery.replace(/autumun|autum/g, 'autumn');
 
     const filtered = songsData.filter(s => {
@@ -601,57 +705,50 @@ function setupEventListeners() {
     populateSongList(filtered);
 
     if (filtered.length > 0) {
-      // もし現在選択中の曲が検索結果に含まれていればその選択を維持
       const currentInFiltered = filtered.find(s => s.id === state.currentSong?.id);
       if (currentInFiltered) {
         elements.songSelect.value = currentInFiltered.id;
       } else {
-        // 含まれていない場合のみ先頭曲をロード
         elements.songSelect.value = filtered[0].id;
         loadSong(filtered[0]);
       }
     }
   });
 
-  // 曲選択ドロップダウン
   elements.songSelect.addEventListener('change', (e) => {
     const selectedId = parseInt(e.target.value, 10);
     const song = songsData.find(s => s.id === selectedId);
     if (song) loadSong(song);
   });
 
-  // スタート / 一時停止 トグルボタン
   elements.btnStart.addEventListener('click', () => {
     if (!state.isPlaying && !state.isPaused) {
-      // 選択中の小節から再生スタート
       audioEngine.setBpm(state.bpm);
       audioEngine.setBackingEnabled(state.enableBacking);
       audioEngine.start(state.countInBeats, state.selectedMeasureIndex);
       updatePlayButtonsState(true, false);
     } else if (state.isPlaying) {
-      // 再生中 -> 一時停止へ
       audioEngine.pause();
       updatePlayButtonsState(false, true);
     } else if (state.isPaused) {
-      // 一時停止中 -> 再スタートへ
       audioEngine.resume();
       updatePlayButtonsState(true, false);
     }
   });
 
-  // リセット
   elements.btnReset.addEventListener('click', () => {
     audioEngine.stop();
     state.selectedMeasureIndex = 0;
-    state.targetToneIndex = 0; // 一番左の度数(1番目の音)にフォーカスをリセット
+    state.targetToneIndex = 0;
+    state.gameTargetIndex = 0;
+    state.fixedNotes = [];
+    state.activePopNote = null;
     state.matchHoldCount = 0;
     updatePlayButtonsState(false, false);
     elements.countinBadge.style.display = 'none';
     renderCurrentState(0, 0);
   });
 
-
-  // BPMの共通更新処理
   const setBpmValue = (newBpm) => {
     const clamped = Math.max(40, Math.min(240, newBpm));
     state.bpm = clamped;
@@ -660,59 +757,38 @@ function setupEventListeners() {
     audioEngine.setBpm(clamped);
   };
 
-  // テンポ (BPM) スライダー
-  elements.bpmSlider.addEventListener('input', (e) => {
-    const val = parseInt(e.target.value, 10);
-    setBpmValue(val);
-  });
-
-  // BPM -1 ボタン
-  elements.bpmMinus1?.addEventListener('click', () => {
-    setBpmValue(state.bpm - 1);
-  });
-
-  // BPM +1 ボタン
-  elements.bpmPlus1?.addEventListener('click', () => {
-    setBpmValue(state.bpm + 1);
-  });
-
-  // BPM -10 ボタン (10刻みのキリがいい数値に丸め)
+  elements.bpmSlider.addEventListener('input', (e) => setBpmValue(parseInt(e.target.value, 10)));
+  elements.bpmMinus1?.addEventListener('click', () => setBpmValue(state.bpm - 1));
+  elements.bpmPlus1?.addEventListener('click', () => setBpmValue(state.bpm + 1));
   elements.bpmMinus10?.addEventListener('click', () => {
     const target = state.bpm % 10 === 0 ? state.bpm - 10 : Math.floor(state.bpm / 10) * 10;
     setBpmValue(target);
   });
-
-  // BPM +10 ボタン (10刻みのキリがいい数値に丸め)
   elements.bpmPlus10?.addEventListener('click', () => {
     const target = Math.floor(state.bpm / 10) * 10 + 10;
     setBpmValue(target);
   });
 
-  // 移調 (Transposition) 変更 -> 全体が連動して一括変化
   elements.transposeSelect.addEventListener('change', (e) => {
     state.transposition = parseInt(e.target.value, 10);
     audioEngine.setSong(state.parsedSong, state.transposition);
     renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
   });
 
-  // ギター指板表示/非表示トグル
   elements.toggleFretboard.addEventListener('change', (e) => {
     state.showFretboard = e.target.checked;
     renderCurrentState(audioEngine.currentMeasure, audioEngine.currentBeat);
   });
 
-  // バッキング和音再生ON/OFF
   elements.toggleBacking.addEventListener('change', (e) => {
     state.enableBacking = e.target.checked;
     audioEngine.setBackingEnabled(state.enableBacking);
   });
 
-  // カウントイン設定
   elements.countinSelect.addEventListener('change', (e) => {
     state.countInBeats = parseInt(e.target.value, 10);
   });
 
-  // オーディオエンジンの Tick イベント同調
   audioEngine.onTick = (info) => {
     if (info.isCountIn) {
       elements.countinBadge.style.display = 'block';
@@ -723,18 +799,16 @@ function setupEventListeners() {
     }
   };
 
-  // 曲終了時
   audioEngine.onEnd = () => {
     updatePlayButtonsState(false, false);
     elements.countinBadge.style.display = 'none';
     renderCurrentState(0, 0);
   };
-  // スマホのダブルタップ拡大防止
+
   let lastTouchEnd = 0;
   document.addEventListener('touchend', (e) => {
     const now = Date.now();
     if (now - lastTouchEnd <= 300) {
-      // フォーム入力等の動作を阻害しないようターゲットチェックも考慮しつつpreventDefault
       if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'SELECT' && e.target.tagName !== 'TEXTAREA') {
         e.preventDefault();
       }

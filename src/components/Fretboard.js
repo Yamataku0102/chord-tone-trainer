@@ -140,14 +140,14 @@ export function renderFretboard(containerEl, options = {}) {
         badgeHtml = `
           <div class="note-badge badge-fixed-correct animate-pop">
             <span class="badge-degree">${fixedMatch.degree}</span>
-            ${!hideNotes ? `<span class="badge-note-sub">${noteName}</span>` : ''}
+            <span class="badge-note-sub">${noteName}</span>
           </div>
         `;
       } else if (isPopActive) {
         const popClass = isPopCorrect ? 'badge-pop-correct' : 'badge-pop-wrong';
         badgeHtml = `
           <div class="note-badge ${popClass} animate-bounce">
-            <span class="badge-note-main">${hideNotes && !isPopCorrect ? '?' : noteName}</span>
+            <span class="badge-note-main">${noteName}</span>
             ${activePopNote.degree ? `<span class="badge-degree-sub">${activePopNote.degree}</span>` : ''}
           </div>
         `;
@@ -155,7 +155,7 @@ export function renderFretboard(containerEl, options = {}) {
         badgeHtml = `
           <div class="note-badge badge-guide-target">
             <span class="badge-degree">${degreeTag}</span>
-            ${!hideNotes ? `<span class="badge-note-sub">${noteName}</span>` : ''}
+            <span class="badge-note-sub">${noteName}</span>
           </div>
         `;
       }

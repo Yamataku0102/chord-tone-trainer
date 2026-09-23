@@ -15,18 +15,6 @@ export function getNoteForStringAndFret(stringNum, fret) {
 
 /**
  * 指板のレンダリング
- * options: {
- *   targetChordTones: [{ note, degree }], // ガイドモードで点灯させる目標音
- *   startFret: 0,
- *   fretCount: 5,
- *   fixedNotes: [{ string, fret, degree, note }], // ゲームモードで正解固定表示された音
- *   activePopNote: { string, fret, note, isCorrect, degree }, // タップ時のアニメーション用
- *   onFretClick: function(stringNum, fret, noteName),
- *   interactive: true,
- *   mode: 'guide' | 'game',
- *   hideNotes: false,
- *   visible: true
- * }
  */
 export function renderFretboard(containerEl, options = {}) {
   if (!containerEl) return;
@@ -67,7 +55,7 @@ export function renderFretboard(containerEl, options = {}) {
       <div class="fretboard-header-bar">
         <div class="fretboard-title-group">
           <span class="fretboard-icon">🎸</span>
-          <span class="fretboard-title-text">${mode === 'game' ? '指板当てゲーム (フレットを押して度数を当てよう！)' : 'ギター指板ガイド'}</span>
+          <span class="fretboard-title-text">${mode === 'game' ? '指板当てゲーム' : 'ギター指板ガイド'}</span>
         </div>
         <div class="fretboard-range-badge">
           ${minFret === 0 ? '開放〜' : minFret + 'フレ〜'} ${maxFret}フレット表示
@@ -79,7 +67,7 @@ export function renderFretboard(containerEl, options = {}) {
         <div class="fretboard-board" data-start-fret="${minFret}" data-fret-count="${numFrets}">
   `;
 
-  // 各フレット列の列ヘッダー ＆ フレット線 ＆ ポジションマーク
+  // 各フレット列の列ヘッダー
   const startF = (minFret === 0 ? 0 : minFret);
 
   html += `<div class="fret-numbers-row">`;
@@ -94,6 +82,9 @@ export function renderFretboard(containerEl, options = {}) {
 
   // 弦とノートグリッド領域 (1弦: Top 〜 6弦: Bottom)
   html += `<div class="strings-container">`;
+
+  const singleDotFrets = [3, 5, 7, 9, 15, 17, 19, 21];
+  const doubleDotFrets = [12, 24];
 
   // 1〜6弦の描画
   GUITAR_STRINGS.forEach((stringConfig) => {
@@ -128,13 +119,24 @@ export function renderFretboard(containerEl, options = {}) {
       const isPopActive = activePopNote && activePopNote.string === stringNum && activePopNote.fret === fret;
       const isPopCorrect = isPopActive && activePopNote.isCorrect;
 
+      // 指板上のポジションマーク (Inlay) 描画
+      // シングルドット: 3弦のセル下部 (3弦と4弦の間)
+      // ダブルドット: 2弦のセル下部 (2/3弦の間) ＆ 4弦のセル下部 (4/5弦の間)
+      let inlayHtml = '';
+      if (!isNut) {
+        if (stringNum === 3 && singleDotFrets.includes(fret)) {
+          inlayHtml = `<div class="fret-inlay-onboard single-inlay"></div>`;
+        } else if ((stringNum === 2 || stringNum === 4) && doubleDotFrets.includes(fret)) {
+          inlayHtml = `<div class="fret-inlay-onboard double-inlay"></div>`;
+        }
+      }
+
       // バッジ表示判定
       let badgeHtml = '';
       let cellClasses = `fret-node-cell fret-${fret}`;
       if (isNut) cellClasses += ' nut-node-cell';
 
       if (fixedMatch) {
-        // ゲーム正解固定表示
         badgeHtml = `
           <div class="note-badge badge-fixed-correct animate-pop">
             <span class="badge-degree">${fixedMatch.degree}</span>
@@ -142,7 +144,6 @@ export function renderFretboard(containerEl, options = {}) {
           </div>
         `;
       } else if (isPopActive) {
-        // タップ直後の試聴/回答アニメーション
         const popClass = isPopCorrect ? 'badge-pop-correct' : 'badge-pop-wrong';
         badgeHtml = `
           <div class="note-badge ${popClass} animate-bounce">
@@ -151,7 +152,6 @@ export function renderFretboard(containerEl, options = {}) {
           </div>
         `;
       } else if (isTarget) {
-        // ガイドモード点灯表示
         badgeHtml = `
           <div class="note-badge badge-guide-target">
             <span class="badge-degree">${degreeTag}</span>
@@ -167,6 +167,7 @@ export function renderFretboard(containerEl, options = {}) {
              data-note="${noteName}"
              title="${stringNum}弦 ${fret}フレット (${noteName})">
           <div class="wire-intersection"></div>
+          ${inlayHtml}
           ${badgeHtml}
         </div>
       `;
@@ -176,28 +177,6 @@ export function renderFretboard(containerEl, options = {}) {
   });
 
   html += `</div>`; // .strings-container
-
-  // 指板下部のポジションマーク (Inlay Position Markers)
-  html += `<div class="fret-inlays-row">`;
-  html += `<div class="fret-label-spacer"></div>`;
-  if (minFret === 0) {
-    html += `<div class="inlay-col nut-col"></div>`;
-  }
-  
-  const singleDotFrets = [3, 5, 7, 9, 15, 17, 19, 21];
-  const doubleDotFrets = [12, 24];
-
-  for (let f = (minFret === 0 ? 1 : minFret); f <= maxFret; f++) {
-    let inlayContent = '';
-    if (doubleDotFrets.includes(f)) {
-      inlayContent = `<span class="inlay-dot double-dot"></span><span class="inlay-dot double-dot"></span>`;
-    } else if (singleDotFrets.includes(f)) {
-      inlayContent = `<span class="inlay-dot single-dot"></span>`;
-    }
-    html += `<div class="inlay-col">${inlayContent}</div>`;
-  }
-  html += `</div>`; // .fret-inlays-row
-
   html += `</div></div></div>`;
 
   containerEl.innerHTML = html;

@@ -350,9 +350,16 @@ select {
 
 .chord-display-row {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: minmax(200px, 260px) 1fr;
   gap: 16px;
   align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .chord-display-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 .tones-card-box {
@@ -425,7 +432,7 @@ select {
   background: linear-gradient(135deg, rgba(42, 23, 18, 0.9), rgba(18, 12, 10, 0.95));
   border: 2px solid var(--border-highlight);
   border-radius: var(--radius-md);
-  padding: 16px 20px;
+  padding: 14px 10px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -434,6 +441,8 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .countin-badge {
@@ -456,13 +465,26 @@ select {
 
 .big-chord-symbol {
   font-family: var(--font-serif);
-  font-size: 4.2rem;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
   font-weight: 700;
   background: linear-gradient(135deg, #f3cfb7, #a14b2c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.5px;
+  white-space: nowrap;
+  max-width: 100%;
+  text-align: center;
+  transition: font-size 0.15s ease;
+}
+
+/* コード名の長さに応じたフォント調整クラス */
+.big-chord-symbol.chord-size-sm {
+  font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+}
+
+.big-chord-symbol.chord-size-xs {
+  font-size: clamp(1.4rem, 3.2vw, 2.0rem);
 }
 
 .next-chord-preview {

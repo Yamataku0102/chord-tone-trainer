@@ -225,8 +225,17 @@ function renderCurrentState(currentMeasureIdx = 0, currentBeatIdx = 0) {
   // ネクストコードの決定
   const nextChordDisplay = getNextDifferentChord(measures, currentMeasureIdx, currentBeatIdx, state.transposition);
 
-  // 大文字コード・ネクストコード表示
-  elements.bigChord.textContent = activeChordDisplay || 'C';
+  // 大文字コード・ネクストコード表示 (文字数に応じたはみ出し防止自動縮小)
+  const chordText = activeChordDisplay || 'C';
+  elements.bigChord.textContent = chordText;
+
+  elements.bigChord.classList.remove('chord-size-sm', 'chord-size-xs');
+  if (chordText.length >= 7) {
+    elements.bigChord.classList.add('chord-size-xs');
+  } else if (chordText.length >= 4) {
+    elements.bigChord.classList.add('chord-size-sm');
+  }
+
   elements.nextChord.textContent = nextChordDisplay;
   elements.measureProgressText.textContent = `小節: ${currentMeasureIdx + 1} / ${measures.length}`;
 

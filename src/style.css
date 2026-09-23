@@ -1043,19 +1043,35 @@ select {
     font-size: 0.75rem;
   }
 
-  /* 楽曲検索 */
-  .song-selector-panel {
+  /* 楽曲検索 ＆ スタートボタンパネル (スマホ最適化) */
+  .song-action-panel {
     flex-direction: column;
-    padding: 12px;
-    gap: 10px;
+    padding: 10px;
+    gap: 8px;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .song-select-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
   }
 
   .search-input, .song-select {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+  }
+
+  .main-btn-group {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+
+  .main-btn-group .btn {
+    flex: 1;
   }
 
   .card-panel {

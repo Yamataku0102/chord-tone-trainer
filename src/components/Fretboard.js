@@ -19,6 +19,10 @@ export function getNoteForStringAndFret(stringNum, fret) {
 export function renderFretboard(containerEl, options = {}) {
   if (!containerEl) return;
 
+  // 再描画前の横スクロール位置を記憶
+  const prevCard = containerEl.querySelector('.fretboard-card');
+  const savedScrollLeft = prevCard ? prevCard.scrollLeft : (containerEl.scrollLeft || 0);
+
   const {
     targetChordTones = [],
     startFret = 0,

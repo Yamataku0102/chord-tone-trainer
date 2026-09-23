@@ -596,6 +596,8 @@ select {
   padding: 18px 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
   margin-top: 10px;
 }
 

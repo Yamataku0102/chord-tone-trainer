@@ -4,6 +4,11 @@
  */
 import { GUITAR_STRINGS, indexToNote, noteToIndex } from '../chordUtils.js';
 
+// グローバルでのスクロール位置保持
+if (typeof window !== 'undefined' && window.__fretboardScrollPos === undefined) {
+  window.__fretboardScrollPos = 0;
+}
+
 // 各弦・フレットの音名算出
 export function getNoteForStringAndFret(stringNum, fret) {
   const stringConfig = GUITAR_STRINGS.find(s => s.stringNum === stringNum);
@@ -19,9 +24,14 @@ export function getNoteForStringAndFret(stringNum, fret) {
 export function renderFretboard(containerEl, options = {}) {
   if (!containerEl) return;
 
-  // 再描画前の横スクロール位置を記憶
+  // 再描画前のスクロール位置を多角的に退避
   const prevCard = containerEl.querySelector('.fretboard-card');
-  const savedScrollLeft = prevCard ? prevCard.scrollLeft : (containerEl.scrollLeft || 0);
+  if (prevCard && prevCard.scrollLeft > 0) {
+    window.__fretboardScrollPos = prevCard.scrollLeft;
+  } else if (containerEl.scrollLeft > 0) {
+    window.__fretboardScrollPos = containerEl.scrollLeft;
+  }
+  const targetScrollLeft = window.__fretboardScrollPos || 0;
 
   const {
     targetChordTones = [],
@@ -184,6 +194,32 @@ export function renderFretboard(containerEl, options = {}) {
   html += `</div></div></div>`;
 
   containerEl.innerHTML = html;
+
+  // スクロール位置の多重非同期完全復元ロジック
+  const restoreScrollPosition = () => {
+    const newCard = containerEl.querySelector('.fretboard-card');
+    if (newCard) {
+      newCard.scrollLeft = targetScrollLeft;
+    }
+    if (containerEl) {
+      containerEl.scrollLeft = targetScrollLeft;
+    }
+  };
+
+  restoreScrollPosition();
+  requestAnimationFrame(() => {
+    restoreScrollPosition();
+    setTimeout(restoreScrollPosition, 0);
+    setTimeout(restoreScrollPosition, 30);
+  });
+
+  // スクロール位置をユーザーが動かした際、常に最新の位置を保存
+  const newCard = containerEl.querySelector('.fretboard-card');
+  if (newCard) {
+    newCard.addEventListener('scroll', () => {
+      window.__fretboardScrollPos = newCard.scrollLeft;
+    }, { passive: true });
+  }
 
   // クリック・タップイベントの登録
   if (interactive && typeof onFretClick === 'function') {
